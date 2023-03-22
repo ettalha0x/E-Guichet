@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '71b52e2b4a7ddb285b6844f569310e5f4c20b836',
+        'reference' => 'a0314f84a25fda174790080cef625291eb8e6709',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -436,11 +436,29 @@
                 0 => 'v10.4.1',
             ),
         ),
+        'inertiajs/inertia-laravel' => array(
+            'pretty_version' => 'v0.6.9',
+            'version' => '0.6.9.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../inertiajs/inertia-laravel',
+            'aliases' => array(),
+            'reference' => 'b983c6eb2fe7460df6170060cdd7b47b5ef6832a',
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'laravel/breeze' => array(
+            'pretty_version' => 'v1.20.0',
+            'version' => '1.20.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/breeze',
+            'aliases' => array(),
+            'reference' => '3d8955fc1b68d5cee7ab7ee8a6ca9e302fd20c30',
+            'dev_requirement' => true,
         ),
         'laravel/framework' => array(
             'pretty_version' => 'v10.4.1',
@@ -457,7 +475,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '71b52e2b4a7ddb285b6844f569310e5f4c20b836',
+            'reference' => 'a0314f84a25fda174790080cef625291eb8e6709',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -1324,6 +1342,15 @@
             'aliases' => array(),
             'reference' => '34a41e998c2183e22995f158c581e7b5e755ab9e',
             'dev_requirement' => true,
+        ),
+        'tightenco/ziggy' => array(
+            'pretty_version' => 'v1.5.0',
+            'version' => '1.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tightenco/ziggy',
+            'aliases' => array(),
+            'reference' => '419ac3f71b60795b392ec1ba6ee72e179977afc8',
+            'dev_requirement' => false,
         ),
         'tijsverkoyen/css-to-inline-styles' => array(
             'pretty_version' => '2.2.6',
