@@ -3,10 +3,12 @@ import { MdOutlineReportProblem } from "react-icons/md";
 import { Tabs } from "antd";
 import Note from "./note";
 import Addmodule from "./addmodule";
+import { usePage } from '@inertiajs/react';
 
 const { TabPane } = Tabs;
 
 function Home() {
+    const { auth } = usePage().props
     return (
         <div className="grid">
             <div className=" bg-blue-300 rounded-t-md relative lg:text-center p-8">
@@ -16,19 +18,19 @@ function Home() {
                             <span className=" font-semibold underline decoration-indigo-800">
                                 Nom :
                             </span>
-                            <span>user.name</span>
+                            <span>{auth.user.name}</span>
                         </div>
                         <div className="grid lg:flex gap-4 lg:gap-8">
                             <span className=" font-semibold underline decoration-indigo-800">
                                 Prenom :
                             </span>
-                            <span>user.preno;</span>
+                            <span>{auth.user.prenom}</span>
                         </div>
                         <div className="grid lg:flex gap-4 lg:gap-8">
                             <span className=" font-semibold underline decoration-indigo-800">
                                 Date/Lieu de naissance:
                             </span>
-                            <span>user.naissance</span>
+                            <span>{auth.user.naissance}</span>
                         </div>
                     </div>
                     <div className="grid gap-8">
@@ -36,39 +38,33 @@ function Home() {
                             <span className=" font-semibold underline decoration-indigo-800">
                                 Appoge :
                             </span>
-                            <span>user.appoge</span>
+                            <span>{auth.user.appoge}</span>
                         </div>
                         <div className="grid lg:flex gap-4 lg:gap-8">
                             <span className=" font-semibold underline decoration-indigo-800">
                                 CNE :
                             </span>
-                            <span>user.cne;</span>
+                            <span>{auth.user.cne}</span>
                         </div>
                         <div className="grid lg:flex gap-4 lg:gap-8">
                             <span className=" font-semibold underline decoration-indigo-800">
-                                CIN :
+                                CNI :
                             </span>
-                            <span>user.cin</span>
+                            <span>{auth.user.cni}</span>
                         </div>
                     </div>
                     <div className="grid gap-8">
                         <div className="grid lg:flex gap-4 lg:gap-8">
                             <span className=" font-semibold underline decoration-indigo-800">
-                                Nom :
+                                Semestre :
                             </span>
-                            <span>user.name</span>
+                            <span>{auth.user.semestre}</span>
                         </div>
                         <div className="grid lg:flex gap-4 lg:gap-8">
                             <span className=" font-semibold underline decoration-indigo-800">
-                                Prenom :
+                                fillier :
                             </span>
-                            <span>user.preno;</span>
-                        </div>
-                        <div className="grid lg:flex gap-4 lg:gap-8">
-                            <span className=" font-semibold underline decoration-indigo-800">
-                                Date/Lieu de naissance:
-                            </span>
-                            <span>user.naissance</span>
+                            <span>{auth.user.fillier}</span>
                         </div>
                     </div>
                 </div>

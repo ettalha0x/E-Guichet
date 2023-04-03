@@ -13,7 +13,7 @@ export default function Dashboard({ auth }: PageProps) {
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <All/>
+                    <All user={auth.user}/>
                 </div>
             </div>
         </AuthenticatedLayout>
