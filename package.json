@@ -22,5 +22,10 @@
         "tailwindcss": "^3.2.1",
         "typescript": "^5.0.2",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "antd": "^5.3.3",
+        "icons": "^1.0.0",
+        "react-icons": "^4.8.0"
     }
 }

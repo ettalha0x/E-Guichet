@@ -6,6 +6,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import logo from "../../images/Universite-logo.png";
 
 export default function Login({ status, canResetPassword }: { status?: string, canResetPassword: boolean }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -31,14 +32,14 @@ export default function Login({ status, canResetPassword }: { status?: string, c
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
-
+            <img src={logo} alt="" />
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="email" value="Email" />
+                    <InputLabel htmlFor="appoge" value="Appoge" />
 
                     <TextInput
                         id="email"
-                        type="email"
+                        type="text"
                         name="email"
                         value={data.email}
                         className="mt-1 block w-full"
@@ -47,11 +48,11 @@ export default function Login({ status, canResetPassword }: { status?: string, c
                         onChange={(e) => setData('email', e.target.value)}
                     />
 
-                    <InputError message={errors.email} className="mt-2" />
+                   <InputError message={errors.email} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="cne" value="CNE" />
 
                     <TextInput
                         id="password"
@@ -73,25 +74,24 @@ export default function Login({ status, canResetPassword }: { status?: string, c
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
                         />
-                        <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                        <span className="ml-2 text-sm text-gray-600 dark:text-gray-600">Remember me</span>
                     </label>
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
+                    {/* {canResetPassword && (
                         <Link
                             href={route('password.request')}
                             className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                         >
                             Forgot your password?
                         </Link>
-                    )}
+                    )} */}
 
                     <PrimaryButton className="ml-4" disabled={processing}>
                         Log in
                     </PrimaryButton>
                 </div>
-                <h1>test</h1>
             </form>
         </GuestLayout>
     );
