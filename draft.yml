@@ -1,22 +1,13 @@
 models:
-    Student:
-        id: integer unsigned nullable
-        cn: integer unsigned nullable
-        dateness: integer
-        name: string
-        email: string
-        last name: string
-        timestamps: true
-        softDeletes: true
-        relationships: 
-            hasMany: semester
-    Courses:
-      - Course: string nullable
-        Semester: string nullable
-        Module_1: string nullable
-        Module_2: string nullable
-        Module_3: string nullable
-        Module_4: string nullable
-        Module_5: string nullable
-        Module_6: string nullable
-        Module_7: string nullable
+  Courses:
+    Course: string:400 nullable
+    Semester: string:400 nullable
+    Module_1: string:400 nullable
+    Module_2: string:400 nullable
+    Module_3: string:400 nullable
+    Module_4: string:400 nullable
+    Module_5: string:400 nullable
+    Module_6: string:400 nullable
+    Module_7: string:400  nullable
+
+seeders: Courses
