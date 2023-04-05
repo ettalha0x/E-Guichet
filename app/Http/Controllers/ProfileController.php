@@ -3,24 +3,52 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+   
+        /* Current Login User Details */
+        $user = auth()->user();
+        var_dump($user);
+      
+        /* Current Login User ID */
+        $userID = auth()->user()->id; 
+        var_dump($userID);
+          
+        /* Current Login User Name */
+        $userName = auth()->user()->name; 
+        var_dump($userName);
+          
+        /* Current Login User Email */
+        $userEmail = auth()->user()->email; 
+        var_dump($userEmail);
+        $models = DB::table('courses')->distinct()->get();
+       // dd($models);
+        return view('dashboard',compact('user','models'));
+        
+    }
+
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): Response
+    public function edit(Request $request): View
     {
-        return Inertia::render('Profile/Edit', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => session('status'),
+        return view('profile.edit', [
+            'user' => $request->user(),
         ]);
     }
 
@@ -37,7 +65,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit');
+        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**
@@ -45,8 +73,8 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validate([
-            'password' => ['required', 'current-password'],
+        $request->validateWithBag('userDeletion', [
+            'password' => ['required', 'current_password'],
         ]);
 
         $user = $request->user();

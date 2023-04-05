@@ -1,0 +1,7 @@
+created:
+    - database/factories/CoursesFactory.php
+    - database/migrations/2023_04_05_012626_create_courses_table.php
+    - app/Models/Courses.php
+    - database/seeders/CoursesSeeder.php
+models:
+    Courses: { Course: 'string:400 nullable', Semester: 'string:400 nullable', Module_1: 'string:400 nullable', Module_2: 'string:400 nullable', Module_3: 'string:400 nullable', Module_4: 'string:400 nullable', Module_5: 'string:400 nullable', Module_6: 'string:400 nullable', Module_7: 'string:400  nullable' }
