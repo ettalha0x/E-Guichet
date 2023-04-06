@@ -1,0 +1,86 @@
+/* Body */
+body {
+	background-color: #f1f1f1;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+  }
+
+  /* Page header */
+  .page-header {
+	background-color: #0f86f0;
+	color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+  }
+
+  .page-header h1 {
+	margin: 0;
+	font-size: 30px;
+  }
+
+  /* Forms */
+  .form-group {
+	margin-bottom: 20px;
+  }
+
+  .form-control {
+	border: 1px solid #ced4da;
+	border-radius: 5px;
+	box-shadow: none;
+  }
+
+  /* Services */
+  .nav-tabs {
+	margin-top: 50px;
+  }
+
+  .nav-tabs > li > a {
+	color: #0f86f0;
+	font-weight: bold;
+  }
+
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+	color: #fff;
+	background-color: #0f86f0;
+	border: none;
+	border-radius: 0;
+  }
+
+  .tab-pane {
+	margin-top: 30px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+	background-color: #0f86f0;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-weight: bold;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+	background-color: #0f86f0;
+  }
+
+  .btn-danger {
+	background-color: #dc3545;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-weight: bold;
+  }
+
+  .btn-danger:hover,
+  .btn-danger:focus {
+	background-color: #c82333;
+  }
+
+  hr {
+	border-top: 3px solid #0f86f0; /* Set the color and thickness of the line */
+	margin: 30px auto; /* Set the margin to center the line horizontally */
+  }
