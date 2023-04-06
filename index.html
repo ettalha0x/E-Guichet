@@ -62,55 +62,62 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-sm-12">
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#correction">Correction</a></li>
           <li><a data-toggle="tab" href="#ajoute">Ajouter</a></li>
         </ul>
-      </div>
-      <div class="tab-content">
-        <div id="correction" class="tab-pane fade in active">
-          <div id="dropdown1" class="col-sm-6">
-            <select class="form-control" name="senester" id="semester">
-              <option value="option1">Selsect Semester</option>
-              <option value="option1">S 1</option>
-              <option value="option2">S 2</option>
-              <option value="option3">S 3</option>
-              <option value="option3">S 4</option>
-              <option value="option3">S 5</option>
-              <option value="option3">S 6</option>
-            </select>
+        <div class="tab-content">
+          <div id="correction" class="tab-pane fade in active">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="semester">Select Semester:</label>
+                  <select class="form-control" name="semester" id="semester">
+                    <option value="">--Select Semester--</option>
+                    <option value="S1">S 1</option>
+                    <option value="S2">S 2</option>
+                    <option value="S3">S 3</option>
+                    <option value="S4">S 4</option>
+                    <option value="S5">S 5</option>
+                    <option value="S6">S 6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="module">Select Module:</label>
+                  <select class="form-control" name="module" id="module">
+                    <option value="">--Select Module--</option>
+                    <option value="M1">M 1</option>
+                    <option value="M2">M 2</option>
+                    <option value="M3">M 3</option>
+                    <option value="M4">M 4</option>
+                    <option value="M5">M 5</option>
+                    <option value="M6">M 6</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
           </div>
-          <div id="dropdown1" class="col-sm-6">
-            <select class="form-control" name="module" id="module">
-              <option value="option1">Selsect Module</option>
-              <option value="option1">M 1</option>
-              <option value="option2">M 2</option>
-              <option value="option3">M 3</option>
-              <option value="option3">M 4</option>
-              <option value="option3">M 5</option>
-              <option value="option3">M 6</option>
-            </select>
-          </div>
-          <div class="form-group text-center">
-            <button type="button" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-        <div id="ajoute" class="tab-pane fade">
+          <div id="ajoute" class="tab-pane fade">
             <div class="form-group">
-              <label>Select semester:</label><br>
-              <label><input type="checkbox" name="option1"> semester 1</label><br>
-              <label><input type="checkbox" name="option2"> semester 2</label><br>
-              <label><input type="checkbox" name="option3"> semester 3</label><br>
-              <label><input type="checkbox" name="option4"> semester 4</label><br>
-              <label><input type="checkbox" name="option5"> semester 5</label><br>
-              <label><input type="checkbox" name="option6"> semester 6</label><br>
+              <label for="semester">Select Semester(s):</label><br>
+              <label><input type="checkbox" name="option1"> Semester 1</label><br>
+              <label><input type="checkbox" name="option2"> Semester 2</label><br>
+              <label><input type="checkbox" name="option3"> Semester 3</label><br>
+              <label><input type="checkbox" name="option4"> Semester 4</label><br>
+              <label><input type="checkbox" name="option5"> Semester 5</label><br>
+              <label><input type="checkbox" name="option6"> Semester 6</label><br>
             </div>
             <div class="form-group text-center">
               <button type="button" class="btn btn-primary">Ajouter</button>
             </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
