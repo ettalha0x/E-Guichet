@@ -1,101 +1,118 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <style>
- 
-  .page-header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    font-family: "Times New Roman", serif;
-  }
-</style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="page-header">
-            <h1>Profile</h1>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <form>
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input readonly type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="lastname">Last Name:</label>
-              <input readonly type="text" class="form-control" id="lastname" name="lastname" required>
-            </div>
-            <div class="form-group">
-              <label for="dateN">Date of Birth:</label>
-              <input readonly type="date" class="form-control" id="dateN" name="dateN" required>
-            </div>
-            <div class="form-group">
-              <label for="cni">CNI:</label>
-              <input readonly type="text" class="form-control" id="cni" name="cni" required>
-            </div>
-            <div class="form-group">
-              <label for="appoge">Appoge:</label>
-              <input readonly type="text" class="form-control" id="appoge" name="appoge" required>
-            </div>
-            <div class="form-group">
-              <label for="filler">Filler:</label>
-              <input readonly type="text" class="form-control" id="filler" name="filler" required>
-            </div>
-          </form>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#dropdown1">Correction</a></li>
-            <li><a data-toggle="tab" href="#dropdown2">Ajouter</a></li>
-          </ul>
-          <div class="tab-content">
-            <div id="dropdown1" class="tab-pane fade in active">
-                <select class="form-control" name="dropdown1" id="dropdown1">
-                  <option value="option1">S 1</option>
-                  <option value="option2">S 2</option>
-                  <option value="option3">S 3</option>
-                  <option value="option3">S 4</option>
-                  <option value="option3">S 5</option>
-                  <option value="option3">S 6</option>
-                </select>
-                <br>
-                <div class="form-group">
-                  <button type="button" class="btn btn-primary">Subset</button>
-                </div>
-              </div>
-              
-              <div id="dropdown2" class="tab-pane fade">
-                <form>
-                  <div class="form-group">
-                    <label>Select two options:</label><br>
-                    <label><input type="checkbox" name="option1"> Option 1</label><br>
-                    <label><input type="checkbox" name="option2"> Option 2</label><br>
-                    <label><input type="checkbox" name="option3"> Option 3</label><br>
-                    <label><input type="checkbox" name="option4"> Option 4</label><br>
-                    <label><input type="checkbox" name="option5"> Option 5</label><br>
-                    <label><input type="checkbox" name="option6"> Option 6</label><br>
-                    <label><input type="checkbox" name="option7"> Option 7</label><br>
-                    <label><input type="checkbox" name="option8"> Option 8</label><br>
-                    <label><input type="checkbox" name="option9"> Option 9</label><br>
-                    <label><input type="checkbox" name="option10"> Option 10</label><br>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-              </div>
-              
-          </div>
+
+<head>
+  <title>Profile</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .page-header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: "Times New Roman", serif;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="page-header">
+          <h1>Welcome Noureddine Ettalhaouy</h1>
         </div>
       </div>
     </div>
-  </body>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <form>
+          <div class="form-group">
+            <label for="name">First Name:</label>
+            <input readonly type="text" class="form-control" id="name" name="name" value="Noureddine" required>
+          </div>
+          <div class="form-group">
+            <label for="cni">CNI:</label>
+            <input readonly type="text" class="form-control" id="cni" name="cni" value="F14856" required>
+          </div>
+          <div class="form-group">
+            <label for="appoge">Appoge:</label>
+            <input readonly type="text" class="form-control" id="appoge" name="appoge" value="123456" required>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <form>
+          <div class="form-group">
+            <label for="name">Last Name:</label>
+            <input readonly type="text" class="form-control" id="name" name="name" value="Ettalha" required>
+          </div>
+          <div class="form-group">
+            <label for="dateN">Date of Birth:</label>
+            <input readonly type="date" class="form-control" id="dateN" name="dateN" required>
+          </div>
+          <div class="form-group">
+            <label for="filler">Filler:</label>
+            <input readonly type="text" class="form-control" id="filler" name="filler" value="Etudes Anglais" required>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#correction">Correction</a></li>
+          <li><a data-toggle="tab" href="#ajoute">Ajouter</a></li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div id="correction" class="tab-pane fade in active">
+          <div id="dropdown1" class="col-sm-6">
+            <select class="form-control" name="senester" id="semester">
+              <option value="option1">Selsect Semester</option>
+              <option value="option1">S 1</option>
+              <option value="option2">S 2</option>
+              <option value="option3">S 3</option>
+              <option value="option3">S 4</option>
+              <option value="option3">S 5</option>
+              <option value="option3">S 6</option>
+            </select>
+          </div>
+          <div id="dropdown1" class="col-sm-6">
+            <select class="form-control" name="module" id="module">
+              <option value="option1">Selsect Module</option>
+              <option value="option1">M 1</option>
+              <option value="option2">M 2</option>
+              <option value="option3">M 3</option>
+              <option value="option3">M 4</option>
+              <option value="option3">M 5</option>
+              <option value="option3">M 6</option>
+            </select>
+          </div>
+          <div class="form-group text-center">
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+        <div id="ajoute" class="tab-pane fade">
+            <div class="form-group">
+              <label>Select semester:</label><br>
+              <label><input type="checkbox" name="option1"> semester 1</label><br>
+              <label><input type="checkbox" name="option2"> semester 2</label><br>
+              <label><input type="checkbox" name="option3"> semester 3</label><br>
+              <label><input type="checkbox" name="option4"> semester 4</label><br>
+              <label><input type="checkbox" name="option5"> semester 5</label><br>
+              <label><input type="checkbox" name="option6"> semester 6</label><br>
+            </div>
+            <div class="form-group text-center">
+              <button type="button" class="btn btn-primary">Ajouter</button>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
