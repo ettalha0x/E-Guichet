@@ -5,16 +5,10 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
   }
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-background: rgb(30,87,153); /* Old browsers */
-background: -moz-linear-gradient(-45deg,  rgb(30,87,153) 0%, rgb(41,137,216) 50%, rgb(32,124,202) 51%, rgb(125,185,232) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  rgb(30,87,153) 0%,rgb(41,137,216) 50%,rgb(32,124,202) 51%,rgb(125,185,232) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  rgb(30,87,153) 0%,rgb(41,137,216) 50%,rgb(32,124,202) 51%,rgb(125,185,232) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
   /* Page header */
   .page-header {
-	background-color: #0f86f0;
+	background-color: rgb(41,137,216);
 	color: #fff;
 	padding: 20px;
 	border-radius: 10px;
@@ -42,7 +36,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
   }
 
   .nav-tabs > li > a {
-	color: #0f86f0;
+	color: rgb(41,137,216);
 	font-weight: bold;
   }
 
@@ -50,7 +44,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
   .nav-tabs > li.active > a:focus,
   .nav-tabs > li.active > a:hover {
 	color: #fff;
-	background-color: #0f86f0;
+	background-color: rgb(41,137,216);
 	border: none;
 	border-radius: 0;
   }
@@ -61,7 +55,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 
   /* Buttons */
   .btn-primary {
-	background-color: #0f86f0;
+	background-color: rgb(41,137,216);
 	border: none;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -70,7 +64,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 
   .btn-primary:hover,
   .btn-primary:focus {
-	background-color: #0f86f0;
+	background-color: rgb(41,137,216);
   }
 
   .btn-danger {
@@ -87,6 +81,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
   }
 
   hr {
-	border-top: 3px solid #0f86f0; /* Set the color and thickness of the line */
-	margin: 30px auto; /* Set the margin to center the line horizontally */
+	border-top: 3px solid rgb(41,137,216);
+	margin: 30px auto;
   }
