@@ -1,5 +1,6 @@
 import { useForm, usePage } from '@inertiajs/react';
 import { Select } from 'antd';
+import Sele from './test';
 
 
 const { Option } = Select;
@@ -20,6 +21,7 @@ function Note() {
       }
   return (
     <div className='grid place-items-center gap-2 text-center'>
+        <Sele/>
         <h1 className=' font-semibold text-lg'>Choisir les module que vous voulez le rectifier</h1>
         <form onSubmit={submit} className=' grid gap-2'>
             <h1>Sélect le semestre</h1>
