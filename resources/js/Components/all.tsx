@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
@@ -35,9 +35,17 @@ function Home() {
         setModal(newModalValue);
     }
 
-    if (modal) {
-        document.body.style.overflowY = 'hidden';
-      }
+    useEffect(() => {
+        const originalOverflow = document.body.style.overflowY;
+
+        if (modal) {
+          document.body.style.overflowY = 'hidden';
+        }
+
+        return () => {
+          document.body.style.overflowY = originalOverflow;
+        };
+      }, [modal]);
 
 
     return (
@@ -54,7 +62,7 @@ function Home() {
                     <Error modal={modal} onModalChange={handleModalChange} />
                 </div>
             )}
-            <div className="grid shadow">
+            <div className="grid">
                 <div className=" bg-blue-300 rounded-t-md lg:text-center p-8">
                     <div className=" grid lg:grid-cols-3 grid-cols-2 gap-8">
                         <div className="grid gap-8">
@@ -120,6 +128,9 @@ function Home() {
                             <MdOutlineReportProblem />
                         </button>
                     </div>
+                </div>
+                <div className=" border-b-2 border-black">
+                    <h1 className=" text-3xl text-center p-8">Services</h1>
                 </div>
                 <div className=" lg:px-8 px-4 pb-4 overflow-x-auto">
                     <Tabs
