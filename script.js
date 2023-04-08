@@ -1,8 +1,9 @@
 $(document).ready(function() {
 	$('.done').click(function() {
-		$(this).closest("tr").css("background-color", "rgb(41,137,216)");
+		$(this).closest("tr").find("td:not(.action)").css("background-color", "orange");
 	});
 	$('.undone').click(function() {
-		$(this).closest("tr").css("background-color", "")
+		$(this).closest("tr").find("td:not(.action)").css("background-color", "");
 	});
 });
+
