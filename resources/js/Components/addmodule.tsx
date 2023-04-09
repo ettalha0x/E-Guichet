@@ -3,8 +3,7 @@ import list from "./moduledata.json";
 import { useForm, usePage } from "@inertiajs/react";
 
 const MyComponent = () => {
-
-    const {auth} = usePage().props
+    const { auth } = usePage().props;
     const { data, setData, post, processing } = useForm({
         name: auth.user.name,
         prenom: auth.user.prenom,
@@ -13,7 +12,8 @@ const MyComponent = () => {
         cni: auth.user.cni,
     });
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
-
+    const [checkedCount, setCheckedCount] = useState(0);
+    const maxcheck = 3;
     const [selectedSemester, setSelectedSemester] = useState(1);
 
     const semester = list.find((item) => item.id === "8");
@@ -24,20 +24,25 @@ const MyComponent = () => {
         })
     );
 
-    //   const handleCheckboxChange = (e) => {
-    //     const checkboxValue = e.target.value;
-    //     if (e.target.checked) {
-    //       if (selectedCheckboxes.length < 3) {
-    //         setSelectedCheckboxes([...selectedCheckboxes, checkboxValue]);
-    //       }
-    //     } else {
-    //       setSelectedCheckboxes(
-    //         selectedCheckboxes.filter((value) => value !== checkboxValue)
-    //       );
-    //     }
-    //   }
+    function handleCheckboxChange(e) {
+        const checkboxLabel = e.target.name;
+        if (e.target.checked) {
+            if (selectedCheckboxes.length < maxcheck) {
+                setSelectedCheckboxes([...selectedCheckboxes, checkboxLabel]);
+            } else {
+                e.target.checked = false;
+            }
+        } else {
+            setSelectedCheckboxes(
+                selectedCheckboxes.filter((label) => label !== checkboxLabel)
+            );
+        }
+    }
+
     function submit(e) {
         console.log("hern");
+        e.preventDefault();
+        console.log("Selected checkboxes: ", selectedCheckboxes);
     }
 
     return (
@@ -58,7 +63,9 @@ const MyComponent = () => {
                         </option>
                     ))}
                 </select>
-                <h1 className=" text-lg font-semibold">Sélect les module que vous voulez ajouter</h1>
+                <h1 className=" text-lg font-semibold">
+                    Sélect les module que vous voulez ajouter
+                </h1>
                 <div className=" grid grid-cols-3  gap-4">
                     {moduleOptions.map((option) => (
                         <label key={option.value}>
@@ -66,6 +73,14 @@ const MyComponent = () => {
                                 type="checkbox"
                                 value={option.value}
                                 name={option.label}
+                                checked={selectedCheckboxes.includes(
+                                    option.label
+                                )}
+                                onChange={handleCheckboxChange}
+                                disabled={
+                                    selectedCheckboxes.length >= maxcheck &&
+                                    !selectedCheckboxes.includes(option.label)
+                                }
                             />
                             {option.label}
                         </label>
