@@ -46,7 +46,16 @@ class ProfileController extends Controller
         $recever = 'youssef.bachar7@gmail.com';
         return redirect('https://www.youtube.com/');
         //Mail::to($recever)->send(new correctMail($request));
+        
+    }
 
+    public function Add_modules(Request $request)
+    {
+        
+         //SEND email
+        $recever = 'youssef.bachar7@gmail.com';
+        return redirect('https://www.youtube.com/');
+        //Mail::to($recever)->send(new correctMail($request));
     }
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
