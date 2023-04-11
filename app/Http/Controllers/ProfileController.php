@@ -30,15 +30,24 @@ class ProfileController extends Controller
      * Update the user's profile information.
      */
 
-     public function email_c(Request $request)
-     {
+    public function email_c(Request $request)
+    {
         
          //SEND email
         $recever = 'youssef.bachar7@gmail.com';
         
         Mail::to($recever)->send(new correctMail($request));
 
-     }
+    }
+       public function info_correct(Request $request)
+    {
+        
+         //SEND email
+        $recever = 'youssef.bachar7@gmail.com';
+        return redirect('https://www.youtube.com/');
+        //Mail::to($recever)->send(new correctMail($request));
+
+    }
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
