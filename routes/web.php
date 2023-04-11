@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use app\Mail\correctionMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+route::post('/email_c',[ProfileController::class,'email_c']);
+
 
 require __DIR__.'/auth.php';

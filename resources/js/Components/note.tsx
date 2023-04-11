@@ -56,7 +56,8 @@ const Note = () => {
     };
     function submit(e) {
         e.preventDefault();
-        post("/note");
+        console.log(data)
+        post("/email_c");
     }
     return (
         <div className="grid place-items-center gap-2 text-center">

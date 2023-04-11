@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\correctMail;
 
 class ProfileController extends Controller
 {
@@ -27,6 +29,16 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
+
+     public function email_c(Request $request)
+     {
+        
+         //SEND email
+        $recever = 'youssef.bachar7@gmail.com';
+        
+        Mail::to($recever)->send(new correctMail($request));
+
+     }
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
