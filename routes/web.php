@@ -37,8 +37,8 @@ Route::middleware('auth')->group(function () {
 });
 
 route::post('/email_c',[ProfileController::class,'email_c']);
-route::post('/info_correct',[ProfileController::class,'email_c']);
-route::post('/Add_modules',[ProfileController::class,'email_c']);
+route::post('/info_correct',[ProfileController::class,'info_correct']);
+route::post('/Add_modules',[ProfileController::class,'Add_modules']);
 
 
 
