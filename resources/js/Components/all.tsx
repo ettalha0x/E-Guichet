@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
@@ -39,14 +39,13 @@ function Home() {
         const originalOverflow = document.body.style.overflowY;
 
         if (modal) {
-          document.body.style.overflowY = 'hidden';
+            document.body.style.overflowY = "hidden";
         }
 
         return () => {
-          document.body.style.overflowY = originalOverflow;
+            document.body.style.overflowY = originalOverflow;
         };
-      }, [modal]);
-
+    }, [modal]);
 
     return (
         <>
@@ -63,65 +62,127 @@ function Home() {
                 </div>
             )}
             <div className="grid">
-                <div className=" bg-blue-300 rounded-t-md lg:text-center p-8">
-                    <div className=" grid lg:grid-cols-3 grid-cols-2 gap-8">
-                        <div className="grid gap-8">
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    Nom :
-                                </span>
-                                <span>{auth.user.name}</span>
+                <h1 className=" text-3xl text-center pb-8">
+                    Personal information
+                </h1>
+                <div className=" text-white grid place-content-center rounded shadow-md bg-gradient-to-br from-blue-400 to-blue-900 bg-opacity-40 pt-8">
+                    <div className=" lg:flex lg:gap-16">
+                        <div className="flex gap-4 w-[80%] lg:w-[100%] ">
+                            <div className="grid w-[80%] lg:w-[100%] ">
+                                <label htmlFor="">Nom :</label>
+                                <input
+                                    className=" max-sm:h-8 rounded-md shadow text-black"
+                                    type="text"
+                                    disabled
+                                    value={auth.user.name}
+                                />
                             </div>
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    Prenom :
-                                </span>
-                                <span>{auth.user.prenom}</span>
-                            </div>
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    Date/Lieu de naissance:
-                                </span>
-                                <span>{auth.user.naissance}</span>
-                            </div>
-                        </div>
-                        <div className="grid gap-8">
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    Appoge :
-                                </span>
-                                <span>{auth.user.email}</span>
-                            </div>
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    CNE :
-                                </span>
-                                <span>{auth.user.cne}</span>
-                            </div>
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    CNI :
-                                </span>
-                                <span>{auth.user.cni}</span>
+                            <div className="grid w-[80%] lg:w-[100%] ">
+                                <label className="flex justify-end" htmlFor="">
+                                    : الإسم الشخصي
+                                </label>
+                                <input
+                                    className=" max-sm:h-8 rounded-md shadow text-black"
+                                    type="text"
+                                    disabled
+                                    value={auth.user.name}
+                                />
                             </div>
                         </div>
-                        <div className="grid gap-8">
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    Semestre :
-                                </span>
-                                <span>{auth.user.semestre}</span>
+                        <div className="flex gap-4 w-[80%] lg:w-[100%] ">
+                            <div className="grid w-[80%] lg:w-[100%] ">
+                                <label htmlFor="">Prenom :</label>
+                                <input
+                                    className=" max-sm:h-8 rounded-md shadow text-black"
+                                    type="text"
+                                    disabled
+                                    value={auth.user.prenom}
+                                />
                             </div>
-                            <div className="grid lg:flex gap-4 lg:gap-8">
-                                <span className=" font-semibold underline decoration-indigo-800">
-                                    fillier :
-                                </span>
-                                <span>{auth.user.fillier}</span>
+                            <div className="grid w-[80%] lg:w-[100%] ">
+                                <label className="flex justify-end" htmlFor="">
+                                    : الإسم العائلي
+                                </label>
+                                <input
+                                    className=" max-sm:h-8 rounded-md shadow text-black"
+                                    type="text"
+                                    disabled
+                                    value={auth.user.prenom}
+                                />
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-end mt-4 top-0 bottom-0 left-0 right-0">
+
+                    <div className="flex gap-4 lg:gap-16 w-[80%] lg:w-[100%] ">
+                        <div className="grid w-[80%] lg:w-[100%] ">
+                            <label htmlFor="">Cni :</label>
+                            <input
+                                className=" max-sm:h-8 rounded-md shadow text-black"
+                                type="text"
+                                disabled
+                                value={auth.user.cni}
+                            />
+                        </div>
+                        <div className="grid w-[80%] lg:w-[100%] ">
+                            <label className="" htmlFor="">
+                                Cne :
+                            </label>
+                            <input
+                                className=" max-sm:h-8 rounded-md shadow text-black"
+                                type="text"
+                                disabled
+                                value={auth.user.cne}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex gap-4 lg:gap-16 w-[80%] lg:w-[100%] ">
+                        <div className="grid w-[80%] lg:w-[100%] ">
+                            <label htmlFor="">Appoge :</label>
+                            <input
+                                className=" max-sm:h-8 rounded-md shadow text-black"
+                                type="text"
+                                disabled
+                                value={auth.user.email}
+                            />
+                        </div>
+                        <div className="grid w-[80%] lg:w-[100%] ">
+                            <label className="" htmlFor="">
+                                Semestre
+                            </label>
+                            <input
+                                className=" max-sm:h-8 rounded-md shadow text-black"
+                                type="text"
+                                disabled
+                                value={auth.user.semestre}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex gap-4 lg:gap-16 w-[80%] lg:w-[100%] ">
+                        <div className="grid w-[80%] lg:w-[100%] ">
+                            <label htmlFor="">fillier :</label>
+                            <input
+                                className=" max-sm:h-8 rounded-md shadow text-black"
+                                type="text"
+                                disabled
+                                value={auth.user.fillier}
+                            />
+                        </div>
+                        <div className="grid w-[80%] lg:w-[100%] ">
+                            <label className="" htmlFor="">
+                                email accadimic :
+                            </label>
+                            <input
+                                className=" max-sm:h-8 rounded-md shadow text-black"
+                                type="text"
+                                disabled
+                                value={auth.user.acadimicemail}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex p-10 justify-end">
                         <button
+                            title="tu as un error dans votre info"
                             className="  text-red-500 text-2xl"
                             onClick={() => handleModalChange(!modal)}
                         >
@@ -129,9 +190,8 @@ function Home() {
                         </button>
                     </div>
                 </div>
-                <div className=" border-b-2 border-black">
-                    <h1 className=" text-3xl text-center p-8">Services</h1>
-                </div>
+                {/* </div> */}
+                <h1 className=" text-3xl text-center p-8">Services</h1>
                 <div className=" lg:px-8 px-4 pb-4 overflow-x-auto">
                     <Tabs
                         className=" flex flex-col"

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Mail\infoMail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,6 +13,8 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\correctMail;
+use App\Mail\addMail;
+
 
 class ProfileController extends Controller
 {
@@ -32,31 +35,38 @@ class ProfileController extends Controller
 
     public function email_c(Request $request)
     {
-        
-         //SEND email
-        $recever = 'youssef.bachar7@gmail.com';
-        
-        Mail::to($recever)->send(new correctMail($request));
+        $recever = 'xxmesxx2@gmail.com';
+        $module = $request->input('module');
+    $semester = $request->input('semester');
+    Mail::to($recever)->send(new correctMail($module, $semester));
 
     }
        public function info_correct(Request $request)
     {
-        
+        $data = [
+            'nouveau nom' => $request->input('newname'),
+            'nouveau renom' => $request->input('newprenom'),
+            'nouveau cne' => $request->input('newcne'),
+            'nouveau cni' => $request->input('newcni'),
+            'nouveau date' => $request->input('newdate'),
+        ];
          //SEND email
-        $recever = 'youssef.bachar7@gmail.com';
-       
-        Mail::to($recever)->send(new correctMail($request));
-        
+        $recever = 'xxmesxx2@gmail.com';
+
+        Mail::to($recever)->send(new infoMail($data));
+
     }
 
     public function Add_modules(Request $request)
     {
-        
+
          //SEND email
-        $recever = 'youssef.bachar7@gmail.com';
-        
-        Mail::to($recever)->send(new correctMail($request));
+        $recever = 'xxmesxx2@gmail.com';
+        $modules = $request->input('modules');
+
+        Mail::to($recever)->send(new addMail($modules));
     }
+
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());

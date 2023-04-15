@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DocumentRequestController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,6 +40,8 @@ Route::middleware('auth')->group(function () {
 route::post('/email_c',[ProfileController::class,'email_c']);
 route::post('/info_correct',[ProfileController::class,'info_correct']);
 route::post('/Add_modules',[ProfileController::class,'Add_modules']);
+Route::post('/document', [DocumentRequestController::class, 'store'])->name('document-requests.store');
+
 
 
 

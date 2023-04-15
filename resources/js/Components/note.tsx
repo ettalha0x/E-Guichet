@@ -2,6 +2,8 @@ import { useForm, usePage } from "@inertiajs/react";
 import { Select } from "antd";
 import list from "./moduledata.json";
 import { useState, useEffect } from "react";
+import {toast } from 'react-toastify';
+
 
 const { Option } = Select;
 const Note = () => {
@@ -11,13 +13,8 @@ const Note = () => {
     const [semesname, setSemesname] = useState("");
     const [modulname, setModulname] = useState("");
     const { data, setData, post, processing } = useForm({
-        name: auth.user.name,
-        prenom: auth.user.prenom,
-        appoge: auth.user.email,
-        cne: auth.user.cne,
-        cni: auth.user.cni,
-        semestre: semesname,
-        module: modulname,
+        semester: semesname,
+        module: modulname
     });
     const [selectedSemester, setSelectedSemester] = useState(0);
 
@@ -41,7 +38,7 @@ const Note = () => {
     useEffect(() => {
         setData((currentData) => ({
             ...currentData,
-            semestre: semesname,
+            semester: semesname,
             module: modulname,
         }));
     }, [semesname, modulname]);
@@ -58,6 +55,11 @@ const Note = () => {
         e.preventDefault();
         console.log(data)
         post("/email_c");
+        try{
+            toast.success('submited');
+        }catch{
+            toast.error('failed');
+        }
     }
     return (
         <div className="grid place-items-center gap-2 text-center">

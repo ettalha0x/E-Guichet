@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { usePage, useForm } from "@inertiajs/react";
+import {toast } from 'react-toastify';
+
 
 function Fichier() {
     const { auth } = usePage().props;
@@ -22,6 +24,11 @@ function Fichier() {
             setData("scolarite", false);
             setData("relevedenote", false);
         });
+        try{
+            toast.success('submited');
+        }catch{
+            toast.error('failed');
+        }
     }
 
     return (
@@ -30,7 +37,7 @@ function Fichier() {
             <form onSubmit={handleSubmit} className=" grid gap-4">
                     <label htmlFor="option1">scolarite:
                     <input
-                    className=" ml-[4.3rem] focus:outline-indigo-800 rounded checked:focus:bg-indigo-800 checked:bg-indigo-800 checked:hover:bg-indigo-800"
+                    className=" ml-[4.3rem] rounded focus:ring-0"
                     type="checkbox"
                     checked={data.scolarite}
                     name="selected_documents[]" value="scolarite"
@@ -39,7 +46,7 @@ function Fichier() {
                     </label>
                     <label htmlFor="option2">releve de note:
                     <input
-                    className="ml-8 focus:outline-indigo-800 rounded checked:focus:bg-indigo-800 checked:bg-indigo-800 checked:hover:bg-indigo-800"
+                    className="ml-8 rounded focus:ring-0"
                     type="checkbox"
                     name="selected_documents[]" value="relevedenote"
                     checked={data.relevedenote}

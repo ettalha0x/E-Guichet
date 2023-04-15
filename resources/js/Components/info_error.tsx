@@ -1,5 +1,7 @@
 import { useForm, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
+import {toast } from 'react-toastify';
+
 
 function info_error(props) {
     function handleClick() {
@@ -14,11 +16,6 @@ function info_error(props) {
     const [modifierdatedenaissance, setModifierdatedenaissance] =
         useState(false);
     const { data, setData, post, processing } = useForm({
-        name: auth.user.name,
-        prenom: auth.user.prenom,
-        cne: auth.user.cne,
-        cni: auth.user.cni,
-        naissance: auth.user.naissance,
         newname: "",
         newprenom: "",
         newcne: "",
@@ -27,20 +24,28 @@ function info_error(props) {
     });
     function submit(e) {
         e.preventDefault();
-        post("/error");
+        post("/info_correct");
+        try{
+            toast.success('submited');
+        }catch{
+            toast.error('failed');
+        }
     }
     return (
         <div className=" shadow max-sm:w-full shadow-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/75 p-8 rounded">
             <h1 className=" font-semibold text-xl text-center mb-4">
                 Signaler une erreur dans vos informations
             </h1>
+                <h1 className=" font-semibold">
+                    choisir ou il y'a l'erreur puis saisi la nouvelle valeur :
+                </h1>
             <div className=" grid grid-cols-3 gap-4">
                 <div>
                     <label htmlFor="" className="flex  justify-between">
                         Nom:
                         <input
                             onChange={(e) => setModifiernom(e.target.checked)}
-                            className="rounded"
+                            className="rounded focus:ring-0"
                             type="checkbox"
                             name=""
                             id=""
@@ -54,7 +59,7 @@ function info_error(props) {
                             onChange={(e) =>
                                 setModifierprenom(e.target.checked)
                             }
-                            className="rounded"
+                            className="rounded focus:ring-0"
                             type="checkbox"
                             name=""
                             id=""
@@ -66,7 +71,7 @@ function info_error(props) {
                         Cne:
                         <input
                             onChange={(e) => setModifiercne(e.target.checked)}
-                            className="rounded"
+                            className="rounded focus:ring-0"
                             type="checkbox"
                             name=""
                             id=""
@@ -78,7 +83,7 @@ function info_error(props) {
                         Cni:
                         <input
                             onChange={(e) => setModifiercni(e.target.checked)}
-                            className="rounded"
+                            className="rounded focus:ring-0"
                             type="checkbox"
                             name=""
                             id=""
@@ -92,7 +97,7 @@ function info_error(props) {
                             onChange={(e) =>
                                 setModifierdatedenaissance(e.target.checked)
                             }
-                            className="rounded"
+                            className="rounded focus:ring-0"
                             type="checkbox"
                             name=""
                             id=""
@@ -101,16 +106,13 @@ function info_error(props) {
                 </div>
             </div>
             <form onSubmit={submit} className=" grid gap-4 place-items-center">
-                <h1 className=" font-semibold">
-                    saisir le correct valeur pour votre information :
-                </h1>
                 <div className=" grid grid-cols-2 gap-4">
                     {modifiernom && (
                         <label htmlFor="">
                             Nom: <br />
                             <input
                             value={data.newname} onChange={e => setData('newname', e.target.value)}
-                                className=" rounded md:w-74 w-32"
+                                className=" rounded focus:ring-0 md:w-74 w-32"
                                 type="text"
                                 name=""
                                 id=""
@@ -122,7 +124,7 @@ function info_error(props) {
                             prenom: <br />
                             <input
                             value={data.newprenom} onChange={e => setData('newprenom', e.target.value)}
-                                className=" rounded md:w-74 w-32"
+                                className=" rounded focus:ring-0 md:w-74 w-32"
                                 type="text"
                                 name=""
                                 id=""
@@ -134,7 +136,7 @@ function info_error(props) {
                             cne: <br />
                             <input
                             value={data.newcne} onChange={e => setData('newcne', e.target.value)}
-                                className=" rounded md:w-74 w-32"
+                                className=" rounded focus:ring-0 md:w-74 w-32"
                                 type="text"
                                 name=""
                                 id=""
@@ -146,7 +148,7 @@ function info_error(props) {
                             cni: <br />
                             <input
                             value={data.newcni} onChange={e => setData('newcni', e.target.value)}
-                                className=" rounded md:w-74 w-32"
+                                className=" rounded focus:ring-0 md:w-74 w-32"
                                 type="text"
                                 name=""
                                 id=""
@@ -158,7 +160,7 @@ function info_error(props) {
                             date de naissance: <br />
                             <input
                             value={data.newdate} onChange={e => setData('newdate', e.target.value)}
-                                className=" rounded md:w-74 w-32"
+                                className=" rounded focus:ring-0 md:w-74 w-32"
                                 type="text"
                                 name=""
                                 id=""
@@ -174,13 +176,13 @@ function info_error(props) {
                     Submit
                 </button>
             </form>
+            <h1 className=" font-serif text-red-700 text-sm">VOTRE MODFICITAION VAS ETRE SUBMITER SOUS FORM D'UN EMAIL</h1>
             <button
                 className=" absolute top-2 right-2 text-xl w-10 hover:bg-slate-500/40 rounded p-2 transition hover:ease-in-out ease-in-out duration-300"
                 onClick={handleClick}
             >
                 X
             </button>
-            {/* <h1 className=" text-red-700">NOTE : VOTRE MODFICITAION </h1> */}
         </div>
     );
 }

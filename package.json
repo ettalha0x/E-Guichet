@@ -26,6 +26,8 @@
     "dependencies": {
         "antd": "^5.3.3",
         "icons": "^1.0.0",
-        "react-icons": "^4.8.0"
+        "react-icons": "^4.8.0",
+        "react-toastify": "^9.1.2",
+        "toastify-js": "^1.12.0"
     }
 }

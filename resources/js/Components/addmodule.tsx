@@ -1,48 +1,53 @@
 import { useState } from "react";
 import list from "./moduledata.json";
 import { useForm, usePage } from "@inertiajs/react";
+import {toast } from 'react-toastify';
 
 const MyComponent = () => {
     const { auth } = usePage().props;
-    const { data, setData, post, processing } = useForm({
-        name: auth.user.name,
-        prenom: auth.user.prenom,
-        appoge: auth.user.appoge,
-        cne: auth.user.cne,
-        cni: auth.user.cni,
-    });
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
     const [checkedCount, setCheckedCount] = useState(0);
     const maxcheck = 3;
     const [selectedSemester, setSelectedSemester] = useState(1);
 
-    const semester = list.find((item) => item.id === "8");
+    const semester = list.find((item) => item.id === "1");
     const moduleOptions = semester.semestre[selectedSemester - 1].module.map(
         (module) => ({
             value: module.id,
             label: module.name,
         })
-    );
+        );
 
-    function handleCheckboxChange(e) {
-        const checkboxLabel = e.target.name;
-        if (e.target.checked) {
-            if (selectedCheckboxes.length < maxcheck) {
+        const { data, setData, post, processing } = useForm({
+            modules : []
+        });
+        function handleCheckboxChange(e) {
+            const checkboxLabel = e.target.name;
+            if (e.target.checked) {
+              if (selectedCheckboxes.length < maxcheck) {
                 setSelectedCheckboxes([...selectedCheckboxes, checkboxLabel]);
-            } else {
+                setData({ ...data, modules: [...selectedCheckboxes, checkboxLabel] });
+              } else {
                 e.target.checked = false;
-            }
-        } else {
-            setSelectedCheckboxes(
+              }
+            } else {
+              setSelectedCheckboxes(
                 selectedCheckboxes.filter((label) => label !== checkboxLabel)
-            );
-        }
-    }
+              );
+              setData({ ...data, modules: selectedCheckboxes.filter((label) => label !== checkboxLabel) });
+            }
+          }
+
 
     function submit(e) {
-        console.log("hern");
         e.preventDefault();
         console.log("Selected checkboxes: ", selectedCheckboxes);
+        post("/Add_modules");
+        try{
+            toast.success('submited');
+        }catch{
+            toast.error('failed')
+        }
     }
 
     return (
@@ -70,6 +75,7 @@ const MyComponent = () => {
                     {moduleOptions.map((option) => (
                         <label key={option.value}>
                             <input
+                            className=" rounded focus:ring-0"
                                 type="checkbox"
                                 value={option.value}
                                 name={option.label}
