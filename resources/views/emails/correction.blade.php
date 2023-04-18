@@ -76,16 +76,16 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="text-center mb-4">
-          <h1>Request for Correction</h1>
+          <h1>Demande de correction</h1>
         </div>
-        <p>Dear Administrator,</p>
-        <p>I am writing to request a correction for module <strong>{{$module}}</strong> in the semester <strong>{{$semester}}</strong>. There appears to be an error in the module, and I would like to bring it to your attention for correction.</p>
-        <p>Here are my details:</p>
+        <p>Cher administrateur,</p>
+        <p>Je vous écris pour demander une correction pour le module <strong>{{$module}}</strong> du semestre <strong>{{$semester}}</strong>. Il semble y avoir une erreur dans le module et je voudrais attirer votre attention pour correction.</p>
+        <p>Voici mes détails :</p>
         <ul>
-            <li><strong>Full Name:</strong> {{ auth()->user()->name }}</li>
-            <li><strong>Semester:</strong> {{$semester}}</li>
-            <li><strong>Module:</strong> {{$module}}</li>
-            <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
-            <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
+            <li><strong>Nom complet :</strong> {{ auth()->user()->name }}</li>
+            <li><strong>Semestre :</strong> {{$semester}}</li>
+            <li><strong>Module :</strong> {{$module}}</li>
+            <li><strong>Appoge :</strong> {{ auth()->user()->email }}</li>
+            <li><strong>CNI :</strong> {{ auth()->user()->cni }}</li>
         </ul>
-        <p>Thank you for your prompt attention to this matter. Please let me know if you require any further information from me.</p
+        <p>Je vous remercie pour votre attention rapide à cette affaire. Veuillez me faire savoir si vous avez besoin de plus d'informations de ma part.</p>

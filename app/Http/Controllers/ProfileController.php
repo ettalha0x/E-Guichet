@@ -35,7 +35,7 @@ class ProfileController extends Controller
 
     public function email_c(Request $request)
     {
-        $recever = 'xxmesxx2@gmail.com';
+        $recever = 'youssef.bachar7@gmail.com';
         $module = $request->input('module');
     $semester = $request->input('semester');
     Mail::to($recever)->send(new correctMail($module, $semester));
@@ -51,7 +51,7 @@ class ProfileController extends Controller
             'nouveau date' => $request->input('newdate'),
         ];
          //SEND email
-        $recever = 'xxmesxx2@gmail.com';
+        $recever = 'youssef.bachar7@gmail.com';
 
         Mail::to($recever)->send(new infoMail($data));
 
@@ -61,7 +61,7 @@ class ProfileController extends Controller
     {
 
          //SEND email
-        $recever = 'xxmesxx2@gmail.com';
+        $recever = 'youssef.bachar7@gmail.com';
         $modules = $request->input('modules');
 
         Mail::to($recever)->send(new addMail($modules));
