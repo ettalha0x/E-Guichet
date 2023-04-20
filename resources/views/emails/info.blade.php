@@ -76,20 +76,20 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="text-center mb-4">
-          <h1>Request for Correction</h1>
+          <h1>Demande de correction</h1>
         </div>
-        <p>Dear Administrator,</p>
-        <p>I am writing to request to add modules sited bellow in the semester <strong>x</strong>.</p>
-        <p>Here are my details:</p>
+        <p>Cher administrateur,</p>
+        <p>Je vous écris pour demander une correction pour mes informations <strong>x</strong>.</p>
+        <p>Voici mes coordonnées:</p>
         <ul>
-        <li><strong>Full Name:</strong> {{ auth()->user()->name }}</li>
+        <li><strong>Nom et prénom:</strong> {{ auth()->user()->name }}</li>
         <li><strong>Semester:</strong> {{ auth()->user()->semestre }}</li>
         <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
         <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
-        @foreach($data as $key => $value)
-        @if(!empty($value))
-        <p>{{ $key }}: {{ $value }}</p>
-        @endif
-        @endforeach
+          @foreach($data as $key => $value)
+            @if(!empty($value))
+            <p>{{ $key }}: {{ $value }}</p>
+            @endif
+          @endforeach
         </ul>
-        <p>Thank you for your prompt attention to this matter. Please let me know if you require any further information from me.</p>
+        <p>Merci de votre prompte attention à ce sujet. S'il vous plaît laissez-moi savoir si vous avez besoin de plus amples informations de ma part.</p>

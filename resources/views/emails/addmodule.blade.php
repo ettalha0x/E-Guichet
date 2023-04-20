@@ -76,17 +76,16 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="text-center mb-4">
-          <h1>Request for Correction</h1>
-        </div>
-        <p>Dear Administrator,</p>
-        <p>I am writing to request to add modules sited bellow in the semester <strong>x</strong>.</p>
-        <p>Here are my details:</p>
-        <ul>
-            <li><strong>Full Name:</strong> {{ auth()->user()->name }}</li>
-            @foreach ($modules as $module)
-                <li>{{ $module }}</li>
-            @endforeach
-            <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
-            <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
-        </ul>
-        <p>Thank you for your prompt attention to this matter. Please let me know if you require any further information from me.</p>
+          <p>Cher administrateur,</p>
+          <p>Je vous écris pour demander d'ajouter les modules cités ci-dessous dans le semestre <strong>x</strong>.</p>
+
+          <p>Voici mes détails :</p>
+          <ul>
+              <li><strong>Nom complet :</strong> {{ auth()->user()->name }}</li>
+              @foreach ($modules as $module)
+                  <li>{{ $module }}</li>
+              @endforeach
+              <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
+              <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
+          </ul>
+          <p>Je vous remercie pour votre attention rapide à cette affaire.</p>

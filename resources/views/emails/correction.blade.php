@@ -88,4 +88,4 @@
             <li><strong>Appoge :</strong> {{ auth()->user()->email }}</li>
             <li><strong>CNI :</strong> {{ auth()->user()->cni }}</li>
         </ul>
-        <p>Je vous remercie pour votre attention rapide à cette affaire. Veuillez me faire savoir si vous avez besoin de plus d'informations de ma part.</p>
+        <p>Je vous remercie pour votre attention rapide à cette affaire. </p>

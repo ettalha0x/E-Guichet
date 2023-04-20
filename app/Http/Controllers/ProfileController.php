@@ -63,8 +63,10 @@ class ProfileController extends Controller
          //SEND email
         $recever = 'youssef.bachar7@gmail.com';
         $modules = $request->input('modules');
-
-        Mail::to($recever)->send(new addMail($modules));
+        $semester = $request->input('semester');
+        $semester = 'yoursemester';
+       // dd($semester);
+        Mail::to($recever)->send(new addMail($modules,$semester));
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
