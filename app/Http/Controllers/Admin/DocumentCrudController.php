@@ -14,15 +14,15 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 class DocumentCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation; so that we cant create a new CreateOperation on dashboard
+    //use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;  so that we cant update a new UpdateOperation on dashboard
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
-     * @return void
+     * @return voidoperation
      */
     public function setup()
     {
@@ -62,24 +62,24 @@ class DocumentCrudController extends CrudController
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
-    protected function setupCreateOperation()
-    {
-        CRUD::setValidation(DocumentRequest::class);
+    // protected function setupCreateOperation()
+    // {
+    //     CRUD::setValidation(DocumentRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('prenom');
-        CRUD::field('cne');
-        CRUD::field('cni');
-        CRUD::field('appoge');
-        CRUD::field('scolarite');
-        CRUD::field('relevedenote');
+    //     CRUD::field('name');
+    //     CRUD::field('prenom');
+    //     CRUD::field('cne');
+    //     CRUD::field('cni');
+    //     CRUD::field('appoge');
+    //     CRUD::field('scolarite');
+    //     CRUD::field('relevedenote');
 
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
-         */
-    }
+    //     /**
+    //      * Fields can be defined using the fluent syntax or array syntax:
+    //      * - CRUD::field('price')->type('number');
+    //      * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+    //      */
+    // }
 
     /**
      * Define what happens when the Update operation is loaded.
@@ -87,8 +87,8 @@ class DocumentCrudController extends CrudController
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */
-    protected function setupUpdateOperation()
-    {
-        $this->setupCreateOperation();
-    }
+    // protected function setupUpdateOperation()
+    // {
+    //     $this->setupCreateOperation();
+    // }
 }
