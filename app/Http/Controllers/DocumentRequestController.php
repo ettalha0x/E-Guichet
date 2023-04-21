@@ -14,9 +14,15 @@ class DocumentRequestController extends Controller
 
             $documentRequest = new Document();
             $documentRequest->name = $request->input('name');
-            $documentRequest->prenom = $request->input('prenom');
-            $documentRequest->cne = $request->input('cne');
-            $documentRequest->cni = $request->input('cni');
+            // $documentRequest->prenom = $request->input('prenom');
+            // $documentRequest->cne = $request->input('cne');
+            // $documentRequest->cni = $request->input('cni'); can be nullable
+
+            ///////////////this is for testing only ///////////////////////
+            $documentRequest->prenom = 'blabla';
+            $documentRequest->cne = 'bloblo';
+            $documentRequest->cni = 'bolb';
+            ///////////////////////////////
             $documentRequest->appoge = $request->input('appoge');
             $scolarite = $request->input('scolarite');
             $releve = $request->input('relevedenote');

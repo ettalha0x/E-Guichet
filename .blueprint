@@ -1,0 +1,9 @@
+created:
+    - database/factories/Models/DocumentFactory.php
+    - database/migrations/2023_04_21_162600_create_documents_table.php
+    - app/Models/Models/Document.php
+    - database/seeders/DocumentSeeder.php
+models:
+    Document: { name: string, prenom: string, cne: string, cni: string, appoge: string, scolarite: 'boolean default:0', relevedenote: 'boolean default:0' }
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Models\Document: { id: integer, name: string, prenom: string, cne: 'integer unsigned', cni: 'integer unsigned', appoge: string, scolarite: 'boolean default:0', relevedenote: 'boolean default:0', timestamps: timestamps, softdeletes: softDeletes }

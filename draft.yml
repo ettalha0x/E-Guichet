@@ -1,0 +1,15 @@
+models:
+    Models\Document:
+      id: integer
+      name: string
+      prenom: string
+      cne: integer unsigned
+      cni: integer unsigned
+      appoge: string
+      scolarite: boolean default:0
+      relevedenote: boolean default:0
+      timestamps: true
+      softDeletes: true
+
+
+seeders: Document

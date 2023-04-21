@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('document', function (Blueprint $table) {
-            $table->id();
+        Schema::create('documents', function (Blueprint $table) {
+            $table->integer('id');
             $table->string('name');
             $table->string('prenom');
-            $table->string('cne');
-            $table->string('cni');
+            $table->unsignedInteger('cne');
+            $table->unsignedInteger('cni');
             $table->string('appoge');
-            $table->boolean('scolarite')->default(false);
-            $table->boolean('relevedenote')->default(false);
+            $table->boolean('scolarite')->default(0);
+            $table->boolean('relevedenote')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('document');
+        Schema::dropIfExists('documents');
     }
 };
