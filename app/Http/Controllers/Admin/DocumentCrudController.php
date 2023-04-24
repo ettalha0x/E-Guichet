@@ -39,7 +39,7 @@ class DocumentCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
+        CRUD::column('nom');
         CRUD::column('prenom');
         CRUD::column('cne');
         CRUD::column('cni');

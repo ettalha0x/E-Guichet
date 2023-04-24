@@ -21,10 +21,10 @@ class DocumentFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
+            'nom' => $this->faker->word,
             'prenom' => $this->faker->word,
-            'cne' => $this->faker->randomNumber(),
-            'cni' => $this->faker->randomNumber(),
+            'cne' => $this->faker->word,
+            'cni' => $this->faker->word,
             'appoge' => $this->faker->word,
             'scolarite' => $this->faker->boolean,
             'relevedenote' => $this->faker->boolean,

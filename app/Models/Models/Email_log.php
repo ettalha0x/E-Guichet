@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Document extends Model
+class EmailLog extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,22 +16,11 @@ class Document extends Model
      * @var array
      */
     protected $fillable = [
-        'nom',
-        'prenom',
-        'cne',
-        'cni',
+        'nom_tudiant',
+        'prenom_tudiant',
+        'cne_tudiant',
+        'cni_tudiant',
         'appoge',
-        'scolarite',
-        'relevedenote',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'scolarite' => 'boolean',
-        'relevedenote' => 'boolean',
+        'type_email',
     ];
 }

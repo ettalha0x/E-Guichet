@@ -1,15 +1,25 @@
 models:
     Models\Document:
       id: integer
-      name: string
+      nom: string
       prenom: string
-      cne: integer unsigned
-      cni: integer unsigned
+      cne: string
+      cni: string
       appoge: string
       scolarite: boolean default:0
       relevedenote: boolean default:0
       timestamps: true
       softDeletes: true
 
+    Models\Email_log:
+      id: integer
+      nom_tudiant: string
+      prenom_tudiant: string
+      cne_tudiant: string
+      cni_tudiant: string
+      appoge: string
+      type_email: enum:"Demande de correction de note","Demande de correction de donnees","Demande d'ajout de module"
+      timestamps: true
+      softDeletes: true
 
-seeders: Document
+seeders: Document ,Email_log

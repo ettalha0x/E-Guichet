@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
-            $table->integer('id');
-            $table->string('name');
-            $table->string('prenom');
-            $table->unsignedInteger('cne');
-            $table->unsignedInteger('cni');
+        Schema::create('email_logs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nome_tudiant');
+            $table->string('prenom_tudiant');
+            $table->string('cne_tudiant');
+            $table->string('cni_tudiant');
             $table->string('appoge');
-            $table->boolean('scolarite')->default(0);
-            $table->boolean('relevedenote')->default(0);
+            $table->enum('type_email', ["Demande de correction de note","Demande de correction de donnees","Demande ajout de module"]);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('email_logs');
     }
 };

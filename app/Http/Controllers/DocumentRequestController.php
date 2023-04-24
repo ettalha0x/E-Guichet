@@ -13,7 +13,7 @@ class DocumentRequestController extends Controller
         // Create a new DocumentRequest instance for each selected document
 
             $documentRequest = new Document();
-            $documentRequest->name = $request->input('name');
+            $documentRequest->nom = $request->input('name');
             // $documentRequest->prenom = $request->input('prenom');
             // $documentRequest->cne = $request->input('cne');
             // $documentRequest->cni = $request->input('cni'); can be nullable
