@@ -62,12 +62,9 @@ const Note = () => {
         }
     }
     return (
-        <div className="grid place-items-center gap-2 text-center">
-            <h1 className=" font-semibold text-lg">
-                Choisir les module que vous voulez le rectifier
-            </h1>
-            <form onSubmit={submit} className=" grid gap-2">
-                <h1>Sélect le semestre</h1>
+        <div className="grid ">
+            <form onSubmit={submit}>
+                <h1 className="text-center text-white text-lg font-semibold">Sélect le semestre</h1>
                 <select
                     value={selectedSemester}
                     onChange={handelsemester}
@@ -80,7 +77,7 @@ const Note = () => {
                         </option>
                     ))}
                 </select>
-                <h1>Choisir le(s) module</h1>
+                <h1 className="text-center text-white text-lg font-semibold">Choisir module</h1>
                 <select
                     onChange={handelmodule}
                     className="w-auto rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
@@ -93,7 +90,7 @@ const Note = () => {
                     ))}
                 </select>
                 <button
-                    className=" bg-green-300 rounded-md w-32 h-8"
+                    className=" bg-yellow-50 rounded w-28 p-2 shadow"
                     disabled={processing}
                     type="submit"
                 >

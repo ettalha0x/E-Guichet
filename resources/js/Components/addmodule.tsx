@@ -51,16 +51,13 @@ const MyComponent = () => {
     }
 
     return (
-        <div className="grid place-items-center gap-4">
-            <h1 className=" font-semibold text-lg">
-                Choisir les module que vous voulez ajouter
-            </h1>
-            <form onSubmit={submit} className=" grid gap-2 place-items-center">
-                <h1 className=" text-lg font-semibold">Sélect le semestre</h1>
+        <div className="grid gap-4">
+            <form onSubmit={submit} className=" grid gap-4">
+                <h1 className=" text-center text-white text-lg font-semibold">Sélect le semestre</h1>
                 <select
                     value={selectedSemester}
                     onChange={(e) => setSelectedSemester(e.target.value)}
-                    className=" w-auto rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
+                    className=" w-52 rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
                 >
                     {semester.semestre.map((semester) => (
                         <option key={semester.id} value={semester.id}>
@@ -68,10 +65,10 @@ const MyComponent = () => {
                         </option>
                     ))}
                 </select>
-                <h1 className=" text-lg font-semibold">
+                <h1 className=" text-white text-center text-lg font-semibold">
                     Sélect les module que vous voulez ajouter
                 </h1>
-                <div className=" grid grid-cols-3  gap-4">
+                <div className=" text-center grid grid-cols-3  gap-4">
                     {moduleOptions.map((option) => (
                         <label key={option.value}>
                             <input
@@ -87,14 +84,14 @@ const MyComponent = () => {
                                     selectedCheckboxes.length >= maxcheck &&
                                     !selectedCheckboxes.includes(option.label)
                                 }
-                            />
+                            /> <br />
                             {option.label}
                         </label>
                     ))}
                 </div>
                 <button
-                    className=" bg-green-300 rounded-md w-32 h-8"
-                    // disabled={processing}
+                    className=" bg-[#C5CCFF] rounded w-28 p-2 shadow"
+                    disabled={processing}
                     type="submit"
                 >
                     Submit

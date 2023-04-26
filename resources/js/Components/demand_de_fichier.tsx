@@ -32,8 +32,8 @@ function Fichier() {
     }
 
     return (
-        <div className="grid place-items-center gap-4">
-            <h1 className=" font-semibold text-lg">Choisir type de document</h1>
+        <div className="grid text-white place-items-center gap-4">
+            <h1 className="  text-center font-semibold text-lg">Choisir type de document</h1>
             <form onSubmit={handleSubmit} className=" grid gap-4">
                     <label htmlFor="option1">scolarite:
                     <input
@@ -55,7 +55,7 @@ function Fichier() {
                     }
                     />
                     </label>
-                <button className=' bg-green-300 rounded-md w-32 h-8' disabled={processing} type="submit">Submit</button>
+                <button className=' bg-[#F3EED9] text-black rounded w-28 p-2 shadow' disabled={processing} type="submit">Submit</button>
             </form>
         </div>
     );
