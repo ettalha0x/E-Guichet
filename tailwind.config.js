@@ -18,6 +18,9 @@ module.exports = {
                 '105': '1.05',
               },
         },
+        animation: {
+            'fadeIn': 'animate__fadeIn',
+          }
     },
 
     plugins: [require('@tailwindcss/forms')],
