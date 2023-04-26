@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.triangle {
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 25px 0;
+    border-color: transparent #FF3457 transparent transparent;
+  }
+
+  .aa .triangle {
+    border-color: transparent #C5CCFF transparent transparent;
+  }
+
+  .bb .triangle {
+    border-color: transparent #0C5AFF transparent transparent;
+  }
+
+  .cc .triangle {
+    border-color: transparent #008660 transparent transparent;
+  }
+
+.card_triangle{
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 20px 0 0;
+    border-color: transparent #FF3457 transparent transparent;
+  }
+
+  .first .card_triangle {
+    border-color: transparent #C5CCFF transparent transparent;
+  }
+
+  .second .card_triangle {
+    border-color: transparent #0C5AFF transparent transparent;
+  }
+  .third .card_triangle {
+    border-color: transparent #008660 transparent transparent;
+  }
+
+  .animate__fadeIn {
+    animation-name: fadeIn;
+    animation-duration: .5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+      }
+      to {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+  }
+
+
