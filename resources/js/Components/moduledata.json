@@ -1,0 +1,894 @@
+[
+    {
+        "id" : "1",
+        "name": "Sociologie",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "s1",
+                "module": [
+                    { "id": "1", "name": "الفكر الفلسفي" },
+                    { "id": "2", "name": "مناهج ونصوص فلسفية" },
+                    { "id": "3", "name": "اسس علم الاجتماع" },
+                    { "id": "4", "name": "ميادين علم الاجتماع" },
+                    { "id": "5", "name": "مدخل الى علم النفس" },
+                    { "id": "6", "name": "ميادين وتيارات علم النفس" },
+                    { "id": "7", "name": "اللغات" }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "s2",
+                "module": [
+                    { "id": "1", "name": "النظريات السوسيولوجية المعاصرة" },
+                    { "id": "2", "name": "المؤسسات الاجتماعية" },
+                    { "id": "3", "name": "المؤسسات السياسية" },
+                    { "id": "4", "name": "علم النفس الاجتماعي" },
+                    { "id": "5", "name": "سوسيولوجية التنظيمات" },
+                    { "id": "6", "name": "الديموغرافية" },
+                    { "id": "7", "name": "اللغات" }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name": "المناهج الكمية" },
+                    { "id": "2", "name": "المناهج الكيفية" },
+                    { "id": "3", "name": "سوسيولوجية الثقافة" },
+                    { "id": "4", "name": "الاحصاء" },
+                    {
+                        "id": "5",
+                        "name": "الانتروبولوجية الاجتماعية والثقافية"
+                    },
+                    { "id": "6", "name": "سوسيولوجية الاديان" }
+                ]
+            },
+
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name": "علم الاجتماع الحضري" },
+                    { "id": "2", "name": "علم الاجتماع القروي" },
+                    { "id": "3", "name": "سوسيولوجية الفقر والهشاشة" },
+                    { "id": "4", "name": "سوسيولوجية التربية" },
+                    { "id": "5", "name": "مدخل الى الاقتصاد" },
+                    { "id": "6", "name": "البيئة والتنمية" }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "s5",
+                "module": [
+                    { "id": "1", "name": "سوسيولوجيا المغرب" },
+                    { "id": "2", "name": "الثقافة الحضرية والثقافة القروية" },
+                    { "id": "3", "name": "المدينة والبادية والعولمة" },
+                    { "id": "4", "name": "نظريات التغير الاجتماعي" },
+                    { "id": "5", "name": "المقاربات الجديدة للتنمية" },
+                    { "id": "6", "name": "المنهجية والبحث البيبلوغرافي" }
+                ]
+            },
+            {
+                "id": "6",
+                "name": "s6",
+                "module": [
+                    { "id": "1", "name": "النوع الاجتماعي" },
+                    { "id": "2", "name": "انتروبولوجيا العالم الاسلامي" },
+                    { "id": "3", "name": "التنمية والتهيئة المجالية" },
+                    {"id": "4","name": "دينامية البنيات الاجتماعية التقليدية" },
+                    { "id": "5", "name": "المجال والمجتمع" },
+                    { "id": "6", "name": "بحث التخرج" }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id" :"2",
+        "name": "Philosophie",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "s1",
+                "module": [
+                    { "id": "1", "name": "مبادئ التفكير الفلسفي" },
+                    { "id": "2", "name": "مفاهيم ونصوص فلسفية" },
+                    { "id": "3", "name": "علم الاجتماع (ميادين)" },
+                    { "id": "4", "name": "علم الاجتماع (الأسس)" },
+                    { "id": "5", "name": "مدخل الى علم النفس ميادين و تيارات" },
+                    { "id": "6", "name": "مدخل الى  علم النفس" },
+                    { "id": "7", "name": "اللغات" }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "s2",
+                "module": [
+                    { "id": "1", "name": "كسمولوجية القديمة" },
+                    { "id": "2", "name": "حكمة الشرق" },
+                    { "id": "3", "name": "الفلسفة وانماط التعبير" },
+                    { "id": "4", "name": "ميتافيزيقا" },
+                    { "id": "5", "name": "المنطق وآليات الاستدلال" },
+                    { "id": "6", "name": "العلم الطبيعي" },
+                    { "id": "7", "name": "اللغات" }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name": "مقاربة فلسفة الدين" },
+                    { "id": "2", "name": "التصوف" },
+                    { "id": "3", "name": "الفلسفة في العالم العربي الاسلامي" },
+                    { "id": "4", "name": "الفلسفة الغربية في العصر الوسيط" },
+                    { "id": "5", "name": "العلوم عند العرب" },
+                    { "id": "6", "name": "علم الكلام" }
+                ]
+            },
+
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name": "الفلسفة الحديثة" },
+                    { "id": "2", "name": "فلسفة الأنوار" },
+                    { "id": "3", "name": "نشأة العلم الحديث" },
+                    { "id": "4", "name": "الفلسفة السياسة" },
+                    { "id": "5", "name": "المنطق المعاصر" },
+                    { "id": "6", "name": "الجماليات" }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "s5",
+                "module": [
+                    { "id": "1", "name": "فلسفة الحق" },
+                    { "id": "2", "name": "فلسفة التواصل" },
+                    { "id": "3", "name": "العدالة السياسية" },
+                    { "id": "4", "name": "الإصلاح والتحديث" },
+                    { "id": "5", "name": "أخلاقيات التواصل" },
+                    { "id": "6", "name": "مشروع نهاية البحث" }
+                ]
+            },
+            {
+                "id": "6",
+                "name": "s6",
+                "module": [
+                    { "id": "1", "name": "مدخل إلى فلسفة التربية" },
+                    { "id": "2", "name": "حوارات ثقافية" },
+                    { "id": "3", "name": "الدولة والمجتمع المدني" },
+                    { "id": "4", "name": "مدخل إلى فلسفة الدين" },
+                    { "id": "5", "name": "الفاعل الاجتماعي" },
+                    { "id": "6", "name": "مشروع نهاية البحث" }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id" :"3",
+        "name": "Etudes Islamiques",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "s1",
+                "module": [
+                    { "id": "1", "name": "علوم القرآن 1" },
+                    { "id": "2", "name": "علوم الحديث 1" },
+                    { "id": "3", "name": "تاريخ التشريع" },
+                    { "id": "4", "name": "العقيدة الإسلامية" },
+                    { "id": "5", "name": "النحو والصرف 1" },
+                    { "id": "6", "name": "السيرة النبوية والخلافة الراشدة" },
+                    { "id": "7", "name": "اللغة ومصطلحات 1" }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "s2",
+                "module": [
+                    { "id": "1", "name": "علوم القرآن 2" },
+                    { "id": "2", "name": "علوم الحديث 2" },
+                    { "id": "3", "name": "فقه العبادات" },
+                    { "id": "4", "name": "الفكر الإسلامي" },
+                    { "id": "5", "name": "النحو و الصرف 2" },
+                    { "id": "6", "name": "مدخل لدراسة العلوم الإنسانية" },
+                    { "id": "7", "name": "اللغة و المصطلحات 2" }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name": "القراءات القرآنية" },
+                    { "id": "2", "name": "الجرح والتعديل" },
+                    { "id": "3", "name": "أصول الفقه 1" },
+                    { "id": "4", "name": "الحركات الإصلاحية" },
+                    { "id": "5", "name": "البلاغة" },
+                    { "id": "6", "name": "المكتبة والمناهج" }
+                ]
+            },
+
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name": "التفسير" },
+                    { "id": "2", "name": "فقه الحديث" },
+                    { "id": "3", "name": "أصول الفقه 2" },
+                    { "id": "4", "name": "تاريخ الأديان" },
+                    { "id": "5", "name": "الأدب الإسلامي" },
+                    { "id": "6", "name": "المواريث" }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "s5",
+                "module": [
+                    { "id": "1", "name": "التفسير ومناهجه" },
+                    { "id": "2", "name": "علم التخريج" },
+                    { "id": "3", "name": "التشريع الجنائي" },
+                    { "id": "4", "name": "المناظرة وأساليب الحجاج" },
+                    { "id": "5", "name": "اللغة الفارسية1" },
+                    { "id": "6", "name": "الإعجاز القرآني" }
+                ]
+            },
+            {
+                "id": "6",
+                "name": "s6",
+                "module": [
+                    { "id": "1", "name": "أيات الأحكام" },
+                    { "id": "2", "name": "الاقتصاد الإسلامي" },
+                    { "id": "3", "name": "مقاصد الشريعة" },
+                    { "id": "4", "name": "فقه الدعوة" },
+                    { "id": "5", "name": "اللغة الفارسية 2" },
+                    { "id": "6", "name": "البحث" }
+                ]
+            }
+        ]
+    },
+    {
+        "id" :"4",
+        "name": "Histoire & Civilisation",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "اللغات" },
+                    { "id": "2", "name": "جغرافية" },
+                    { "id": "3", "name": "تاريخ الحضارات القديمة" },
+                    {
+                        "id": "4",
+                        "name": "تاريخ أوربا في العصور الوسطى/ تاريخ أوروبا في العصور الوسطى: الفيودالية والكنيسة"
+                    },
+                    { "id": "5", "name": "المدخل لدراسة التاريخ" },
+                    {
+                        "id": "6",
+                        "name": "تاريخ الإسلام من صدر الإسلام إلى العصر العباسي"
+                    },
+                    {
+                        "id": "7",
+                        "name": "الغرب الإسلامي: من الفتح إلى القرن 5الهجري"
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "اللغات" },
+                    { "id": "2", "name": "العلوم المساعدة للتاريخ" },
+                    {
+                        "id": "3",
+                        "name": "الغرب الإسلامي من المرابطين إلى نهاية المرينين"
+                    },
+                    { "id": "4", "name": "تاريخ المماليك و العثمانيين" },
+                    { "id": "5", "name": "النهضة الأوروبية" },
+                    { "id": "6", "name": "الإغريق و الرومان" },
+                    { "id": "7", "name": "الخرائطية" }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name": "تاريخ شمال إفريقيا الحديث" },
+                    { "id": "2", "name": "تاريخ المغرب الحديث" },
+                    { "id": "3", "name": "العالم العربي في القرن19 و 20م" },
+                    { "id": "4", "name": "تحليل الوثيقة" },
+                    { "id": "5", "name": "الجغرافية التاريخية" },
+                    { "id": "6", "name": "الثورة الفرنسية والثورة الصناعية" }
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name": "المغرب في القرن 19م" },
+                    {
+                        "id": "2",
+                        "name": "تاريخ المغرب و إفريقيا جنوب الصحراء"
+                    },
+                    { "id": "3", "name": "أوروبا في القرنين 19م و 20م" },
+                    { "id": "4", "name": "تاريخ أمريكا" },
+                    { "id": "5", "name": "تاريخ الشرق الأقصى" },
+                    { "id": "6", "name": "النظريات الاقتصادية" }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "s5",
+                "module": [
+                    { "id": "1", "name": "تاريخ الأندلس" },
+                    { "id": "2", "name": "الفكر الأندلسي" },
+                    {
+                        "id": "3",
+                        "name": "التاريخ الاجتماعي والاقتصادي والعلمي المحلي"
+                    },
+                    { "id": "4", "name": "الحركة الوطنية بالشمال" },
+                    { "id": "5", "name": "المغاربيون" },
+                    { "id": "6", "name": "المغرب بعد الاستقلال" }
+                ]
+            },
+            {
+                "id": "6",
+                "name": "s6",
+                "module": [
+                    { "id": "1", "name": "علم التحقيق" },
+                    { "id": "2", "name": "الإصدارات التاريخية الحديثة" },
+                    { "id": "3", "name": "التراث التقافي و التنمية الجهوية" },
+                    { "id": "4", "name": "قضايا راهنة" },
+                    { "id": "5", "name": "بحوث" },
+                    { "id": "6", "name": "بحوث" }
+                ]
+            }
+        ]
+    },
+    {
+        "id" :"5",
+        "name": "Géographie",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "اللغات"},
+                    { "id": "2", "name": "تاريخ المغرب"},
+                    { "id": "3", "name": "جيومرفلوجيا"},
+                    { "id": "4", "name": "مناخ"},
+                    { "id": "5", "name": "جغرافية السكان"},
+                    { "id": "6",  "name":"جغرافية الأرياف"},
+                    { "id": "7",  "name":"قراءة الخرائط والوثائق/قراءة الخرائط الطبوغرافية"}
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "اللغات"},
+                    { "id": "2", "name": "إحصاء و تعبير بياني"},
+                    { "id": "3", "name": "جيوبنيوية"},
+                    { "id": "4", "name": "بيوجغرافيا"},
+                    { "id": "5", "name": "جغرافيا اقتصادية"},
+                    { "id": "6", "name": "جغرافية المدن"},
+                    { "id": "7", "name": "قرائة الوثائق و تحليل الخرائط الطبوغرافية"}
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name": "الموفومناخ"},
+                    { "id": "2", "name": "مناخ دينامي"},
+                    { "id": "3", "name": "دينامية المجال الريفي"},
+                    { "id": "4", "name": "دينامية المجال الحضري"},
+                    { "id": "5", "name": "سيميولوجية الخرائط"},
+                    { "id": "6", "name": "علم الاجتماع"}
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name":"تطبيقات مورفوبنيوية"},
+                    { "id": "2", "name":"النبات و التربة"},
+                    { "id": "3", "name":"جغرافية حوض البحر الأبيض المتوسط"},
+                    { "id": "4", "name":"جغرافية المغرب العامة"},
+                    { "id": "5", "name":"الخرائط الموضوعاتية و التحليلية"},
+                    { "id": "6", "name":"أدوات و مناهج البحث الجغرافي"}
+                ]
+            },
+            {
+                "id": "5",
+                "name": "s5",
+                "module": [
+                    { "id": "1", "name": "الأحواض المائية وقضايا التدبير المائي"},
+                    { "id": "2", "name": "السواحل: الأشكال السيرورات والاعداد"},
+                    { "id": "3", "name": "السياحة والتنمية الجهوية"},
+                    { "id": "4", "name": "الدينامية السكانية"},
+                    { "id": "5", "name": "اعداد التراب"},
+                    { "id": "6", "name": "جيوماتيك تطبيقية"}
+                ]
+            },
+            {
+                "id": "6",
+                "name": "s9",
+                "module": [
+                    { "id": "1", "name": "بحث و تدريب 1"},
+                    { "id": "2", "name": "بحث و تدريب 2"},
+                    { "id": "3", "name": "تهيئة المجال القروي"},
+                    { "id": "4", "name": "تهيئة المجال الحضري"},
+                    { "id": "5", "name": "تدبير الموارد الطبيعية"},
+                    { "id": "6", "name": "دينامية الأوساط الطبيعية"}
+                ]
+            }
+        ]
+    },
+    {
+        "id" :"6",
+        "name": "Histoire & Civilisation",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "اللغات" },
+                    { "id": "2", "name": "جغرافية" },
+                    { "id": "3", "name": "تاريخ الحضارات القديمة" },
+                    {
+                        "id": "4",
+                        "name": "تاريخ أوربا في العصور الوسطى/ تاريخ أوروبا في العصور الوسطى: الفيودالية والكنيسة"
+                    },
+                    { "id": "5", "name": "المدخل لدراسة التاريخ" },
+                    {
+                        "id": "6",
+                        "name": "تاريخ الإسلام من صدر الإسلام إلى العصر العباسي"
+                    },
+                    {
+                        "id": "7",
+                        "name": "الغرب الإسلامي: من الفتح إلى القرن 5الهجري"
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "اللغات" },
+                    { "id": "2", "name": "العلوم المساعدة للتاريخ" },
+                    {
+                        "id": "3",
+                        "name": "الغرب الإسلامي من المرابطين إلى نهاية المرينين"
+                    },
+                    { "id": "4", "name": "تاريخ المماليك و العثمانيين" },
+                    { "id": "5", "name": "النهضة الأوروبية" },
+                    { "id": "6", "name": "الإغريق و الرومان" },
+                    { "id": "7", "name": "الخرائطية" }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name": "تاريخ شمال إفريقيا الحديث" },
+                    { "id": "2", "name": "تاريخ المغرب الحديث" },
+                    { "id": "3", "name": "العالم العربي في القرن19 و 20م" },
+                    { "id": "4", "name": "تحليل الوثيقة" },
+                    { "id": "5", "name": "الجغرافية التاريخية" },
+                    { "id": "6", "name": "الثورة الفرنسية والثورة الصناعية" }
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name": "المغرب في القرن 19م" },
+                    {
+                        "id": "2",
+                        "name": "تاريخ المغرب و إفريقيا جنوب الصحراء"
+                    },
+                    { "id": "3", "name": "أوروبا في القرنين 19م و 20م" },
+                    { "id": "4", "name": "تاريخ أمريكا" },
+                    { "id": "5", "name": "تاريخ الشرق الأقصى" },
+                    { "id": "6", "name": "النظريات الاقتصادية" }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "s5",
+                "module": [
+                    { "id": "1", "name": "تاريخ الأندلس" },
+                    { "id": "2", "name": "الفكر الأندلسي" },
+                    {
+                        "id": "3",
+                        "name": "التاريخ الاجتماعي والاقتصادي والعلمي المحلي"
+                    },
+                    { "id": "4", "name": "الحركة الوطنية بالشمال" },
+                    { "id": "5", "name": "المغاربيون" },
+                    { "id": "6", "name": "المغرب بعد الاستقلال" }
+                ]
+            },
+            {
+                "id": "6",
+                "name": "s6",
+                "module": [
+                    { "id": "1", "name": "علم التحقيق" },
+                    { "id": "2", "name": "الإصدارات التاريخية الحديثة" },
+                    { "id": "3", "name": "التراث التقافي و التنمية الجهوية" },
+                    { "id": "4", "name": "قضايا راهنة" },
+                    { "id": "5", "name": "بحوث" },
+                    { "id": "6", "name": "بحوث" }
+                ]
+            }
+        ]
+    },
+    {
+        "id" :"7",
+        "name": "Etudes Arabes",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "نحو 1"},
+                    { "id": "2", "name": "مدخل إلى اللسانيات"},
+                    { "id": "3", "name": "مدخل إلى الأدب العربي"},
+                    { "id": "4", "name": "حضارة إسلامية"},
+                    { "id": "5", "name": "بلاغة وعروض"},
+                    { "id": "6",  "name":"عروض"},
+                    { "id": "7",  "name":"اللغات"}
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "نحو"},
+                    { "id": "2", "name": "صوتيات"},
+                    { "id": "3", "name": "شعر قديم"},
+                    { "id": "4", "name": "شعر حديث"},
+                    { "id": "5", "name": "فقه اللغة"},
+                    { "id": "6", "name": "الفلسفة"},
+                    { "id": "7", "name": "اللغات"}
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name":"نحو"},
+                    { "id": "2", "name":"صوتيات وصواتة"},
+                    { "id": "3", "name":"سرد قديم"},
+                    { "id": "4", "name":"سرد حديث"},
+                    { "id": "5", "name":"نقد قديم"},
+                    { "id": "6", "name":"معجم"}
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name":"صرف"},
+                    { "id": "2", "name":"تركيب"},
+                    { "id": "3", "name":"أدب أندلسي و مغربي"},
+                    { "id": "4", "name":"مسرح"},
+                    { "id": "5", "name":"مناهج النقد الأدبي الحديث"},
+                    { "id": "6", "name":"دلالة"}
+                ]
+            },
+            {
+                "id": "5",
+                "name": "S5 - Lettres et Arts",
+                "module": [
+                    { "id": "1", "name": "قراءة النص النثري القديم وتحليله"},
+                    { "id": "2", "name": "قراءة النص الشعري القديم وتحليله"},
+                    { "id": "3", "name": "السوسيولسانيات"},
+                    { "id": "4", "name": "فلسفة اللغة"},
+                    { "id": "5", "name": "ادب حديث"},
+                    { "id": "6", "name": "اللغة الشرقية"}
+                ]
+            },
+            {
+                "id": "6",
+                "name": "S5 - Linguistiques",
+                "module": [
+                    { "id": "1", "name": "صرف و صواتة"},
+                    { "id": "2", "name": "نماذج تركيبية"},
+                    { "id": "3", "name": "السوسيولسانيات"},
+                    { "id": "4", "name": "فلسفة اللغة"},
+                    { "id": "5", "name": "قراءة النص النثري القديم وتحليله"},
+                    { "id": "6", "name": "اللغة الشرقية"}
+                ]
+            },
+            {
+                "id": "7",
+                "name": "S6 - Lettres et Arts",
+                "module": [
+                    { "id": "1", "name": "المكتبة النقدية"},
+                    { "id": "2", "name": "اللغات الشرقية"},
+                    { "id": "3", "name": "قراءة النص الأدبي القديم"},
+                    { "id": "4", "name": "الأدب الشعبي"},
+                    { "id": "5", "name": "مشروع نهاية الدروس"},
+                    { "id": "6", "name": "مشروع نهاية الدروس"}
+                ]
+            },
+            {
+                "id": "8",
+                "name": "S6 - Linguistiques",
+                "module": [
+                    { "id": "1", "name": "اللسانيات المقارنة"},
+                    { "id": "2", "name": "نماذج دلالية تداولية"},
+                    { "id": "3", "name": "حقول لسانية : المصطلحية"},
+                    { "id": "4", "name": "اللغات الشرقية"},
+                    { "id": "5", "name": "مشروع نهاية الدروس"},
+                    { "id": "6", "name": "مشروع نهاية الدروس"}
+                ]
+            }
+        ]
+    },
+    {
+        "id" :"8",
+        "name": "Etudes Anglaises",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "Langues I"},
+                    { "id": "2", "name": "Study Skills"},
+                    { "id": "3", "name": "Paragraph Writing"},
+                    { "id": "4", "name": "Spoken English"},
+                    { "id": "5", "name": "Grammar I"},
+                    { "id": "6",  "name":"Reading Comprehension and Precis I"},
+                    { "id": "7",  "name":"Guided Reading"}
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "Langues II"},
+                    { "id": "2", "name": "Business Communication"},
+                    { "id": "3", "name": "Composition I"},
+                    { "id": "4", "name": "Oral Communication"},
+                    { "id": "5", "name": "Grammar II"},
+                    { "id": "6", "name": "Reading Comprehension and Precis II"},
+                    { "id": "7", "name": "Readings in Culture"}
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name":"Initiation to Translation"},
+                    { "id": "2", "name":"British Culture & society/Culture & society in the US"},
+                    { "id": "3", "name":"Composition II"},
+                    { "id": "4", "name":"Public Speaking & Debating"},
+                    { "id": "5", "name":"Grammar III"},
+                    { "id": "6", "name":"Extensive Reading"}
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name":"Trans Arabic-English-Arabic"},
+                    { "id": "2", "name":"Introduction to Cultural Studies"},
+                    { "id": "3", "name":"Advanced Composition & Introduction to Research"},
+                    { "id": "4", "name":"British Culture and Society"},
+                    { "id": "5", "name":"Introduction to Linguistics"},
+                    { "id": "6", "name":"Introduction to Literature"}
+                ]
+            },
+            {
+                "id": "5",
+                "name": "S5 - Linguistics",
+                "module": [
+                    { "id": "1", "name": "Novel & Short Story"},
+                    { "id": "2", "name": "Rhetoric"},
+                    { "id": "3", "name": "Phonetics & Phonology"},
+                    { "id": "4", "name": "Morphology & Syntax"},
+                    { "id": "5", "name": "Semantics"},
+                    { "id": "6", "name": "Sociolinguistics"}
+                ]
+            },
+            {
+                "id": "6",
+                "name": "S5 - Literature",
+                "module": [
+                    { "id": "1", "name": "Novel & Short Story"},
+                    { "id": "2", "name": "Rhetoric"},
+                    { "id": "3", "name": "African Literature"},
+                    { "id": "4", "name": "Classical Drama"},
+                    { "id": "5", "name": "Classical Criticism"},
+                    { "id": "6", "name": "Classical Poetry"}
+                ]
+            },
+            {
+                "id": "7",
+                "name": "S6 - Linguistic",
+                "module": [
+                    { "id": "1", "name":  "Final Study Project 1"},
+                    { "id": "2", "name":  "Final Study Project 2"},
+                    { "id": "3", "name":  "Advanced Phonology"},
+                    { "id": "4", "name":  "Advanced Syntax"},
+                    { "id": "5", "name":  "Pragmatics"},
+                    { "id": "6", "name":  "Applied Linguistics"}
+                ]
+            },
+            {
+                "id": "8",
+                "name": "S6 - Literature",
+                "module": [
+                    { "id": "1", "name": "Novel & Short Story"},
+                    { "id": "2", "name": "Final Study Project 1"},
+                    { "id": "3", "name": "Final Study Project 2"},
+                    { "id": "4", "name": "Modern Drama"},
+                    { "id": "5", "name": "Modern Critical Theory"},
+                    { "id": "6", "name": "Modern Poetry"}
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "9",
+        "name": "Etudes Hispaniques",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "Cultura Árabe"},
+                    { "id": "2", "name": "Lenguas I Francés"},
+                    { "id": "3", "name": "Expresión Oral"},
+                    { "id": "4", "name": "Comprensión de Textos"},
+                    { "id": "5", "name": "Expresion escrita y redacción"},
+                    { "id": "6",  "name":"Gramatica Española"},
+                    { "id": "7",  "name":"Geografía e Historia Hispánicas"}
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "Cultura Arabe 2"},
+                    { "id": "2", "name": "Lengua II Francés"},
+                    { "id": "3", "name": "Historia y Civilizacion Hispanicas"},
+                    { "id": "4", "name": "Gramatica Espanola 2"},
+                    { "id": "5", "name": "Expresion Escrita y Redaccion 2"},
+                    { "id": "6", "name": "Comprension de Textos 2"},
+                    { "id": "7", "name": "Expresion Oral 2"}
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name":"Medología de Trabajo Universitario"},
+                    { "id": "2", "name":"Panorama de la Literatura Hispánica"},
+                    { "id": "3", "name":"Técnica de Comentarios de Textos Literarios 1"},
+                    { "id": "4", "name":"Introducción a la Lingüística"},
+                    { "id": "5", "name":"Sintaxis del Español"},
+                    { "id": "6", "name":"Historia y Civilización de Al-Ándalus"}
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name":"Técnicas de Investigacion"},
+                    { "id": "2", "name":"Panorama de la Literatura Hispanica 2"},
+                    { "id": "3", "name":"Técnicas de Comentario de Textos Literarios 2"},
+                    { "id": "4", "name":"Cuestiones de Lexicologia"},
+                    { "id": "5", "name":"Fonetica y Fonologia"},
+                    { "id": "6", "name":"Técnicas y Practicas de Traduccion"}
+                ]
+            },
+            {
+                "id": "5",
+                "name": "S5",
+                "module": [
+                    { "id": "1", "name": "Linguística Moderna y Sociolinguística"},
+                    { "id": "2", "name": "Lengua con Fines Específicos"},
+                    { "id": "3", "name": "Historia del Mundo Hispánico Actual"},
+                    { "id": "4", "name": "Literatura Española Contemporánea"},
+                    { "id": "5", "name": "Crítica y Teoría Literarias"},
+                    { "id": "6", "name": "Normas y Técnicas de Investigación"}
+                ]
+            },
+            {
+                "id": "6",
+                "name": "S6",
+                "module": [
+                    { "id": "1", "name": "Pragmatica"},
+                    { "id": "2", "name": "Cervantes y los moriscos"},
+                    { "id": "3", "name": "Proyecto de Fin de Estudios"},
+                    { "id": "4", "name": "Estudio de Textos Literarios"},
+                    { "id": "5", "name": "Literatura Hispano-americana Contemporanea"},
+                    { "id": "6", "name": "Analisis de textos Hispano-americanos"}
+                ]
+            }
+        ]
+    },
+    {
+        "id" : "10",
+        "name": "Etudes Françaises",
+        "semestre": [
+            {
+                "id": "1",
+                "name": "S1",
+                "module": [
+                    { "id": "1", "name": "Langues"},
+                    { "id": "2", "name": "Grammaire 1"},
+                    { "id": "3", "name": "Phonétique"},
+                    { "id": "4", "name": "Typologie Des Textes Narratifs"},
+                    { "id": "5", "name": "Initiation Aux Genres Dramatiques"},
+                    { "id": "6",  "name":"Histoire Des Idées"},
+                    { "id": "7",  "name":"Les Grands Mythes"}
+                ]
+            },
+            {
+                "id": "2",
+                "name": "S2",
+                "module": [
+                    { "id": "1", "name": "LANGUES 2"},
+                    { "id": "2", "name": "GRAMMAIRE 2"},
+                    { "id": "3", "name": "LEXICOGRAPHIE"},
+                    { "id": "4", "name": "CATEGORIES DU RECIT"},
+                    { "id": "5", "name": "POESIE ET VERSIFICATION"},
+                    { "id": "6", "name": "HISTOIRE DE LA LITTERATURE"},
+                    { "id": "7", "name": "HISTOIRE DES IDEES ET DES ARTS XVIII° SIECLE"}
+                ]
+            },
+            {
+                "id": "3",
+                "name": "s3",
+                "module": [
+                    { "id": "1", "name":"Initiation A La Traduction"},
+                    { "id": "2", "name":"Morphosyntaxe1"},
+                    { "id": "3", "name":"Lexicologie"},
+                    { "id": "4", "name":"Anlyse Roman"},
+                    { "id": "5", "name":"Theatre Classique"},
+                    { "id": "6", "name":"Histoire Des Idees Et De L’art (19e Siecle)"}
+                ]
+            },
+            {
+                "id": "4",
+                "name": "s4",
+                "module": [
+                    { "id": "1", "name":"INITIATION A LA RECHERCHE"},
+                    { "id": "2", "name":"MORPHOSYNTAXE 2"},
+                    { "id": "3", "name":"INITIATION A LA LINGUISTIQUE"},
+                    { "id": "4", "name":"POESIE (XIXE SIECLE)"},
+                    { "id": "5", "name":"THEATRE ROMANTIQUE"},
+                    { "id": "6", "name":"HITOIRE DES IDEES ET DE L’ART (20E SIECLE)"}
+                ]
+            },
+            {
+                "id": "5",
+                "name": "S5",
+                "module": [
+                    { "id": "1", "name": "Enonciation"},
+                    { "id": "2", "name": "Sémiotique Littéraire"},
+                    { "id": "3", "name": "Littérature Française Contemporaine I"},
+                    { "id": "4", "name": "Critique Littéraire"},
+                    { "id": "5", "name": "Littérature Maghrébine"},
+                    { "id": "6", "name": "Méthode D’analyse Littéraire"}
+                ]
+            },
+            {
+                "id": "6",
+                "name": "S6",
+                "module": [
+                    { "id": "1", "name": "NARRATOLOGIE CLASSIQUE"},
+                    { "id": "2", "name": "ANALYSE DU DISCOURS"},
+                    { "id": "3", "name": "LITTERATURE FRANÇAISE CONTEMPORAINE II"},
+                    { "id": "4", "name": "LITTERATURE FRANCOPHONE"},
+                    { "id": "5", "name": "PFE"},
+                    { "id": "6", "name": "PFE"}
+                ]
+            }
+        ]
+    }
+]

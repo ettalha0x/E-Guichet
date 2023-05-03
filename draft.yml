@@ -1,13 +1,25 @@
 models:
-  Courses:
-    Course: string:400 nullable
-    Semester: string:400 nullable
-    Module_1: string:400 nullable
-    Module_2: string:400 nullable
-    Module_3: string:400 nullable
-    Module_4: string:400 nullable
-    Module_5: string:400 nullable
-    Module_6: string:400 nullable
-    Module_7: string:400  nullable
+    Models\Document:
+      id: integer
+      nom: string
+      prenom: string
+      cne: string
+      cni: string
+      appoge: string
+      scolarite: boolean default:0
+      relevedenote: boolean default:0
+      timestamps: true
+      softDeletes: true
 
-seeders: Courses
+    Models\Email_log:
+      id: integer
+      nom_tudiant: string
+      prenom_tudiant: string
+      cne_tudiant: string
+      cni_tudiant: string
+      appoge: string
+      type_email: enum:"Demande de correction de note","Demande de correction de donnees","Demande d'ajout de module"
+      timestamps: true
+      softDeletes: true
+
+seeders: Document ,Email_log

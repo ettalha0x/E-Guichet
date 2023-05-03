@@ -1,0 +1,15 @@
+created:
+    - database/factories/Models/DocumentFactory.php
+    - database/factories/Models/EmailLogFactory.php
+    - database/migrations/2023_04_24_165137_create_documents_table.php
+    - database/migrations/2023_04_24_165138_create_email_logs_table.php
+    - app/Models/Models/Document.php
+    - app/Models/Models/Email_log.php
+    - database/seeders/DocumentSeeder.php
+    - database/seeders/EmailLogSeeder.php
+models:
+    Document: {  }
+    EmailLog: {  }
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Models\Document: { id: integer, nom: string, prenom: string, cne: string, cni: string, appoge: string, scolarite: 'boolean default:0', relevedenote: 'boolean default:0', timestamps: timestamps, softdeletes: softDeletes }
+    Models\Email_log: { id: integer, nom_tudiant: string, prenom_tudiant: string, cne_tudiant: string, cni_tudiant: string, appoge: string, type_email: 'enum:"Demande de correction de note","Demande de correction de donnees","Demande d''ajout de module"', timestamps: timestamps, softdeletes: softDeletes }

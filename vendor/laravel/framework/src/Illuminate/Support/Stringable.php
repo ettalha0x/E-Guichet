@@ -614,12 +614,11 @@ class Stringable implements JsonSerializable, ArrayAccess
      *
      * @param  string|iterable<string>  $search
      * @param  string|iterable<string>  $replace
-     * @param  bool  $caseSensitive
      * @return static
      */
-    public function replace($search, $replace, $caseSensitive = true)
+    public function replace($search, $replace)
     {
-        return new static(Str::replace($search, $replace, $this->value, $caseSensitive));
+        return new static(Str::replace($search, $replace, $this->value));
     }
 
     /**

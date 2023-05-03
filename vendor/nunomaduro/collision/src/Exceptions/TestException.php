@@ -25,11 +25,6 @@ final class TestException
         //
     }
 
-    public function getThrowable(): Throwable
-    {
-        return $this->throwable;
-    }
-
     /**
      * @return class-string
      */
