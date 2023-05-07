@@ -42,7 +42,7 @@ const MyComponent = () => {
     function submit(e) {
         e.preventDefault();
         console.log("Selected checkboxes: ", selectedCheckboxes);
-        post("/Add_modules");
+        post("/ajout_de_module");
         try{
             toast.success('submited');
         }catch{

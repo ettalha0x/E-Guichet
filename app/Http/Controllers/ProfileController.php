@@ -14,10 +14,29 @@ use Inertia\Response;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\correctMail;
 use App\Mail\addMail;
+use Illuminate\Support\Facades\DB;
 
 
 class ProfileController extends Controller
 {
+    /**
+     * A function To Log All Emails
+     */
+    private function insertEmailLog($type_email) {
+        $data = [
+            'nome_tudiant' => auth()->user()->name,
+            'prenom_tudiant' => auth()->user()->prenom,
+            'cne_tudiant' => auth()->user()->cne,
+            'cni_tudiant' =>  auth()->user()->cni,
+            'appoge' =>  auth()->user()->email,
+            'type_email' => $type_email,
+            'created_at' => now(), 
+            'updated_at' => now(),
+        ];
+        
+        DB::table('email_logs')->insert($data);
+    }
+
     /**
      * Display the user's profile form.
      */
@@ -33,15 +52,17 @@ class ProfileController extends Controller
      * Update the user's profile information.
      */
 
-    public function email_c(Request $request)
+    public function correction_de_note(Request $request)
     {
-        $recever = 'youssef.bachar7@gmail.com';
+        $receiver = 'youssef.bachar7@gmail.com';
         $module = $request->input('module');
-    $semester = $request->input('semester');
-    Mail::to($recever)->send(new correctMail($module, $semester));
+        $semester = $request->input('semester');
+        Mail::to($receiver)->send(new correctMail($module, $semester));
+        
+        $this->insertEmailLog("Demande de correction de note");
 
     }
-       public function info_correct(Request $request)
+       public function correction_de_donnees(Request $request)
     {
         $data = [
             'nouveau nom' => $request->input('newname'),
@@ -51,22 +72,26 @@ class ProfileController extends Controller
             'nouveau date' => $request->input('newdate'),
         ];
          //SEND email
-        $recever = 'youssef.bachar7@gmail.com';
+        $receiver = 'youssef.bachar7@gmail.com';
 
-        Mail::to($recever)->send(new infoMail($data));
+        Mail::to($receiver)->send(new infoMail($data));
+        $this->insertEmailLog("Demande de correction de donnees");
 
     }
 
-    public function Add_modules(Request $request)
+    public function ajout_de_module(Request $request)
     {
 
          //SEND email
-        $recever = 'youssef.bachar7@gmail.com';
+        $receiver = 'youssef.bachar7@gmail.com';
         $modules = $request->input('modules');
         $semester = $request->input('semester');
         $semester = 'yoursemester';
        // dd($semester);
-        Mail::to($recever)->send(new addMail($modules,$semester));
+         // insert email data into the email_logs table
+   
+         Mail::to($receiver)->send(new addMail($modules,$semester));
+         $this->insertEmailLog("Demande ajout de module");
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
