@@ -6,30 +6,27 @@ import {toast } from 'react-toastify';
 function Fichier() {
     const { auth } = usePage().props;
 
-    const { data, setData, post , processing } = useForm({
-        name : auth.user.name,
-        prenom : auth.user.prenom,
-        cne : auth.user.cne,
-        cni : auth.user.cni,
-        appoge : auth.user.email,
+    const { data, setData, post, processing, reset } = useForm({
+        name: auth.user.name,
+        prenom: auth.user.prenom,
+        cne: auth.user.cne,
+        cni: auth.user.cni,
+        appoge: auth.user.email,
         scolarite: false,
         relevedenote: false,
-    });
+        onSuccess: () => {
+            reset();
+            toast.success('Submitted');
+          },
+      });
 
-    function handleSubmit(e) {
+      function handleSubmit(e) {
         e.preventDefault();
-        post("/document",data)
-        .then(() => {
-            console.log('done');
-            setData("scolarite", false);
-            setData("relevedenote", false);
-        });
-        try{
-            toast.success('submited');
-        }catch{
-            toast.error('failed');
-        }
-    }
+        post("/document", data);
+      }
+
+
+
 
     return (
         <div className="grid text-white place-items-center gap-4">

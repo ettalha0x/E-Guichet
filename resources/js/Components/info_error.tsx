@@ -15,7 +15,7 @@ function info_error(props) {
     const [modifiercni, setModifiercni] = useState(false);
     const [modifierdatedenaissance, setModifierdatedenaissance] =
         useState(false);
-    const { data, setData, post, processing } = useForm({
+    const { data, setData, post, processing , reset} = useForm({
         newname: "",
         newprenom: "",
         newcne: "",
@@ -24,13 +24,19 @@ function info_error(props) {
     });
     function submit(e) {
         e.preventDefault();
-        post("/info_correct");
-        try{
-            toast.success('submited');
-        }catch{
-            toast.error('failed');
-        }
+        post("/info_correct", {
+        onSuccess: () => {
+            reset();
+            toast.success('Submitted');
+        },
+        onError: (error) => {
+            console.log(error);
+            toast.error('An error occurred while submitting the form');
+        },
+        });
     }
+
+
     return (
         <div className=" shadow max-sm:w-full shadow-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/75 p-8 rounded">
             <h1 className=" font-semibold text-xl text-center mb-4">

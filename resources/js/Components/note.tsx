@@ -12,7 +12,7 @@ const Note = () => {
     const { auth } = usePage().props;
     const [semesname, setSemesname] = useState("");
     const [modulname, setModulname] = useState("");
-    const { data, setData, post, processing } = useForm({
+    const { data, setData, post, processing , reset} = useForm({
         semester: semesname,
         module: modulname
     });
@@ -54,16 +54,20 @@ const Note = () => {
     function submit(e) {
         e.preventDefault();
         console.log(data)
-        post("/email_c");
-        try{
-            toast.success('submited');
-        }catch{
-            toast.error('failed');
-        }
+        post("/email_c", {
+            onSuccess: () => {
+                reset();
+                toast.success('Submitted');
+            },
+            onError: (error) => {
+                console.log(error);
+                toast.error('An error occurred while submitting the form');
+            },
+            });
     }
     return (
-        <div className="grid ">
-            <form onSubmit={submit}>
+        <div className="grid">
+            <form onSubmit={submit} className="grid gap-4">
                 <h1 className="text-center text-white text-lg font-semibold">Sélect le semestre</h1>
                 <select
                     value={selectedSemester}

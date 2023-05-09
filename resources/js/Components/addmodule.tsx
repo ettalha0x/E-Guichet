@@ -18,7 +18,7 @@ const MyComponent = () => {
         })
         );
 
-        const { data, setData, post, processing } = useForm({
+        const { data, setData, post, processing , reset} = useForm({
             modules : []
         });
         function handleCheckboxChange(e) {
@@ -42,12 +42,16 @@ const MyComponent = () => {
     function submit(e) {
         e.preventDefault();
         console.log("Selected checkboxes: ", selectedCheckboxes);
-        post("/Add_modules");
-        try{
-            toast.success('submited');
-        }catch{
-            toast.error('failed')
-        }
+        post("/Add_modules", {
+            onSuccess: () => {
+                reset();
+                toast.success('Submitted');
+            },
+            onError: (error) => {
+                console.log(error);
+                toast.error('An error occurred while submitting the form');
+            },
+            });
     }
 
     return (
@@ -85,7 +89,10 @@ const MyComponent = () => {
                                     !selectedCheckboxes.includes(option.label)
                                 }
                             /> <br />
+                            <span className="text-white">
+
                             {option.label}
+                            </span>
                         </label>
                     ))}
                 </div>
