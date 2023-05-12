@@ -24,7 +24,7 @@ function info_error(props) {
     });
     function submit(e) {
         e.preventDefault();
-        post("/info_correct");
+        post("/correction_de_donnees");
         try{
             toast.success('submited');
         }catch{

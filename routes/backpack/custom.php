@@ -19,4 +19,7 @@ Route::group([
     Route::crud('document', 'DocumentCrudController');
     Route::crud('user', 'UserCrudController');
     Route::crud('email-log', 'EmailLogCrudController');
+    Route::crud('demande-ajout-de-module', 'DemandeAjoutDeModuleCrudController');
+    Route::crud('demande-correction-de-donnees', 'DemandeCorrectionDeDonneesCrudController');
+    Route::crud('demande-de-correction', 'DemandeDeCorrectionCrudController');
 }); // this should be the absolute last line of this file

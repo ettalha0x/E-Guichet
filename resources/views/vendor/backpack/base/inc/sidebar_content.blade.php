@@ -6,3 +6,6 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user') }}"><i class="nav-icon la la-question"></i> Users</a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('email-log') }}"><i class="nav-icon la la-question"></i> Email logs</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('demande-ajout-de-module') }}"><i class="nav-icon la la-question"></i> Demande ajout de modules</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('demande-correction-de-donnees') }}"><i class="nav-icon la la-question"></i> Demande correction de donnees</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('demande-de-correction') }}"><i class="nav-icon la la-question"></i> Demande de corrections</a></li>

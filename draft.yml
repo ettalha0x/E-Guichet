@@ -21,5 +21,42 @@ models:
       type_email: enum:"Demande de correction de note","Demande de correction de donnees","Demande d'ajout de module"
       timestamps: true
       softDeletes: true
+    
+    Models\Demande_de_correction:
+      id: integer
+      nom_tudiant: string
+      prenom_tudiant: string
+      cne_tudiant: string
+      cni_tudiant: string
+      appoge: string
+      semestre: string
+      module: string
+      type_email: enum:"Demande de correction de note"
+      timestamps: true
+      softDeletes: true
+    
+    Models\Demande_ajout_de_module:
+      id: integer
+      nom_tudiant: string
+      prenom_tudiant: string
+      cne_tudiant: string
+      cni_tudiant: string
+      appoge: string
+      semestre: string
+      module: string
+      type_email: enum:"Demande d ajout de module"
+      timestamps: true
+      softDeletes: true
+    
+    Models\Demande_correction_de_donnees:
+      id: integer
+      nom_tudiant: string
+      prenom_tudiant: string
+      cne_tudiant: string
+      cni_tudiant: string
+      appoge: string
+      type_email: enum:"Demande de correction de donnees"
+      timestamps: true
+      softDeletes: true
 
-seeders: Document ,Email_log
+seeders: Document ,Email_log,Demande_de_correction,Demande_ajout_de_module,Demande_correction_de_donnees

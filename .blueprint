@@ -1,15 +1,33 @@
 created:
     - database/factories/Models/DocumentFactory.php
     - database/factories/Models/EmailLogFactory.php
-    - database/migrations/2023_04_24_165137_create_documents_table.php
-    - database/migrations/2023_04_24_165138_create_email_logs_table.php
+    - database/factories/Models/DemandeDeCorrectionFactory.php
+    - database/factories/Models/DemandeAjoutDeModuleFactory.php
+    - database/factories/Models/DemandeCorrectionDeDonneesFactory.php
+    - database/migrations/2023_05_11_211832_create_documents_table.php
+    - database/migrations/2023_05_11_211833_create_email_logs_table.php
+    - database/migrations/2023_05_11_211834_create_demande_de_corrections_table.php
+    - database/migrations/2023_05_11_211835_create_demande_ajout_de_modules_table.php
+    - database/migrations/2023_05_11_211836_create_demande_correction_de_donnees_table.php
     - app/Models/Models/Document.php
     - app/Models/Models/Email_log.php
+    - app/Models/Models/Demande_de_correction.php
+    - app/Models/Models/Demande_ajout_de_module.php
+    - app/Models/Models/Demande_correction_de_donnees.php
     - database/seeders/DocumentSeeder.php
     - database/seeders/EmailLogSeeder.php
+    - database/seeders/DemandeDeCorrectionSeeder.php
+    - database/seeders/DemandeAjoutDeModuleSeeder.php
+    - database/seeders/DemandeCorrectionDeDonneesSeeder.php
 models:
-    Document: {  }
-    EmailLog: {  }
-    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    DemandeAjoutDeModule: { nom_etudiant: string, prenom_etudiant: string, cne_etudiant: string, cni_etudiant: string, appoge: string, semestre: string, module: string, type_email: 'enum:"Demande d ajout de module"' }
+    DemandeCorrectionDeDonnees: { nom_etudiant: string, prenom_etudiant: string, cne_etudiant: string, cni_etudiant: string, appoge: string, type_email: 'enum:"Demande de correction de donnees"' }
+    DemandeDeCorrection: { nom_etudiant: string, prenom_etudiant: string, cne_etudiant: string, cni_etudiant: string, appoge: string, semestre: string, module: string, type_email: 'enum:"Demande de correction de note"' }
+    Document: { nom: string, prenom: string, cne: string, cni: string, appoge: string, scolarite: 'boolean default:0', relevedenote: 'boolean default:0' }
+    EmailLog: { nome_tudiant: string, prenom_tudiant: string, cne_tudiant: string, cni_tudiant: string, appoge: string, type_email: 'enum:"Demande de correction de note","Demande de correction de donnees","Demande ajout de module"' }
+    User: { name: 'string nullable', prenom: 'string nullable', cne: 'string nullable', cni: 'string nullable', email: string, is_admin: 'boolean default:0', email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
     Models\Document: { id: integer, nom: string, prenom: string, cne: string, cni: string, appoge: string, scolarite: 'boolean default:0', relevedenote: 'boolean default:0', timestamps: timestamps, softdeletes: softDeletes }
     Models\Email_log: { id: integer, nom_tudiant: string, prenom_tudiant: string, cne_tudiant: string, cni_tudiant: string, appoge: string, type_email: 'enum:"Demande de correction de note","Demande de correction de donnees","Demande d''ajout de module"', timestamps: timestamps, softdeletes: softDeletes }
+    Models\Demande_de_correction: { id: integer, nom_tudiant: string, prenom_tudiant: string, cne_tudiant: string, cni_tudiant: string, appoge: string, semestre: string, module: string, type_email: 'enum:"Demande de correction de note"', timestamps: timestamps, softdeletes: softDeletes }
+    Models\Demande_ajout_de_module: { id: integer, nom_tudiant: string, prenom_tudiant: string, cne_tudiant: string, cni_tudiant: string, appoge: string, semestre: string, module: string, type_email: 'enum:"Demande d ajout de module"', timestamps: timestamps, softdeletes: softDeletes }
+    Models\Demande_correction_de_donnees: { id: integer, nom_tudiant: string, prenom_tudiant: string, cne_tudiant: string, cni_tudiant: string, appoge: string, type_email: 'enum:"Demande de correction de donnees"', timestamps: timestamps, softdeletes: softDeletes }

@@ -54,7 +54,7 @@ const Note = () => {
     function submit(e) {
         e.preventDefault();
         console.log(data)
-        post("/email_c");
+        post("/correction_de_note");
         try{
             toast.success('submited');
         }catch{
