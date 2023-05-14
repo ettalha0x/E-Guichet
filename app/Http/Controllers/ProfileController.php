@@ -37,7 +37,9 @@ class ProfileController extends Controller
         DB::table('email_logs')->insert($data);
     }
 
-
+    /*
+    * A function To Log modules  Emails
+    */
     private function insert_Ajout_De_Modules($type_email,$module,$semester) {
         $data = [
             'nom_etudiant' => auth()->user()->name,
@@ -56,7 +58,9 @@ class ProfileController extends Controller
         DB::table('demande_ajout_de_modules')->insert($data);
     }
 
-
+    /*
+    * A function To Log info Correction Emails
+    */
     private function insert_Correction_De_Donnees() {
         $data = [
             'nom_etudiant' => auth()->user()->name,
@@ -72,7 +76,9 @@ class ProfileController extends Controller
         
         DB::table('demande_correction_de_donnees')->insert($data);
     }
-
+    /*
+    * A function To Log Note Correction Emails
+    */
     private function insert_correction_de_note($module,$semester) {
         $data = [
             'nom_etudiant' => auth()->user()->name,
@@ -94,18 +100,54 @@ class ProfileController extends Controller
     *
     */
     
-    private function mail_validate($type_email)
+    private function mail_validate($number)
     {
-        $threeMonthsAgo = now()->subMonths(3);
-        $previousEmailLog = DB::table('email_logs')
+        $Number_of_Months = now()->subMonths($number);
+        $previousEmailLog = DB::table('demande_ajout_de_modules')
         ->where('appoge', '=', auth()->user()->email)
-        ->where('type_email', '=', $type_email)
-        ->where('created_at', '>=', $threeMonthsAgo)
+        ->where('created_at', '>=', $Number_of_Months)
         ->first();
 
         if ($previousEmailLog !== null)
             return FALSE;
     
+        return TRUE;
+    }
+
+    /*
+    * A function that validates the note corections email
+    */
+    
+    private function mail_validate_for_note($type_email,$number,$module,$semestre,$tabel)
+    {
+        $Number_of_Months = now()->subMonths($number);
+        $previousEmailLog = DB::table($tabel)
+        ->where('appoge', '=', auth()->user()->email)
+        ->where('type_email', '=', $type_email)
+        ->where('created_at', '>=', $Number_of_Months)
+        ->where('semestre', '=', $semestre)
+        ->where('module', '=', $module)
+        ->first();
+
+        if ($previousEmailLog !== null)
+            return FALSE;
+        return TRUE;
+    }
+
+    /*
+    *
+    */
+    private function mail_validate_for_info($type_email,$number,$tabel)
+    {
+        $Number_of_Months = now()->subMonths($number);
+        $previousEmailLog = DB::table($tabel)
+        ->where('appoge', '=', auth()->user()->email)
+        ->where('type_email', '=', $type_email)
+        ->where('created_at', '>=', $Number_of_Months)
+        ->first();
+
+        if ($previousEmailLog !== null)
+            return FALSE;
         return TRUE;
     }
 
@@ -130,22 +172,34 @@ class ProfileController extends Controller
         $receiver_1 = env('RECEIVER_1');
         $receiver_2 = env('RECEIVER_2');
         $receiver_3 = env('RECEIVER_3');
-        ////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////
 
         $module = $request->input('module');
         $semester = $request->input('semester');
+        $table = 'demande_de_corrections';
 
-        if ($this->mail_validate("Demande de correction de note")) 
+        if ($this->mail_validate_for_note("Demande de correction de note",3,$module,$semester,$table)) 
         {
-            # code...
-            // Mail::to($receiver_1)->send(new correctMail($module, $semester));
-            // Mail::to($receiver_2)->send(new correctMail($module, $semester));
-            // Mail::to($receiver_3)->send(new correctMail($module, $semester));
-    
-            //$this->insertEmailLog("Demande de correction de note");
+            
+            if ($semester != null && $module != null) 
+            {
+                    # code...
+                    Mail::to($receiver_1)->send(new correctMail($module, $semester));
+                    Mail::to($receiver_2)->send(new correctMail($module, $semester));
+                    Mail::to($receiver_3)->send(new correctMail($module, $semester));
+
+                    $this->insert_correction_de_note($module, $semester);    
+                }
+            else {
+                return redirect('error');
+            }
+        }
+        else {
+            
+            session()->flash('status', 'Task was unsuccessful!');
+
         }
         
-        $this->insert_correction_de_note($module, $semester);    
     }
 
     public function correction_de_donnees(Request $request)
@@ -154,7 +208,7 @@ class ProfileController extends Controller
         $receiver_1 = env('RECEIVER_1');
         $receiver_2 = env('RECEIVER_2');
         $receiver_3 = env('RECEIVER_3');
-        ////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////
 
         $data = [
             'nouveau nom' => $request->input('newname'),
@@ -164,14 +218,23 @@ class ProfileController extends Controller
             'nouveau date' => $request->input('newdate'),
         ];
        
+        $table = 'demande_correction_de_donnees	';
 
-        Mail::to($receiver_1)->send(new infoMail($data));
-        Mail::to($receiver_2)->send(new infoMail($data));
-        Mail::to($receiver_3)->send(new infoMail($data));
+        if ($this->mail_validate_for_info('Demande de correction de donnees',1,$table)) 
+        {
+            // Mail::to($receiver_1)->send(new infoMail($data));
+            // Mail::to($receiver_2)->send(new infoMail($data));
+            // Mail::to($receiver_3)->send(new infoMail($data));
+    
+            $this->insert_Correction_De_Donnees();
+            
+           
+        }
+        else {
+            
+            session()->flash('status', 'Task was unsuccessful!');
 
-        $this->insert_Correction_De_Donnees();
-
-
+        }
     }
 
     public function ajout_de_module(Request $request)
@@ -183,17 +246,26 @@ class ProfileController extends Controller
         ////////////////////////////////////////////////////////////////
 
         $modules = $request->input('modules');
-        $semester = $request->input('semester'); //   mohamed i need thisthe input name
+        $semester = $request->input('semester'); //   mohamed i need this input name
         $semester = 'yoursemester';
    
-        Mail::to($receiver_1)->send(new addMail($modules,$semester));
-        Mail::to($receiver_2)->send(new addMail($modules,$semester));
-        Mail::to($receiver_3)->send(new addMail($modules,$semester));
-
-        foreach ($modules as $module) {
-            $this->insert_Ajout_De_Modules( $module, $semester);
-        }
         
+        
+        if ($this->mail_validate(12)) 
+        {
+            # code...
+            
+            Mail::to($receiver_1)->send(new addMail($modules,$semester));
+            Mail::to($receiver_2)->send(new addMail($modules,$semester));
+            Mail::to($receiver_3)->send(new addMail($modules,$semester));
+    
+            foreach ($modules as $module) {
+                $this->insert_Ajout_De_Modules( 'Demande d ajout de module',$module, $semester);
+            }
+        }
+        else{
+            return redirect('error');
+        }
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
