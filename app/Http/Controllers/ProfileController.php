@@ -168,9 +168,11 @@ class ProfileController extends Controller
 
     public function correction_de_note(Request $request)
     {
-        //////////////RECEIVERS//////////////////
+        ////////////// vars from env//////////////////
         $receiver_1 = env('RECEIVER_1');
         $receiver_2 = env('RECEIVER_2');
+
+        $number =   env('Months_limit_for_Grades_Corrections');
         $receiver_3 = env('RECEIVER_3');
         /////////////////////////////////////////
 
@@ -178,7 +180,7 @@ class ProfileController extends Controller
         $semester = $request->input('semester');
         $table = 'demande_de_corrections';
 
-        if ($this->mail_validate_for_note("Demande de correction de note",3,$module,$semester,$table)) 
+        if ($this->mail_validate_for_note("Demande de correction de note",$number,$module,$semester,$table)) 
         {
             
             if ($semester != null && $module != null) 
@@ -207,6 +209,8 @@ class ProfileController extends Controller
         //////////////RECEIVERS//////////////////
         $receiver_1 = env('RECEIVER_1');
         $receiver_2 = env('RECEIVER_2');
+
+        $number =   env('Months_limit_for_Grades_Corrections');
         $receiver_3 = env('RECEIVER_3');
         ////////////////////////////////////////
 
@@ -220,11 +224,11 @@ class ProfileController extends Controller
        
         $table = 'demande_correction_de_donnees	';
 
-        if ($this->mail_validate_for_info('Demande de correction de donnees',1,$table)) 
+        if ($this->mail_validate_for_info('Demande de correction de donnees',$number,$table)) 
         {
-            // Mail::to($receiver_1)->send(new infoMail($data));
-            // Mail::to($receiver_2)->send(new infoMail($data));
-            // Mail::to($receiver_3)->send(new infoMail($data));
+            Mail::to($receiver_1)->send(new infoMail($data));
+            Mail::to($receiver_2)->send(new infoMail($data));
+            Mail::to($receiver_3)->send(new infoMail($data));
     
             $this->insert_Correction_De_Donnees();
             
@@ -242,6 +246,9 @@ class ProfileController extends Controller
         //////////////RECEIVERS//////////////////
         $receiver_1 = env('RECEIVER_1');
         $receiver_2 = env('RECEIVER_2');
+
+        $number =   env('Months_limit_for_Modules_add');
+
         $receiver_3 = env('RECEIVER_3');
         ////////////////////////////////////////////////////////////////
 
@@ -251,7 +258,7 @@ class ProfileController extends Controller
    
         
         
-        if ($this->mail_validate(12)) 
+        if ($this->mail_validate($number)) 
         {
             # code...
             

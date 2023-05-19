@@ -67,7 +67,7 @@ export default function Welcome({
                         </Link>
                     )}
                     </div>
-                    <div className=" grid gap-4">
+                    {/* <div className=" grid gap-4">
                     <h1 className=" text-lg font-semibold underline">continue comme administrateur</h1>
                     {auth.user ? (
                         <Link
@@ -84,7 +84,7 @@ export default function Welcome({
                             Log in
                         </Link>
                     )}
-                    </div>
+                    </div> */}
                     </div>
                 </div>
             </div>

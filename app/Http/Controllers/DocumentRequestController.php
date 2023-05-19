@@ -54,8 +54,10 @@ class DocumentRequestController extends Controller
         // Count the number of records for the current date
         $count = DB::table('document')->whereDate('created_at', $currentDate)->count();
 
-         // Check if the maximum limit of 40 records per day has been reached
-        if ($count >= 40) {
+         // Check if the maximum limit of  records per day has been reached
+            $number =  env('maximum_number_of_docs_per_day');
+
+        if ($count >= $number) {
             redirect('error'); //'Maximum limit of 40 records per day has been reached'
         }
         else {

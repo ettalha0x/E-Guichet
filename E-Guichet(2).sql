@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 16, 2023 at 12:58 AM
+-- Generation Time: May 20, 2023 at 01:44 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -89,38 +89,6 @@ INSERT INTO `document` (`id`, `nom`, `prenom`, `cne`, `cni`, `appoge`, `scolarit
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email_logs`
---
-
-CREATE TABLE `email_logs` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `nome_tudiant` varchar(255) NOT NULL,
-  `prenom_tudiant` varchar(255) NOT NULL,
-  `cne_tudiant` varchar(255) NOT NULL,
-  `cni_tudiant` varchar(255) NOT NULL,
-  `appoge` varchar(255) NOT NULL,
-  `type_email` enum('Demande de correction de note','Demande de correction de donnees','Demande ajout de module') NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `email_logs`
---
-
-INSERT INTO `email_logs` (`id`, `nome_tudiant`, `prenom_tudiant`, `cne_tudiant`, `cni_tudiant`, `appoge`, `type_email`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande ajout de module', '2023-05-07 11:59:33', '2023-05-07 11:59:33', NULL),
-(11, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande de correction de donnees', '2023-05-07 11:59:48', '2023-05-07 11:59:48', NULL),
-(13, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande de correction de donnees', '2023-05-09 15:53:53', '2023-05-09 15:53:53', NULL),
-(14, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande de correction de donnees', '2023-05-09 16:20:00', '2023-05-09 16:20:00', NULL),
-(15, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande de correction de donnees', '2023-05-09 16:23:19', '2023-05-09 16:23:19', NULL),
-(16, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande de correction de donnees', '2023-05-09 16:26:00', '2023-05-09 16:26:00', NULL),
-(20, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 'Demande de correction de note', '2023-05-09 17:30:35', '2023-05-09 17:30:35', NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `failed_jobs`
 --
 
@@ -164,7 +132,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (46, '2019_12_14_000001_create_personal_access_tokens_table', 10),
 (47, '2023_04_24_161740_create_email_logs_table', 10),
 (48, '2023_04_24_165137_create_documents_table', 10),
-(50, '2014_10_12_000000_create_users_table', 11),
 (51, '2015_09_07_190535_create_languages_table', 12),
 (52, '2015_09_10_124414_alter_languages_table', 12),
 (53, '2023_05_11_174851_create_documents_table', 13),
@@ -177,7 +144,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (63, '2023_05_11_192743_create_demande_correction_de_donnees_table', 16),
 (64, '2023_05_11_211834_create_demande_de_corrections_table', 17),
 (65, '2023_05_11_211835_create_demande_ajout_de_modules_table', 17),
-(66, '2023_05_11_211836_create_demande_correction_de_donnees_table', 17);
+(66, '2023_05_11_211836_create_demande_correction_de_donnees_table', 17),
+(68, '2014_10_12_000000_create_users_table', 18);
 
 -- --------------------------------------------------------
 
@@ -224,6 +192,8 @@ CREATE TABLE `users` (
   `cni` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `is_admin` tinyint(1) NOT NULL DEFAULT 0,
+  `Appoge` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
@@ -235,9 +205,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `prenom`, `cne`, `cni`, `email`, `is_admin`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'youssef', 'bachar', 't4358', 't4356', 'youssef.bachar7@gmail.com', 0, NULL, '$2y$10$AXXMxjPiCD94KG/MCw/xz.UFAxrhcw0y9u7yaLdJ/pw/OgW7F.5Vy', NULL, '2023-05-05 21:32:55', '2023-05-05 21:32:55'),
-(2, 'yhyA', 'bachar', 't273930', 't56588', 'admin@admin.com', 1, NULL, '$2y$10$GO3oZBh4sR1a.fHac//6T.IiPXa3sOW28tXQ2l7.YYz3z4h64z762', NULL, '2023-05-05 21:34:05', '2023-05-05 21:34:05');
+INSERT INTO `users` (`id`, `name`, `prenom`, `cne`, `cni`, `email`, `is_admin`, `Appoge`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'youssef', NULL, NULL, NULL, 'youssef.bachar7@gmail.com', 0, '12as45g', NULL, NULL, '$2y$10$clNodY3ubKjc7GXCv52b4e6K07u6o8DdpyeIt0n.Y1c4huL9.Xnqy', NULL, '2023-05-16 20:48:51', '2023-05-16 20:48:51'),
+(2, 'yhyA', NULL, NULL, NULL, 'admin@admin.com', 1, NULL, 'superadmin', NULL, '$2y$10$2QRU0W2Y73hebPwBo85v6Ogs.fYRhqsMfuVP5F94k/n8sBjDVVeIC', NULL, '2023-05-16 20:49:39', '2023-05-16 20:49:39'),
+(3, 'yhyA2', NULL, NULL, NULL, '2admin@admin.com', 1, NULL, 'doc', NULL, '$2y$10$yNOo01R5VIO1wJhJEwJSh.Jh7ImP2ia4pvFY.fa9y7Ie6YEeoipv2', NULL, '2023-05-16 20:54:18', '2023-05-16 20:54:18');
 
 --
 -- Indexes for dumped tables
@@ -247,12 +218,6 @@ INSERT INTO `users` (`id`, `name`, `prenom`, `cne`, `cni`, `email`, `is_admin`, 
 -- Indexes for table `document`
 --
 ALTER TABLE `document`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `email_logs`
---
-ALTER TABLE `email_logs`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -287,7 +252,9 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_appoge_unique` (`Appoge`),
+  ADD UNIQUE KEY `users_role_unique` (`role`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -300,12 +267,6 @@ ALTER TABLE `document`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `email_logs`
---
-ALTER TABLE `email_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -315,7 +276,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -327,7 +288,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
