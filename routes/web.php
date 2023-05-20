@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use app\Mail\correctionMail;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,5 +45,11 @@ Route::post('/document', [DocumentRequestController::class, 'store'])->name('doc
 
 
 
+
+    // Route::group(['middleware' => 'doc'], function () {
+    //     Route::post('/document', [DocumentRequestController::class, 'store'])
+    //         ->name('document-requests.store');
+    // });
+    
 
 require __DIR__.'/auth.php';
