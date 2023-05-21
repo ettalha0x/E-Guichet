@@ -85,7 +85,7 @@
               @foreach ($modules as $module)
                   <li>{{ $module }}</li>
               @endforeach
-              <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
+              <li><strong>Appoge:</strong> {{ auth()->user()->Appoge }}</li>
               <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
           </ul>
           <p>Je vous remercie pour votre attention rapide à cette affaire.</p>

@@ -19,23 +19,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    /**
-     * A function To Log All Emails
-     */
-    private function insertEmailLog($type_email) {
-        $data = [
-            'nome_etudiant' => auth()->user()->name,
-            'prenom_etudiant' => auth()->user()->prenom,
-            'cne_etudiant' => auth()->user()->cne,
-            'cni_etudiant' =>  auth()->user()->cni,
-            'appoge' =>  auth()->user()->email,
-            'type_email' => $type_email,
-            'created_at' => now(), 
-            'updated_at' => now(),
-        ];
-        
-        DB::table('email_logs')->insert($data);
-    }
+
 
     /*
     * A function To Log modules  Emails
@@ -46,7 +30,7 @@ class ProfileController extends Controller
             'prenom_etudiant' => auth()->user()->prenom,
             'cne_etudiant' => auth()->user()->cne,
             'cni_etudiant' =>  auth()->user()->cni,
-            'appoge' =>  auth()->user()->email,
+            'appoge' =>  auth()->user()->Appoge,
             'semestre' => $semester,
             'module' => $module,
             'type_email' => 'Demande d ajout de module',
@@ -67,7 +51,7 @@ class ProfileController extends Controller
             'prenom_etudiant' => auth()->user()->prenom,
             'cne_etudiant' => auth()->user()->cne,
             'cni_etudiant' =>  auth()->user()->cni,
-            'appoge' =>  auth()->user()->email,
+            'appoge' =>  auth()->user()->Appoge,
             'type_email' => 'Demande de correction de donnees',
             'created_at' => now(), 
             'updated_at' => now(),
@@ -85,7 +69,7 @@ class ProfileController extends Controller
             'prenom_etudiant' => auth()->user()->prenom,
             'cne_etudiant' => auth()->user()->cne,
             'cni_etudiant' =>  auth()->user()->cni,
-            'appoge' =>  auth()->user()->email,
+            'appoge' =>  auth()->user()->Appoge,
             'semestre' => $semester,
             'module' => $module,
             'type_email' => 'Demande de correction de note',
@@ -104,7 +88,7 @@ class ProfileController extends Controller
     {
         $Number_of_Months = now()->subMonths($number);
         $previousEmailLog = DB::table('demande_ajout_de_modules')
-        ->where('appoge', '=', auth()->user()->email)
+        ->where('appoge', '=', auth()->user()->Appoge)
         ->where('created_at', '>=', $Number_of_Months)
         ->first();
 
@@ -122,7 +106,7 @@ class ProfileController extends Controller
     {
         $Number_of_Months = now()->subMonths($number);
         $previousEmailLog = DB::table($tabel)
-        ->where('appoge', '=', auth()->user()->email)
+        ->where('appoge', '=', auth()->user()->Appoge)
         ->where('type_email', '=', $type_email)
         ->where('created_at', '>=', $Number_of_Months)
         ->where('semestre', '=', $semestre)
@@ -141,7 +125,7 @@ class ProfileController extends Controller
     {
         $Number_of_Months = now()->subMonths($number);
         $previousEmailLog = DB::table($tabel)
-        ->where('appoge', '=', auth()->user()->email)
+        ->where('appoge', '=', auth()->user()->Appoge)
         ->where('type_email', '=', $type_email)
         ->where('created_at', '>=', $Number_of_Months)
         ->first();
