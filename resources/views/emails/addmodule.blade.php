@@ -82,10 +82,11 @@
           <p>Voici mes détails :</p>
           <ul>
               <li><strong>Nom complet :</strong> {{ auth()->user()->name }}</li>
+              <li> <strong>Modules a ajouter :</strong> </li>
               @foreach ($modules as $module)
                   <li>{{ $module }}</li>
               @endforeach
               <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
-              <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
+              <li><strong>CNE:</strong> {{ auth()->user()->cne }}</li>
           </ul>
           <p>Je vous remercie pour votre attention rapide à cette affaire.</p>

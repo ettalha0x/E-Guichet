@@ -3,9 +3,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use Illuminate\Http\Request;
-
+use Exception;
+use Carbon\Carbon;
+use  Illuminate\Support\Facades\DB;
 class DocumentRequestController extends Controller
 {
+    private function documentRequest_validate($number)
+    {
+        $Number_of_Months = now()->subMonths($number);
+        $previousEmailLog = DB::table('document')
+        ->where('appoge', '=', auth()->user()->email)
+        ->where('created_at', '>=', $Number_of_Months)
+        ->first();
+
+        if ($previousEmailLog !== null)
+            return FALSE;
+
+        return TRUE;
+    }
+
+
+
+
     public function store(Request $request)
     {
         // Retrieve the selected documents from the request input
@@ -14,15 +33,9 @@ class DocumentRequestController extends Controller
 
             $documentRequest = new Document();
             $documentRequest->nom = $request->input('name');
-            $documentRequest->prenom = $request->input('prenom');
-            $documentRequest->cne = $request->input('cne');
-            $documentRequest->cni = $request->input('cni'); //can be nullable
-
-            ///////////////this is for testing only ///////////////////////
-            // $documentRequest->prenom = 'blabla';
-            // $documentRequest->cne = 'bloblo';
-            // $documentRequest->cni = 'bolb';
-            ///////////////////////////////
+            $documentRequest->prenom = auth()->user()->prenom;
+            $documentRequest->cne = auth()->user()->cne;
+            $documentRequest->cni = auth()->user()->cni;
             $documentRequest->appoge = $request->input('appoge');
             $scolarite = $request->input('scolarite');
             $releve = $request->input('relevedenote');
@@ -35,7 +48,35 @@ class DocumentRequestController extends Controller
             } elseif ($releve) {
                 $documentRequest->relevedenote = true;
             }
-            $documentRequest->save();
+
+        $currentDate = Carbon::now(config('app.timezone'))->format('Y-m-d');
+
+        // Count the number of records for the current date
+        $count = DB::table('document')->whereDate('created_at', $currentDate)->count();
+
+         // Check if the maximum limit of  records per day has been reached
+            $number =  env('maximum_number_of_docs_per_day');
+
+        if ($count >= $number) {
+            return inertia('Dashboard')->with([
+                'status' => 'error',
+                'message' => 'the limite of submit per day reached',
+            ]); //'Maximum limit of 40 records per day has been reached'
+        }
+        else {
+            if ($this->documentRequest_validate(1))
+            {
+                $documentRequest->save();
+                return inertia('Dashboard')->with([
+                    'status' => 'success',
+                    'message' => 'submited',
+                ]);
+            }
+            return inertia('Dashboard')->with([
+                'status' => 'erro',
+                'message' => 'alr submited',
+            ]);
+        }
 
 
         // Redirect the user to a confirmation page or show a success message

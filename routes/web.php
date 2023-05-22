@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use app\Mail\correctionMail;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,12 +38,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-route::post('/email_c',[ProfileController::class,'email_c']);
-route::post('/info_correct',[ProfileController::class,'info_correct']);
-route::post('/Add_modules',[ProfileController::class,'Add_modules']);
+route::post('/correction_de_note',[ProfileController::class,'correction_de_note']);
+route::post('/correction_de_donnees',[ProfileController::class,'correction_de_donnees']);
+route::post('/ajout_de_module',[ProfileController::class,'ajout_de_module']);
 Route::post('/document', [DocumentRequestController::class, 'store'])->name('document-requests.store');
 
 
 
+
+    // Route::group(['middleware' => 'doc'], function () {
+    //     Route::post('/document', [DocumentRequestController::class, 'store'])
+    //         ->name('document-requests.store');
+    // });
+    
 
 require __DIR__.'/auth.php';

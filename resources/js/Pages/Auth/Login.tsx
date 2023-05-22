@@ -35,7 +35,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
             <img src={logo} alt="" />
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="appoge" value="Appoge" />
+                    <InputLabel htmlFor="appoge" value="email" />
 
                     <TextInput
                         id="email"

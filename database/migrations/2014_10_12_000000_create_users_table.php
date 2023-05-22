@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('cni')->nullable();;
             $table->string('email')->unique();
             $table->boolean('is_admin')->default('0');
-           // $table->string('Appoge')->unique();
+            $table->string('Appoge')->unique()->nullable();
+            $table->string('role')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

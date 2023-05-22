@@ -85,7 +85,8 @@
         <li><strong>Nom et prénom:</strong> {{ auth()->user()->name }}</li>
         <li><strong>Semester:</strong> {{ auth()->user()->semestre }}</li>
         <li><strong>Appoge:</strong> {{ auth()->user()->email }}</li>
-        <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
+        <li><strong>CNE:</strong> {{ auth()->user()->cne }}</li>
+        <li><strong>les informations suivants:</strong></li>
           @foreach($data as $key => $value)
             @if(!empty($value))
             <p>{{ $key }}: {{ $value }}</p>

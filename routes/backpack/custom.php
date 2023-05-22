@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\SettingsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckUserRole;
+
+
 
 // --------------------------
 // Custom Backpack Routes
@@ -16,7 +20,21 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
-    Route::crud('document', 'DocumentCrudController');
-    Route::crud('user', 'UserCrudController');
-    Route::crud('email-log', 'EmailLogCrudController');
-}); // this should be the absolute last line of this file
+   // Route::crud('document', 'DocumentCrudController');
+   
+   Route::crud('document', 'DocumentCrudController');
+   Route::crud('demande-ajout-de-module', 'DemandeAjoutDeModuleCrudController');
+   Route::crud('demande-correction-de-donnees', 'DemandeCorrectionDeDonneesCrudController');
+   Route::crud('demande-de-correction', 'DemandeDeCorrectionCrudController');
+
+   Route::middleware(['auth','doc'])->group(function () {
+    
+    });
+    //Route::crud('sitings','sitingsController');
+    Route::get('settings', 'SettingsController@index')->name('page.settings.index');
+    
+    Route::get('parametre', 'SettingsController@parametre')->name('page.settings.parametre');
+
+   
+    //store-pram
+}); // this should be the absolute last line of this file 

@@ -24,16 +24,20 @@ function info_error(props) {
     });
     function submit(e) {
         e.preventDefault();
-        post("/info_correct", {
-        onSuccess: () => {
-            reset();
-            toast.success('Submitted');
-        },
-        onError: (error) => {
-            console.log(error);
-            toast.error('An error occurred while submitting the form');
-        },
-        });
+        post("/correction_de_donnees", {
+            onSuccess: (response) => {
+                reset();
+                if (response.props.status === 'success') {
+                    toast.success(response.props.message);
+                } else {
+                    toast.error(response.props.message);
+                  }
+              },
+              onError: (error) => {
+                console.log(error);
+                toast.error('Error');
+              },
+            });
     }
 
 

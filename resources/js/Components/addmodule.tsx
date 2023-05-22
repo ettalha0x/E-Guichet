@@ -2,6 +2,7 @@ import { useState } from "react";
 import list from "./moduledata.json";
 import { useForm, usePage } from "@inertiajs/react";
 import {toast } from 'react-toastify';
+import mails from "./email_list.json";
 
 const MyComponent = () => {
     const { auth } = usePage().props;
@@ -10,7 +11,8 @@ const MyComponent = () => {
     const maxcheck = 3;
     const [selectedSemester, setSelectedSemester] = useState(1);
 
-    const semester = list.find((item) => item.id === "1");
+    const mail = mails.find((item) => item.name === auth.user.fillier);
+    const semester = list.find((item) => item.name === auth.user.fillier);
     const moduleOptions = semester.semestre[selectedSemester - 1].module.map(
         (module) => ({
             value: module.id,
@@ -19,7 +21,9 @@ const MyComponent = () => {
         );
 
         const { data, setData, post, processing , reset} = useForm({
-            modules : []
+            semestre : semester.semestre[selectedSemester - 1].name,
+            modules : [],
+            receiver : mail?.email
         });
         function handleCheckboxChange(e) {
             const checkboxLabel = e.target.name;
@@ -38,21 +42,25 @@ const MyComponent = () => {
             }
           }
 
-
-    function submit(e) {
-        e.preventDefault();
-        console.log("Selected checkboxes: ", selectedCheckboxes);
-        post("/Add_modules", {
-            onSuccess: () => {
+          function submit(e) {
+            e.preventDefault();
+            console.log(data);
+            post("/ajout_de_module", {
+              onSuccess: (response) => {
                 reset();
-                toast.success('Submitted');
-            },
-            onError: (error) => {
+                if (response.props.status === 'success') {
+                    toast.success(response.props.message);
+                } else {
+                    toast.error(response.props.message);
+                  }
+              },
+              onError: (error) => {
                 console.log(error);
-                toast.error('An error occurred while submitting the form');
-            },
+                toast.error('Error');
+              },
             });
-    }
+          }
+
 
     return (
         <div className="grid gap-4">

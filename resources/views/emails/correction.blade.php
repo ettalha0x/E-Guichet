@@ -86,6 +86,6 @@
             <li><strong>Semestre :</strong> {{$semester}}</li>
             <li><strong>Module :</strong> {{$module}}</li>
             <li><strong>Appoge :</strong> {{ auth()->user()->email }}</li>
-            <li><strong>CNI :</strong> {{ auth()->user()->cni }}</li>
+            <li><strong>CNE :</strong> {{ auth()->user()->cne }}</li>
         </ul>
         <p>Je vous remercie pour votre attention rapide à cette affaire. </p>

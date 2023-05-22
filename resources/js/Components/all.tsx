@@ -153,7 +153,7 @@ function Home() {
                                     <span className=" font-semibold">
                                         Semester :{" "}
                                     </span>
-                                    <span>{auth.user.semestre} </span>
+                                    <span>{auth.user.semester} </span>
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">

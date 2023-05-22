@@ -3,6 +3,8 @@ import { Select } from "antd";
 import list from "./moduledata.json";
 import { useState, useEffect } from "react";
 import {toast } from 'react-toastify';
+import mails from "./email_list.json";
+
 
 
 const { Option } = Select;
@@ -12,13 +14,14 @@ const Note = () => {
     const { auth } = usePage().props;
     const [semesname, setSemesname] = useState("");
     const [modulname, setModulname] = useState("");
+    const mail = mails.find((item) => item.name === auth.user.fillier);
     const { data, setData, post, processing , reset} = useForm({
         semester: semesname,
-        module: modulname
+        module: modulname,
+        receiver : mail?.email
     });
     const [selectedSemester, setSelectedSemester] = useState(0);
-
-    const semester = list.find((item) => item.id === "1");
+    const semester = list.find((item) => item.name === auth.user.fillier);
     if (selectedSemester === 0) {
         moduleOptions = semester.semestre[selectedSemester].module.map(
             (module) => ({
@@ -34,7 +37,6 @@ const Note = () => {
             })
         );
     }
-
     useEffect(() => {
         setData((currentData) => ({
             ...currentData,
@@ -53,16 +55,19 @@ const Note = () => {
     };
     function submit(e) {
         e.preventDefault();
-        console.log(data)
-        post("/email_c", {
-            onSuccess: () => {
+        post("/correction_de_note", {
+            onSuccess: (response) => {
                 reset();
-                toast.success('Submitted');
-            },
-            onError: (error) => {
+                if (response.props.status === 'success') {
+                    toast.success(response.props.message);
+                } else {
+                    toast.error(response.props.message);
+                  }
+              },
+              onError: (error) => {
                 console.log(error);
-                toast.error('An error occurred while submitting the form');
-            },
+                toast.error('Error');
+              },
             });
     }
     return (
@@ -72,7 +77,7 @@ const Note = () => {
                 <select
                     value={selectedSemester}
                     onChange={handelsemester}
-                    className="w-auto rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
+                    className="w-52 rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
                 >
                     <option value="">Select a semester</option>
                     {semester.semestre.map((semester) => (
@@ -84,7 +89,7 @@ const Note = () => {
                 <h1 className="text-center text-white text-lg font-semibold">Choisir module</h1>
                 <select
                     onChange={handelmodule}
-                    className="w-auto rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
+                    className="w-52 rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
                 >
                     <option value="">Select a module</option>
                     {moduleOptions.map((option) => (
