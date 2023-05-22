@@ -39,6 +39,12 @@
       <input type="text" name="max_doc" class="form-control" id="max-doc" value="{{$max_doc}}">
       <div id="max_doc-error" class="text-danger"></div>
     </div>
+
+    <div class="mb-3 col-6">
+      <label for="exampleInputPassword1" class="form-label">Nombre de mois limite pour demander des documents</label>
+      <input type="text" name="doc_r" class="form-control" id="doc-r" value="{{$doc_r}}">
+      <div id="doc_r-error" class="text-danger"></div>
+    </div>
    
 
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -92,6 +98,9 @@
     var maxdocInput = document.getElementById("max-doc").value;
     var maxdocError = document.getElementById("max_doc-error");
 
+    var docInput = document.getElementById("doc-r").value;
+    var docError = document.getElementById("doc_r-error");
+
    // Regular expression pattern for integer validation
    var intPattern = /^\d+$/;
 
@@ -112,16 +121,22 @@
         maxdocError.innerHTML = errorMessage;
         return false;
     }
+    else if(!intPattern.test(docInput)) {
+      docError.innerHTML = errorMessage;
+        return false;
+    }
     else {
       noteCorrectionError.className = "text-success";
       infoCorrectionError.className = "text-success";
       m_add_Error.className = "text-success";
       maxdocError.className = "text-success";
+      docError.className = "text-success";
 
       noteCorrectionError.innerHTML = successMessage;
       infoCorrectionError.innerHTML = successMessage;
       m_add_Error.innerHTML = successMessage;
       maxdocError.innerHTML = successMessage;
+      docError.innerHTML = successMessage;
       return true;
     }
   }

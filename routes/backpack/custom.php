@@ -13,6 +13,7 @@ use App\Http\Middleware\CheckUserRole;
 // Routes you generate using Backpack\Generators will be placed here.
 
 Route::group([
+    
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(
         (array) config('backpack.base.web_middleware', 'web'),
@@ -20,21 +21,22 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
-   // Route::crud('document', 'DocumentCrudController');
-   
+  
+  // admin routes 
    Route::crud('document', 'DocumentCrudController');
-   Route::crud('demande-ajout-de-module', 'DemandeAjoutDeModuleCrudController');
-   Route::crud('demande-correction-de-donnees', 'DemandeCorrectionDeDonneesCrudController');
-   Route::crud('demande-de-correction', 'DemandeDeCorrectionCrudController');
-
-   Route::middleware(['auth','doc'])->group(function () {
-    
+   
+   Route::middleware(['superadmin'])->group(function () {
+       // super admin routes
+       Route::crud('demande-de-correction', 'DemandeDeCorrectionCrudController');
+       Route::crud('demande-correction-de-donnees', 'DemandeCorrectionDeDonneesCrudController');
+       Route::crud('demande-ajout-de-module', 'DemandeAjoutDeModuleCrudController');
+       Route::get('settings', 'SettingsController@index')->name('page.settings.index');
+       Route::get('parametre', 'SettingsController@parametre')->name('page.settings.parametre');
     });
-    //Route::crud('sitings','sitingsController');
-    Route::get('settings', 'SettingsController@index')->name('page.settings.index');
+  
     
-    Route::get('parametre', 'SettingsController@parametre')->name('page.settings.parametre');
 
    
     //store-pram
 }); // this should be the absolute last line of this file 
+

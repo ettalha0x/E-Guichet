@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use app\Mail\correctionMail;
+use App\Http\Controllers\Admin\SettingsController;
 
 
 /*
@@ -44,12 +45,6 @@ route::post('/ajout_de_module',[ProfileController::class,'ajout_de_module']);
 Route::post('/document', [DocumentRequestController::class, 'store'])->name('document-requests.store');
 
 
-
-
-    // Route::group(['middleware' => 'doc'], function () {
-    //     Route::post('/document', [DocumentRequestController::class, 'store'])
-    //         ->name('document-requests.store');
-    // });
     
 
 require __DIR__.'/auth.php';

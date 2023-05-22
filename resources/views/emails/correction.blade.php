@@ -85,7 +85,7 @@
             <li><strong>Nom complet :</strong> {{ auth()->user()->name }}</li>
             <li><strong>Semestre :</strong> {{$semester}}</li>
             <li><strong>Module :</strong> {{$module}}</li>
-            <li><strong>Appoge :</strong> {{ auth()->user()->email }}</li>
+            <li><strong>Appoge :</strong> {{ auth()->user()->Appoge }}</li>
             <li><strong>CNI :</strong> {{ auth()->user()->cni }}</li>
         </ul>
         <p>Je vous remercie pour votre attention rapide à cette affaire. </p>

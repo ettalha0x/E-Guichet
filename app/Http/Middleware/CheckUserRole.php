@@ -14,12 +14,12 @@ class CheckUserRole
     public function handle($request, Closure $next)
     {
        
-        dd(Auth::user()); 
+      
 
         if ($request->user() && $request->user()->role === 'superadmin') {
             return $next($request);
         }
-       // abort(403, 'Unauthorized action.');
+        abort(403, 'Unauthorized action.');
 
     }
 }

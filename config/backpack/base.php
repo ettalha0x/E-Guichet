@@ -24,7 +24,7 @@ return [
     // ----
 
     // Project name. Shown in the window title.
-    'project_name' => 'Backpack Admin Panel',
+    'project_name' => 'Admin Panel',
 
     // When clicking on the admin panel's top-left logo/name,
     // where should the user be redirected?
@@ -85,7 +85,8 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<b>Back</b>pack',
+    'project_logo'   => '<b>Admin</b>istration',
+
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
@@ -267,7 +268,7 @@ return [
         App\Http\Middleware\CheckIfAdmin::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \Backpack\CRUD\app\Http\Middleware\AuthenticateSession::class,
-        // \Backpack\CRUD\app\Http\Middleware\UseBackpackAuthGuardInsteadOfDefaultAuthGuard::class,
+         \Backpack\CRUD\app\Http\Middleware\UseBackpackAuthGuardInsteadOfDefaultAuthGuard::class,
     ],
 
     // Alias for that middleware

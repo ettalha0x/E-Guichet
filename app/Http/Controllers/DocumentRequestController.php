@@ -12,7 +12,7 @@ class DocumentRequestController extends Controller
     {
         $Number_of_Months = now()->subMonths($number);
         $previousEmailLog = DB::table('document')
-        ->where('appoge', '=', auth()->user()->email)
+        ->where('appoge', '=', auth()->user()->Appoge)
         ->where('created_at', '>=', $Number_of_Months)
         ->first();
 
@@ -49,19 +49,23 @@ class DocumentRequestController extends Controller
                 $documentRequest->relevedenote = true;
             }
 
+        // Get the current Date
         $currentDate = Carbon::now(config('app.timezone'))->format('Y-m-d');
 
         // Count the number of records for the current date
         $count = DB::table('document')->whereDate('created_at', $currentDate)->count();
 
-         // Check if the maximum limit of  records per day has been reached
-            $number =  env('maximum_number_of_docs_per_day');
+        // Check if the maximum limit of  records per day has been reached
+        $number =  env('maximum_number_of_docs_per_day');
+        
+        // giting the env var for the validation
+        $num_Monts =  env('maximum_number_of_docs_per_day'); //1
 
         if ($count >= $number) {
             redirect('error'); //'Maximum limit of 40 records per day has been reached'
         }
         else {
-            if ($this->documentRequest_validate(1))
+            if ($this->documentRequest_validate($num_Monts))
                 $documentRequest->save();
         }
 
