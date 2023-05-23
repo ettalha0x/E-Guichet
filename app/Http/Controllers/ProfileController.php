@@ -232,7 +232,6 @@ class ProfileController extends Controller
         $receiver_2 = env('RECEIVER_2');
 
         $number =   env('Months_limit_for_Modules_add');
-        dd( $request->input('receiver'));
 
         $receiver_3 = env('RECEIVER_3');
         ////////////////////////////////////////////////////////////////
