@@ -1,13 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+ 
   
   <style>
     /* Custom styles */
     body {
-      /* height: 100vh;
-      display: flex; */
-     
-    /* background-color: #FFF5E6; */
-      /* overflow: hidden; */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFF5E6;
+      overflow: hidden;
       background-size: cover;
       background-image: url('https://images.wallpaperscraft.com/image/single/work_pencil_drawing_4505_1280x720.jpg');
     
@@ -15,7 +20,7 @@
     }
 
     /* Import Holidays Homework font */
-    /* @import url('https://fonts.cdnfonts.com/css/holidays-homework'); */
+    @import url('https://fonts.cdnfonts.com/css/holidays-homework');
 
     #welcome {
       font-size: 64px;
@@ -23,14 +28,12 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       font-family: 'Holidays Homework', sans-serif;
       animation: floatAnimation 3s infinite ease-in-out;
-      justify-content: center;
-      align-items: center;
     }
 
     #datetime {
-      /* position: absolute;
+      position: absolute;
       top: 10px;
-      right: 10px; */
+      right: 10px;
       color: #336699;
       text-align: right;
       font-family: "Arial", sans-serif;
@@ -70,13 +73,13 @@
       100% { background-position: 2000px 2000px; }
     }
   </style>
+</head>
 
-
-
+<body>
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <h1 id="welcome">Bienvenue, {{ auth()->user()->name}} !</h1>
+        <h1 id="welcome">Bienvenue, Jon !</h1>
       </div>
     </div>
   </div>
@@ -106,6 +109,10 @@
     </script>
   </div>
 
+  <div class="animated-bg"></div>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
- 
+</html>
