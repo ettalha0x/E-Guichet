@@ -18,7 +18,7 @@ class DocumentRequestController extends Controller
 
         if ($previousEmailLog !== null)
             return FALSE;
-    
+
         return TRUE;
     }
 
@@ -57,20 +57,33 @@ class DocumentRequestController extends Controller
 
         // Check if the maximum limit of  records per day has been reached
         $number =  env('maximum_number_of_docs_per_day');
-        
+
         // giting the env var for the validation
         $num_Monts =  env('maximum_number_of_docs_per_day'); //1
 
         if ($count >= $number) {
-            redirect('error'); //'Maximum limit of 40 records per day has been reached'
+            return inertia('Dashboard')->with([
+                'status' => 'error',
+                'message' => 'the limite of submit per day reached',
+            ]); //'Maximum limit of 40 records per day has been reached'
         }
         else {
             if ($this->documentRequest_validate($num_Monts))
+            {
                 $documentRequest->save();
+                return inertia('Dashboard')->with([
+                    'status' => 'success',
+                    'message' => 'submited',
+                ]);
+            }
+            return inertia('Dashboard')->with([
+                'status' => 'erro',
+                'message' => 'alr submited',
+            ]);
         }
 
 
-        // Redirect the user to a confirmation page or show a success message  
+        // Redirect the user to a confirmation page or show a success message
         return redirect('/dashboard')->with('success', 'Document request submitted successfully');
     }
 }
