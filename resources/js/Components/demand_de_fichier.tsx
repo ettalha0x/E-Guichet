@@ -6,7 +6,7 @@ import {toast } from 'react-toastify';
 function Fichier() {
     const { auth } = usePage().props;
 
-    const { data, setData, post , processing } = useForm({
+    const { data, setData, post , processing , reset} = useForm({
         name : auth.user.name,
         prenom : auth.user.prenom,
         cne : auth.user.cne,
@@ -18,17 +18,20 @@ function Fichier() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        post("/document",data)
-        .then(() => {
-            console.log('done');
-            setData("scolarite", false);
-            setData("relevedenote", false);
+        post("/document", {
+        onSuccess: (response) => {
+            reset();
+            if (response.props.status === 'success') {
+                toast.success(response.props.message);
+            } else {
+                toast.error(response.props.message);
+              }
+          },
+          onError: (error) => {
+            console.log(error);
+            toast.error('Error');
+          },
         });
-        try{
-            toast.success('submited');
-        }catch{
-            toast.error('failed');
-        }
     }
 
     return (

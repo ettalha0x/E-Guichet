@@ -12,15 +12,17 @@ class addMail extends Mailable
     use Queueable, SerializesModels;
 
     public $modules;
+    public $semester;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($modules)
+    public function __construct($modules, $semester)
     {
         $this->modules = $modules;
+        $this->semester = $semester;
     }
 
     /**
@@ -33,6 +35,7 @@ class addMail extends Mailable
         return $this->view('emails.addmodule')
                     ->with([
                         'modules' => $this->modules,
+                        'semester' => $this->semester
                     ]);
     }
 }

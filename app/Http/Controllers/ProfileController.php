@@ -34,11 +34,11 @@ class ProfileController extends Controller
             'semestre' => $semester,
             'module' => $module,
             'type_email' => 'Demande d ajout de module',
-            'created_at' => now(), 
+            'created_at' => now(),
             'updated_at' => now(),
-            
+
         ];
-        
+
         DB::table('demande_ajout_de_modules')->insert($data);
     }
 
@@ -53,11 +53,11 @@ class ProfileController extends Controller
             'cni_etudiant' =>  auth()->user()->cni,
             'appoge' =>  auth()->user()->Appoge,
             'type_email' => 'Demande de correction de donnees',
-            'created_at' => now(), 
+            'created_at' => now(),
             'updated_at' => now(),
-            
+
         ];
-        
+
         DB::table('demande_correction_de_donnees')->insert($data);
     }
     /*
@@ -73,17 +73,17 @@ class ProfileController extends Controller
             'semestre' => $semester,
             'module' => $module,
             'type_email' => 'Demande de correction de note',
-            'created_at' => now(), 
+            'created_at' => now(),
             'updated_at' => now(),
-            
+
         ];
-        
+
         DB::table('demande_de_corrections')->insert($data);
     }
     /*
     *
     */
-    
+
     private function mail_validate($number)
     {
         $Number_of_Months = now()->subMonths($number);
@@ -94,14 +94,14 @@ class ProfileController extends Controller
 
         if ($previousEmailLog !== null)
             return FALSE;
-    
+
         return TRUE;
     }
 
     /*
     * A function that validates the note corections email
     */
-    
+
     private function mail_validate_for_note($type_email,$number,$module,$semestre,$tabel)
     {
         $Number_of_Months = now()->subMonths($number);
@@ -150,114 +150,132 @@ class ProfileController extends Controller
      * Update the user's profile information.
      */
 
-    public function correction_de_note(Request $request)
-    {
-        ////////////// vars from env//////////////////
-        $receiver_1 = env('RECEIVER_1');
-        $receiver_2 = env('RECEIVER_2');
+     public function correction_de_note(Request $request)
+     {
+         ////////////// vars from env//////////////////
+         $receiver_1 = env('RECEIVER_1');
+         $receiver_2 = env('RECEIVER_2');
+         $receiver_3 = $request->input('receiver');
 
-        $number =   env('Months_limit_for_Grades_Corrections');
-        $receiver_3 = env('RECEIVER_3');
-        /////////////////////////////////////////
+         $number =   env('Months_limit_for_Grades_Corrections');
+         /////////////////////////////////////////
 
-        $module = $request->input('module');
-        $semester = $request->input('semester');
-        $table = 'demande_de_corrections';
+         $module = $request->input('module');
+         $semester = $request->input('semester');
+         $table = 'demande_de_corrections';
 
-        if ($this->mail_validate_for_note("Demande de correction de note",$number,$module,$semester,$table)) 
+         if ($this->mail_validate_for_note("Demande de correction de note",$number,$module,$semester,$table))
+         {
+
+             if ($semester != null && $module != null)
+             {
+                     # code...
+                     Mail::to($receiver_1)->send(new correctMail($module, $semester));
+                     Mail::to($receiver_2)->send(new correctMail($module, $semester));
+                     Mail::to($receiver_3)->send(new correctMail($module, $semester));
+
+                     $this->insert_correction_de_note($module, $semester);
+                     return inertia('Dashboard')->with([
+                         'status' => 'success',
+                         'message' => 'submited',
+                     ]);
+                 }
+             else {
+                 return inertia('Dashboard')->with([
+                     'status' => 'success',
+                     'message' => 'submited',
+                 ]);
+             }
+         }
+         else {
+             return inertia('Dashboard')->with([
+                 'status' => 'error',
+                 'message' => 'not sub',
+             ]);
+         }
+        }
+
+        public function correction_de_donnees(Request $request)
         {
-            
-            if ($semester != null && $module != null) 
+            //////////////RECEIVERS//////////////////
+            $receiver_1 = env('RECEIVER_1');
+            $receiver_2 = env('RECEIVER_2');
+
+            $number =   env('Months_limit_for_Grades_Corrections');
+            $receiver_3 = env('RECEIVER_3');
+            ////////////////////////////////////////
+
+            $data = [
+                'nouveau nom' => $request->input('newname'),
+                'nouveau renom' => $request->input('newprenom'),
+                'nouveau cne' => $request->input('newcne'),
+                'nouveau cni' => $request->input('newcni'),
+                'nouveau date' => $request->input('newdate'),
+            ];
+
+            $table = 'demande_correction_de_donnees';
+
+            if ($this->mail_validate_for_info('Demande de correction de donnees',$number,$table))
             {
-                    # code...
-                    Mail::to($receiver_1)->send(new correctMail($module, $semester));
-                    Mail::to($receiver_2)->send(new correctMail($module, $semester));
-                    Mail::to($receiver_3)->send(new correctMail($module, $semester));
+                Mail::to($receiver_1)->send(new infoMail($data));
+                Mail::to($receiver_2)->send(new infoMail($data));
+                Mail::to($receiver_3)->send(new infoMail($data));
 
-                    $this->insert_correction_de_note($module, $semester);    
-                }
+                $this->insert_Correction_De_Donnees();
+
+                return inertia('Dashboard')->with([
+                    'status' => 'success',
+                    'message' => 'submited',
+                ]);
+            }
             else {
-                return redirect('error');
+                return inertia('Dashboard')->with([
+                    'status' => 'error',
+                    'message' => 'you alr change your info',
+                ]);
+
             }
         }
-        else {
-            
-            session()->flash('status', 'Task was unsuccessful!');
 
-        }
-        
-    }
-
-    public function correction_de_donnees(Request $request)
-    {
-        //////////////RECEIVERS//////////////////
-        $receiver_1 = env('RECEIVER_1');
-        $receiver_2 = env('RECEIVER_2');
-
-        $number =   env('Months_limit_for_Grades_Corrections');
-        $receiver_3 = env('RECEIVER_3');
-        ////////////////////////////////////////
-
-        $data = [
-            'nouveau nom' => $request->input('newname'),
-            'nouveau renom' => $request->input('newprenom'),
-            'nouveau cne' => $request->input('newcne'),
-            'nouveau cni' => $request->input('newcni'),
-            'nouveau date' => $request->input('newdate'),
-        ];
-       
-        $table = 'demande_correction_de_donnees	';
-
-        if ($this->mail_validate_for_info('Demande de correction de donnees',$number,$table)) 
+        public function ajout_de_module(Request $request)
         {
-            Mail::to($receiver_1)->send(new infoMail($data));
-            Mail::to($receiver_2)->send(new infoMail($data));
-            Mail::to($receiver_3)->send(new infoMail($data));
-    
-            $this->insert_Correction_De_Donnees();
-            
-           
-        }
-        else {
-            
-            session()->flash('status', 'Task was unsuccessful!');
+            //////////////RECEIVERS//////////////////
+            $receiver_1 = env('RECEIVER_1');
+            $receiver_2 = env('RECEIVER_2');
 
-        }
-    }
+            $number =   env('Months_limit_for_Modules_add');
 
-    public function ajout_de_module(Request $request)
-    {
-        //////////////RECEIVERS//////////////////
-        $receiver_1 = env('RECEIVER_1');
-        $receiver_2 = env('RECEIVER_2');
+            $receiver_3 =  $request->input('receiver');;
+            ////////////////////////////////////////////////////////////////
 
-        $number =   env('Months_limit_for_Modules_add');
+            $modules = $request->input('modules');
+            $semester = $request->input('semester');
 
-        $receiver_3 = env('RECEIVER_3');
-        ////////////////////////////////////////////////////////////////
 
-        $modules = $request->input('modules');
-        $semester = $request->input('semester'); //   mohamed i need this input name
-        $semester = 'yoursemester';
-   
-        
-        
-        if ($this->mail_validate($number)) 
-        {
-            # code...
-            
-            Mail::to($receiver_1)->send(new addMail($modules,$semester));
-            Mail::to($receiver_2)->send(new addMail($modules,$semester));
-            Mail::to($receiver_3)->send(new addMail($modules,$semester));
-    
-            foreach ($modules as $module) {
-                $this->insert_Ajout_De_Modules( 'Demande d ajout de module',$module, $semester);
+
+            if ($this->mail_validate($number))
+            {
+                # code...
+
+                Mail::to($receiver_1)->send(new addMail($modules,$semester));
+                Mail::to($receiver_2)->send(new addMail($modules,$semester));
+                Mail::to($receiver_3)->send(new addMail($modules,$semester));
+
+                foreach ($modules as $module) {
+                    $this->insert_Ajout_De_Modules( 'Demande d ajout de module',$module, $semester);
+                }
+                return inertia('Dashboard')->with([
+                    'status' => 'success',
+                    'message' => 'submited',
+                ]);
+            }
+            else{
+                return inertia('Dashboard')->with([
+                    'status' => 'error',
+                    'message' => 'you can submite once in year',
+                ]);
             }
         }
-        else{
-            return redirect('error');
-        }
-    }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
