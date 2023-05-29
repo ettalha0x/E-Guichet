@@ -13,7 +13,7 @@ import { BiAddToQueue } from "react-icons/bi";
 import { IoDocuments } from "react-icons/io5";
 import { HiCheckCircle } from "react-icons/hi";
 
-function Home() {
+function Home({ t, i18n }) {
     const [modal, setModal] = useState(false);
 
     const [profile, setprofile] = useState(false);
@@ -84,7 +84,7 @@ function Home() {
                         onClick={() => handleModalChange(!modal)}
                         className=" fixed w-screen h-screen top-0 right-0 left-0 bottom-0 bg-[rgba(49,49,49,0.8)]"
                     ></div>
-                    <Error modal={modal} onModalChange={handleModalChange} />
+                    <Error t={t} i18n={i18n}  modal={modal} onModalChange={handleModalChange} />
                 </div>
             )}
             <div className="">
@@ -92,7 +92,7 @@ function Home() {
                     <div className="md:bg-gradient-to-r bg-gradient-to-b from-gray-200 p-12  grid gap-8">
                         <h1 className=" font-semibold text-3xl">
                             <span>
-                                Bienvenu, <br />
+                                {t('welcome')} <br />
                             </span>
                             <span className="text-blue-500">
                                 {auth.user.name}
@@ -112,7 +112,7 @@ function Home() {
                                 <FaUserGraduate className="text-3xl text-[#C5CCFF]" />
                             </div>
                             <span className="font-semibold">
-                                Personal information
+                                {t('perosnal inf')}
                             </span>
                             {!profile &&(
                             <span className="triangle"></span>
@@ -133,36 +133,36 @@ function Home() {
                                 </h1>
                                 <h1>
                                     <span className="font-semibold">
-                                        Appoge :{" "}
+                                        {t('appoge')} :{" "}
                                     </span>
                                     <span>{auth.user.email}</span>
                                 </h1>
                                 <h1>
                                     <span className="font-semibold">
-                                        Cne :{" "}
+                                        {t("cne")} :{" "}
                                     </span>
                                     <span>{auth.user.cne} </span>
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">
-                                        Cni :{" "}
+                                        {t('cni')} :{" "}
                                     </span>
                                     <span>{auth.user.cni} </span>
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">
-                                        Semester :{" "}
+                                        {t("semestre")} :{" "}
                                     </span>
-                                    <span>{auth.user.semestre} </span>
+                                    <span>{auth.user.semester} </span>
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">
-                                        fillier :{" "}
+                                        {t('fillier')} :{" "}
                                     </span>
                                     <span>{auth.user.fillier}</span>
                                 </h1>
                                 <button className="bg-blue-800 text-white rounded w-28 p-2 shadow" onClick={() => handleModalChange(!modal)}>
-                                    Error au info
+                                    {t("error")}
                                 </button>
                             </div>
                         )}
@@ -176,7 +176,7 @@ function Home() {
                                 <BiAddToQueue className="text-3xl text-[#0C5AFF]" />
                             </div>
                             <span className="font-semibold">
-                                Ajouter des modules
+                                {t('addmodule')}
                             </span>
                             {!module && (
                             <span className="triangle"></span>
@@ -185,7 +185,7 @@ function Home() {
                         {module && (
                             <div className="second  shadow-lg grid gap-4 w-64 bg-[#0C5AFF] p-6 rounded relative animate__fadeIn">
                                 <span className="card_triangle"></span>
-                                <Addmodule />
+                                <Addmodule t={t} i18n={i18n}  />
                             </div>
                         )}
                     </div>
@@ -198,7 +198,7 @@ function Home() {
                                 <HiCheckCircle className="text-3xl text-[#008660]" />
                             </div>
                             <span className="font-semibold">
-                                Demand de correction
+                                {t('note')}
                             </span>
                             {!note && (
                             <span className="triangle"></span>
@@ -207,7 +207,7 @@ function Home() {
                         {note && (
                             <div className="third grid  shadow-lg gap-4 w-64 bg-[#008660] p-6 rounded relative animate__fadeIn">
                                 <span className="card_triangle"></span>
-                                <Note />
+                                <Note t={t} i18n={i18n}  />
                             </div>
                         )}
                     </div>
@@ -220,7 +220,7 @@ function Home() {
                                 <IoDocuments className="text-3xl text-[#FF3457]" />
                             </div>
                             <span className="font-semibold">
-                                Demande de document
+                                {t('document')}
                             </span>
                             {!doc && (
                             <span className="triangle"></span>
@@ -229,7 +229,7 @@ function Home() {
                         {doc && (
                             <div className="last grid gap-4 w-64 bg-[#FF3457] p-6 rounded relative animate__fadeIn">
                                 <span className="card_triangle"></span>
-                                <Document />
+                                <Document t={t} i18n={i18n}  />
                             </div>
                         )}
                     </div>

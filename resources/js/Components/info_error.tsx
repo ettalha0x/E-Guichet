@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import {toast } from 'react-toastify';
 
 
-function info_error(props) {
+function info_error({ t, i18n, props }) {
     function handleClick() {
         props.onModalChange(!props.modal);
     }
@@ -44,15 +44,15 @@ function info_error(props) {
     return (
         <div className=" shadow max-sm:w-full shadow-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/75 p-8 rounded">
             <h1 className=" font-semibold text-xl text-center mb-4">
-                Signaler une erreur dans vos informations
+                {t('msg')}
             </h1>
                 <h1 className=" font-semibold">
-                    choisir ou il y'a l'erreur puis saisi la nouvelle valeur :
+                    {t('instruction')}
                 </h1>
             <div className=" grid grid-cols-3 gap-4">
                 <div>
                     <label htmlFor="" className="flex  justify-between">
-                        Nom:
+                        {t('nom')}:
                         <input
                             onChange={(e) => setModifiernom(e.target.checked)}
                             className="rounded focus:ring-0"
@@ -64,7 +64,7 @@ function info_error(props) {
                 </div>
                 <div>
                     <label htmlFor="" className="flex  justify-between">
-                        Prenom:
+                        {t('prenom')}:
                         <input
                             onChange={(e) =>
                                 setModifierprenom(e.target.checked)
@@ -78,7 +78,7 @@ function info_error(props) {
                 </div>
                 <div>
                     <label htmlFor="" className="flex  justify-between">
-                        Cne:
+                        {t("cne")}:
                         <input
                             onChange={(e) => setModifiercne(e.target.checked)}
                             className="rounded focus:ring-0"
@@ -90,7 +90,7 @@ function info_error(props) {
                 </div>
                 <div>
                     <label htmlFor="" className="flex  justify-between">
-                        Cni:
+                        {t("cni")}:
                         <input
                             onChange={(e) => setModifiercni(e.target.checked)}
                             className="rounded focus:ring-0"
@@ -119,7 +119,7 @@ function info_error(props) {
                 <div className=" grid grid-cols-2 gap-4">
                     {modifiernom && (
                         <label htmlFor="">
-                            Nom: <br />
+                            {t('nom')}: <br />
                             <input
                             value={data.newname} onChange={e => setData('newname', e.target.value)}
                                 className=" rounded focus:ring-0 md:w-74 w-32"
@@ -131,7 +131,7 @@ function info_error(props) {
                     )}
                     {modifierprenom && (
                         <label htmlFor="">
-                            prenom: <br />
+                            {t('prenom')}: <br />
                             <input
                             value={data.newprenom} onChange={e => setData('newprenom', e.target.value)}
                                 className=" rounded focus:ring-0 md:w-74 w-32"
@@ -143,7 +143,7 @@ function info_error(props) {
                     )}
                     {modifiercne && (
                         <label htmlFor="">
-                            cne: <br />
+                            {t('cne')}: <br />
                             <input
                             value={data.newcne} onChange={e => setData('newcne', e.target.value)}
                                 className=" rounded focus:ring-0 md:w-74 w-32"
@@ -155,7 +155,7 @@ function info_error(props) {
                     )}
                     {modifiercni && (
                         <label htmlFor="">
-                            cni: <br />
+                            {t("cni")}: <br />
                             <input
                             value={data.newcni} onChange={e => setData('newcni', e.target.value)}
                                 className=" rounded focus:ring-0 md:w-74 w-32"
@@ -183,10 +183,10 @@ function info_error(props) {
                     disabled={processing}
                     type="submit"
                 >
-                    Submit
+                    {t('submit')}
                 </button>
             </form>
-            <h1 className=" font-serif text-red-700 text-sm">VOTRE MODFICITAION VAS ETRE SUBMITER SOUS FORM D'UN EMAIL</h1>
+            <h1 className=" font-serif text-red-700 text-sm">{t("warning")}</h1>
             <button
                 className=" absolute top-2 right-2 text-xl w-10 hover:bg-slate-500/40 rounded p-2 transition hover:ease-in-out ease-in-out duration-300"
                 onClick={handleClick}

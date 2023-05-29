@@ -8,7 +8,7 @@ import mails from "./email_list.json";
 
 
 const { Option } = Select;
-const Note = () => {
+const Note = ({ t, i18n }) => {
     let moduleOptions;
 
     const { auth } = usePage().props;
@@ -73,7 +73,7 @@ const Note = () => {
     return (
         <div className="grid">
             <form onSubmit={submit} className="grid gap-4">
-                <h1 className="text-center text-white text-lg font-semibold">Sélect le semestre</h1>
+                <h1 className="text-center text-white text-lg font-semibold">{t('selecte la semestre')}</h1>
                 <select
                     value={selectedSemester}
                     onChange={handelsemester}
@@ -86,7 +86,7 @@ const Note = () => {
                         </option>
                     ))}
                 </select>
-                <h1 className="text-center text-white text-lg font-semibold">Choisir module</h1>
+                <h1 className="text-center text-white text-lg font-semibold">{t('Choisir module')}</h1>
                 <select
                     onChange={handelmodule}
                     className="w-52 rounded focus:outline-none focus:border focus:border-transparent focus:ring-1 focus:ring-black"
@@ -103,7 +103,7 @@ const Note = () => {
                     disabled={processing}
                     type="submit"
                 >
-                    Submit
+                    {t('submit')}
                 </button>
             </form>
         </div>

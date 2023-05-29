@@ -4,7 +4,7 @@ import { useForm, usePage } from "@inertiajs/react";
 import {toast } from 'react-toastify';
 import mails from "./email_list.json";
 
-const MyComponent = () => {
+const MyComponent = ({ t, i18n }) => {
     const { auth } = usePage().props;
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
     const [checkedCount, setCheckedCount] = useState(0);
@@ -65,7 +65,7 @@ const MyComponent = () => {
     return (
         <div className="grid gap-4">
             <form onSubmit={submit} className=" grid gap-4">
-                <h1 className=" text-center text-white text-lg font-semibold">Sélect le semestre</h1>
+                <h1 className=" text-center text-white text-lg font-semibold">{t('selecte la semestre')}</h1>
                 <select
                     value={selectedSemester}
                     onChange={(e) => setSelectedSemester(e.target.value)}
@@ -78,7 +78,7 @@ const MyComponent = () => {
                     ))}
                 </select>
                 <h1 className=" text-white text-center text-lg font-semibold">
-                    Sélect les module que vous voulez ajouter
+                    {t('Sélect les module que vous voulez ajouter')}
                 </h1>
                 <div className=" text-center grid grid-cols-3  gap-4">
                     {moduleOptions.map((option) => (
@@ -109,7 +109,7 @@ const MyComponent = () => {
                     disabled={processing}
                     type="submit"
                 >
-                    Submit
+                    {t('submit')}
                 </button>
             </form>
         </div>
