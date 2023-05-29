@@ -1,13 +1,18 @@
-import { useState, PropsWithChildren, ReactNode } from 'react';
+import { useState, PropsWithChildren, ReactNode, useEffect } from 'react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 import { User } from '@/types';
+import maroc from '../images/mflag.png'
+import france from '../images/fflag.png'
 
-export default function Authenticated({ user, header, children }: PropsWithChildren<{ user: User, header?: ReactNode }>) {
+export default function Authenticated({ user, header, children , t, i18n}: PropsWithChildren<{ user: User, header?: ReactNode }>) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    const handleLanguageChange = (language) => {
+        i18n.changeLanguage(language);
+      };
 
     return (
         <div className="min-h-screen bg-gray-100">
@@ -23,12 +28,22 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                             </div> */}
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink className=' text-xl' href={route('dashboard')} active={route().current('dashboard')}>
-                                    Home
+                                    Accueil
                                 </NavLink>
                             </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
+                            <div className='flex gap-2'>
+                                <button onClick={() => handleLanguageChange('ar')
+                                }>
+                                    <img className="rounded-full w-6 h-6" src={maroc} alt="" />
+                                </button>
+                                <button onClick={() => handleLanguageChange('fr')}>
+                                    <img className="rounded-full w-6 h-6" src={france} alt="" />
+
+                                </button>
+                            </div>
                             <div className="ml-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
@@ -58,7 +73,7 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                                     <Dropdown.Content>
                                         {/* <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link> */}
                                         <Dropdown.Link href={route('logout')} method="post" as="button">
-                                            Log Out
+                                            {t('log out')}
                                         </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
@@ -95,10 +110,20 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                     <div className="pt-2 pb-3 space-y-1">
 
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-                            Home
+                            Accueil
                         </ResponsiveNavLink>
                     </div>
+                    <div className='flex gap-2 m-4'>
+                    <button onClick={() => handleLanguageChange('ar')
+                                }>
+                                    <img className=" rounded w-5 h-5" src={maroc} alt="" />
+                                </button>
+                                <button onClick={() => handleLanguageChange('fr')
+                                }>
+                                    <img className=" rounded w-5 h-5" src={france} alt="" />
 
+                                </button>
+                            </div>
                     <div className="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
                         <div className="px-4">
                             <div className="font-medium text-base text-gray-800 dark:text-gray-200">
@@ -110,7 +135,7 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                         <div className="mt-3 space-y-1">
                             {/* <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink> */}
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">
-                                Log Out
+                            {t('log out')}
                             </ResponsiveNavLink>
                         </div>
                     </div>
