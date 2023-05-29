@@ -1,0 +1,29 @@
+{
+    "welcome": "مرحبا",
+  "perosnal inf": "معلومات شخصية",
+  "addmodule": "إضافة وحدة",
+  "note": "طلب تصحيح",
+  "document": "طلب مستند",
+  "nom": "الاسم",
+  "prenom": "اللقب",
+  "module": "الوحدة",
+  "semestre": "فصل دراسي",
+  "fillier": "التخصص",
+  "scolarite": "التعليم",
+  "releve de note": "كشف العلامات",
+    "log out" :",تسجيل خروج",
+    "cni" : "رقم البطاقة الوطنية",
+    "appoge" : "رقم الطالب",
+    "cne" : "رقم مسار",
+    "error" : "خطأ في المعلومات",
+    "selecte la semestre": "اختر الفصل الدراسي",
+    "submit": "أرسل",
+    "Choisir type de document": "اختر نوع الوثيقة",
+    "Choisir module" : "اختيار وحدة",
+    "Sélect les module que vous voulez ajouter" : "حدد الوحدات التي تريد إضافتها",
+    "warning" : "سيتم تقديم التعديل الذي أجريته في شكل رسالة بريد إلكتروني",
+    "msg" : "الإبلاغ عن خطأ في المعلومات الخاصة بك",
+    "instruction" : "اختر مكان الخطأ ثم أدخل القيمة الجديدة:"
+
+
+}
