@@ -249,7 +249,7 @@ class ProfileController extends Controller
             ////////////////////////////////////////////////////////////////
 
             $modules = $request->input('modules');
-            $semester = $request->input('semester');
+            $semester = $request->input('semestre');
 
 
 
