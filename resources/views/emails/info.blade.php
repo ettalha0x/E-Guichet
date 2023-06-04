@@ -79,7 +79,7 @@
           <h1>Demande de correction</h1>
         </div>
         <p>Cher administrateur,</p>
-        <p>Je vous écris pour demander une correction pour mes informations <strong>x</strong>.</p>
+        <p>Je vous écris pour demander une correction pour mes informations .</p>
         <p>Voici mes coordonnées:</p>
         <ul>
         <li><strong>Nom et prénom:</strong> {{ auth()->user()->name }}</li>
