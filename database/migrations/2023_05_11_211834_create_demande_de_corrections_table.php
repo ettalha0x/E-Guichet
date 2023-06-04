@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('appoge');
             $table->string('semestre');
             $table->string('module');
+            $table->string('telephone');
             $table->enum('type_email', ["Demande de correction de note"]);
             $table->timestamps();
             $table->softDeletes();

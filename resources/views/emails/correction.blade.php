@@ -87,5 +87,6 @@
             <li><strong>Module :</strong> {{$module}}</li>
             <li><strong>Appoge :</strong> {{ auth()->user()->Appoge }}</li>
             <li><strong>CNI :</strong> {{ auth()->user()->cni }}</li>
+            <li><strong>telephone:</strong> {{ auth()->user()->telephone }}</li>
         </ul>
         <p>Je vous remercie pour votre attention rapide à cette affaire. </p>

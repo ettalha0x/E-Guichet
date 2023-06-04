@@ -43,6 +43,7 @@ class DemandeCorrectionDeDonneesCrudController extends CrudController
         CRUD::column('prenom_etudiant');
         CRUD::column('cne_etudiant');
         CRUD::column('cni_etudiant');
+        CRUD::column('telephone');
         CRUD::column('appoge');
         CRUD::column('type_email');
         CRUD::column('created_at');
@@ -70,6 +71,7 @@ class DemandeCorrectionDeDonneesCrudController extends CrudController
         CRUD::field('prenom_etudiant');
         CRUD::field('cne_etudiant');
         CRUD::field('cni_etudiant');
+        CRUD::field('telephone');
         CRUD::field('appoge');
         CRUD::field('type_email');
 

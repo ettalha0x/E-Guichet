@@ -86,6 +86,7 @@
         <li><strong>Semester:</strong> {{ auth()->user()->semestre }}</li>
         <li><strong>Appoge:</strong> {{ auth()->user()->Appoge }}</li>
         <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
+        <li><strong>telephone:</strong> {{ auth()->user()->telephone }}</li>
           @foreach($data as $key => $value)
             @if(!empty($value))
             <p>{{ $key }}: {{ $value }}</p>

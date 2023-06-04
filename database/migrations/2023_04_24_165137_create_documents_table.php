@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('cne');
             $table->string('cni');
             $table->string('appoge');
+            $table->string('telephone');
             $table->boolean('scolarite')->default(0);
             $table->boolean('relevedenote')->default(0);
             $table->timestamps();

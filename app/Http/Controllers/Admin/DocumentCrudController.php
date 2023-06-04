@@ -43,6 +43,7 @@ class DocumentCrudController extends CrudController
         CRUD::column('prenom');
         CRUD::column('cne');
         CRUD::column('cni');
+        CRUD::column('telephone');
         CRUD::column('appoge');
         CRUD::column('scolarite');
         CRUD::column('relevedenote');

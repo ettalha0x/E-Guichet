@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('cne_etudiant');
             $table->string('cni_etudiant');
             $table->string('appoge');
+            $table->string('telephone');
             $table->enum('type_email', ["Demande de correction de donnees"]);
             $table->timestamps();
             $table->softDeletes();

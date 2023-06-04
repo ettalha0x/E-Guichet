@@ -36,6 +36,7 @@ class DocumentRequestController extends Controller
             $documentRequest->prenom = auth()->user()->prenom;
             $documentRequest->cne = auth()->user()->cne;
             $documentRequest->cni = auth()->user()->cni;
+            $documentRequest->telephone = auth()->user()->telephone;
             $documentRequest->appoge = $request->input('appoge');
             $scolarite = $request->input('scolarite');
             $releve = $request->input('relevedenote');

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('cni_etudiant');
             $table->string('appoge');
             $table->string('semestre');
+            $table->string('telephone');
             $table->string('module');
             $table->enum('type_email', ["Demande d ajout de module"]);
             $table->timestamps();

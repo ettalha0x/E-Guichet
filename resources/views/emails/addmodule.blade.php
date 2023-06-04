@@ -77,7 +77,7 @@
       <div class="col-md-8">
         <div class="text-center mb-4">
           <p>Cher administrateur,</p>
-          <p>Je vous écris pour demander d'ajouter les modules cités ci-dessous dans le semestre <strong>x</strong>.</p>
+          <p>Je vous écris pour demander d'ajouter les modules cités ci-dessous dans le semestre <strong>{{ auth()->user()->semester }}</strong>.</p>
 
           <p>Voici mes détails :</p>
           <ul>
@@ -87,5 +87,6 @@
               @endforeach
               <li><strong>Appoge:</strong> {{ auth()->user()->Appoge }}</li>
               <li><strong>CNI:</strong> {{ auth()->user()->cni }}</li>
+              <li><strong>telephone:</strong> {{ auth()->user()->telephone }}</li>
           </ul>
           <p>Je vous remercie pour votre attention rapide à cette affaire.</p>
