@@ -180,20 +180,20 @@ class ProfileController extends Controller
                      $this->insert_correction_de_note($module, $semester);
                      return inertia('Dashboard')->with([
                          'status' => 'success',
-                         'message' => 'submited',
+                         'message' => 'bien envoye',
                      ]);
                  }
              else {
                  return inertia('Dashboard')->with([
-                     'status' => 'success',
-                     'message' => 'submited',
+                     'status' => 'error',
+                     'message' => 'vous devez remplir tous les champs',
                  ]);
              }
          }
          else {
              return inertia('Dashboard')->with([
                  'status' => 'error',
-                 'message' => 'not sub',
+                 'message' => 'vous avez deja envoye une demande',
              ]);
          }
         }
@@ -205,7 +205,7 @@ class ProfileController extends Controller
             $receiver_2 = env('RECEIVER_2');
 
             $number =   env('Months_limit_for_Grades_Corrections');
-            $receiver_3 = env('RECEIVER_3');
+            // $receiver_3 = env('RECEIVER_3');
             ////////////////////////////////////////
 
             $data = [
@@ -222,19 +222,19 @@ class ProfileController extends Controller
             {
                 Mail::to($receiver_1)->send(new infoMail($data));
                 Mail::to($receiver_2)->send(new infoMail($data));
-                Mail::to($receiver_3)->send(new infoMail($data));
+                // Mail::to($receiver_3)->send(new infoMail($data));
 
                 $this->insert_Correction_De_Donnees();
 
                 return inertia('Dashboard')->with([
                     'status' => 'success',
-                    'message' => 'submited',
+                    'message' => 'bien envoye',
                 ]);
             }
             else {
                 return inertia('Dashboard')->with([
                     'status' => 'error',
-                    'message' => 'you alr change your info',
+                    'message' => 'vous avez deja envoye une demande de correction de donnees',
                 ]);
 
             }
@@ -269,13 +269,13 @@ class ProfileController extends Controller
                 }
                 return inertia('Dashboard')->with([
                     'status' => 'success',
-                    'message' => 'submited',
+                    'message' => 'bien envoye',
                 ]);
             }
             else{
                 return inertia('Dashboard')->with([
                     'status' => 'error',
-                    'message' => 'you can submite once in year',
+                    'message' => 'vous avez deja envoye une demande',
                 ]);
             }
         }

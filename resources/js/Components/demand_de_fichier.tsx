@@ -17,6 +17,11 @@ function Fichier({ t, i18n }) {
     });
 
     function handleSubmit(e) {
+        if (!data.scolarite && !data.relevedenote) {
+            toast.error('Veuillez choisir au moins un document');
+            e.preventDefault();
+            return;
+        }
         e.preventDefault();
         post("/document", {
         onSuccess: (response) => {
@@ -40,7 +45,7 @@ function Fichier({ t, i18n }) {
             <form onSubmit={handleSubmit} className=" grid gap-4">
                     <label htmlFor="option1">{t('scolarite')}:
                     <input
-                    className=" ml-[4.3rem] rounded focus:ring-0"
+                    className=" ml-[4.3rem] rtl:mr-[4.3rem] rounded focus:ring-0"
                     type="checkbox"
                     checked={data.scolarite}
                     name="selected_documents[]" value="scolarite"
@@ -49,7 +54,7 @@ function Fichier({ t, i18n }) {
                     </label>
                     <label htmlFor="option2">{t('releve de note')}:
                     <input
-                    className="ml-8 rounded focus:ring-0"
+                    className="ml-8 rtl:mr-4 rounded focus:ring-0"
                     type="checkbox"
                     name="selected_documents[]" value="relevedenote"
                     checked={data.relevedenote}

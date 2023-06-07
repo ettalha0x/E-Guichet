@@ -23,5 +23,7 @@
     "Sélect les module que vous voulez ajouter" : "حدد الوحدات التي تريد إضافتها",
     "warning" : "VOTRE MODFICITAION VAS ETRE SUBMITER SOUS FORM D'UN EMAIL",
     "msg" : "Signaler une erreur dans vos informations",
-    "instruction" : "Choisir ou il y'a l'erreur puis saisi la nouvelle valeur :"
+    "instruction" : "Choisir ou il y'a l'erreur puis saisi la nouvelle valeur :",
+    "day" : "aujourd'hui est",
+    "dayl" : "fr-FR"
 }

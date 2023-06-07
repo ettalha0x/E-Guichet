@@ -65,7 +65,7 @@ class DocumentRequestController extends Controller
         if ($count >= $number) {
             return inertia('Dashboard')->with([
                 'status' => 'error',
-                'message' => 'the limite of submit per day reached',
+                'message' => 'le maximum de demande par jour est atteint',
             ]); //'Maximum limit of 40 records per day has been reached'
         }
         else {
@@ -74,12 +74,12 @@ class DocumentRequestController extends Controller
                 $documentRequest->save();
                 return inertia('Dashboard')->with([
                     'status' => 'success',
-                    'message' => 'submited',
+                    'message' => 'bien submited',
                 ]);
             }
             return inertia('Dashboard')->with([
-                'status' => 'erro',
-                'message' => 'alr submited',
+                'status' => 'error',
+                'message' => 'vous avez deja fait une demande ce mois ci',
             ]);
         }
 

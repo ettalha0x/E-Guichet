@@ -43,6 +43,11 @@ const MyComponent = ({ t, i18n }) => {
           }
 
           function submit(e) {
+            if (selectedCheckboxes.length < 1) {
+              toast.error('Vous devez sélectionner un module');
+              e.preventDefault();
+              return;
+            }
             e.preventDefault();
             console.log(data);
             post("/ajout_de_module", {

@@ -15,6 +15,14 @@ import { HiCheckCircle } from "react-icons/hi";
 
 function Home({ t, i18n }) {
     const [modal, setModal] = useState(false);
+    // const [lang, setLang] = useState("fr");
+
+    useEffect(() => {
+        const rootDiv = document.getElementById('all');
+        if (rootDiv) {
+          rootDiv.dir = i18n.dir();
+        }
+      }, [i18n.language]);
 
     const [profile, setprofile] = useState(false);
     const [module, setmodule] = useState(false);
@@ -67,14 +75,16 @@ function Home({ t, i18n }) {
         };
     }, [modal]);
 
-    const today = new Date().toLocaleDateString("fr-FR", {
+    const options = {
         weekday: "long",
         day: "numeric",
         month: "long",
         year: "numeric",
-    });
+      };
+
+      const today = new Date().toLocaleDateString(t('dayl'), options);
     return (
-        <>
+        <div id="all">
             {modal && (
                 <div
                     className="fixed w-screen h-screen top-0 right-0 left-0 bottom-0"
@@ -84,12 +94,12 @@ function Home({ t, i18n }) {
                         onClick={() => handleModalChange(!modal)}
                         className=" fixed w-screen h-screen top-0 right-0 left-0 bottom-0 bg-[rgba(49,49,49,0.8)]"
                     ></div>
-                    <Error t={t} i18n={i18n}  modal={modal} onModalChange={handleModalChange} />
+                    <Error t={t} i18n={i18n} modal={modal} onModalChange={handleModalChange} />
                 </div>
             )}
             <div className="">
                 <div className="flex flex-wrap justify-around bg-[{photo}]">
-                    <div className="md:bg-gradient-to-r bg-gradient-to-b from-gray-200 p-12  grid gap-8">
+                    <div className="md:bg-gradient-to-r rtl:bg-gradient-to-l bg-gradient-to-b from-gray-200 p-12  grid gap-8">
                         <h1 className=" font-semibold text-3xl">
                             <span>
                                 {t('welcome')} <br />
@@ -98,9 +108,18 @@ function Home({ t, i18n }) {
                                 {auth.user.name}
                             </span>
                         </h1>
-                        <h2>Aujourd'hui est {today} </h2>
+                        <h2>{t('day')} {today} </h2>
                     </div>
                     <img className="w-64" src={photo} alt="" />
+                </div>
+                <div className="p-4">
+                    <h1 className=" font-semibold text-2xl text-red-500">REMARQUE</h1>
+                    <ul className=" list-disc font-semibold">
+                        <li>tous les service sont sous forme des email</li>
+                        <li>vous douvez attender au moins une semain pour recus votre document</li>
+                        <li>le max de module que vous pouver ajouter est 3</li>
+                        <li>tous les nonmbre de fois pour chaque cervice est limite au moins 1 fois par 6 mois</li>
+                    </ul>
                 </div>
                 <div className="flex flex-wrap gap-8 justify-around mt-8 h-auto">
                     <div className="grid gap-4">
@@ -235,7 +254,7 @@ function Home({ t, i18n }) {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

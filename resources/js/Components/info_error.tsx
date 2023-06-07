@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import {toast } from 'react-toastify';
 
 
-function info_error({ t, i18n, props }) {
+function info_error({ t, i18n, modal, onModalChange }) {
     function handleClick() {
-        props.onModalChange(!props.modal);
+      onModalChange(!modal);
     }
 
     const { auth } = usePage().props;
