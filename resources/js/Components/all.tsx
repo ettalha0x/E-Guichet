@@ -113,12 +113,12 @@ function Home({ t, i18n }) {
                     <img className="w-64" src={photo} alt="" />
                 </div>
                 <div className="p-4">
-                    <h1 className=" font-semibold text-2xl text-red-500">REMARQUE</h1>
+                    <h1 className=" font-semibold text-2xl text-red-500">{t('remarque')}</h1>
                     <ul className=" list-disc font-semibold">
-                        <li>tous les service sont sous forme des email</li>
-                        <li>vous douvez attender au moins une semain pour recus votre document</li>
-                        <li>le max de module que vous pouver ajouter est 3</li>
-                        <li>tous les nonmbre de fois pour chaque cervice est limite au moins 1 fois par 6 mois</li>
+                        <li>{t('remarque1')}</li>
+                        <li>{t('remarque2')}</li>
+                        <li>{t('remarque3')}</li>
+                        <li>{t('remarque4')}</li>
                     </ul>
                 </div>
                 <div className="flex flex-wrap gap-8 justify-around mt-8 h-auto">

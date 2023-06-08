@@ -25,5 +25,10 @@
     "msg" : "Signaler une erreur dans vos informations",
     "instruction" : "Choisir ou il y'a l'erreur puis saisi la nouvelle valeur :",
     "day" : "aujourd'hui est",
-    "dayl" : "fr-FR"
+    "dayl" : "fr-FR",
+    "remarque" : "REMARQUE",
+    "remarque1" : "tous les service sont sous forme des email",
+    "remarque2" : "vous douvez attender au moins une semain pour recus votre document",
+    "remarque3" : "le max nombre de module que vous pouver ajouter est 3",
+    "remarque4" : "tous les services sont limités à 2 demandes par an"
 }
