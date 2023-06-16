@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('role')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('fillier')->nullable();
-            $table->string('semester')->nullable();
+            $table->string('naissance')->nullable();
             $table->string('telephone')->nullable();
             $table->string('password');
             $table->rememberToken();
