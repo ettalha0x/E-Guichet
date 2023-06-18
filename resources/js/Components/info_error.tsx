@@ -15,12 +15,14 @@ function info_error({ t, i18n, modal, onModalChange }) {
     const [modifiercni, setModifiercni] = useState(false);
     const [modifierdatedenaissance, setModifierdatedenaissance] =
         useState(false);
+    const [modifiertelephone, setModifiertelephone] = useState(false);
     const { data, setData, post, processing , reset} = useForm({
         newname: "",
         newprenom: "",
         newcne: "",
         newcni: "",
         newdate: "",
+        newtelephone: "",
     });
     function submit(e) {
         e.preventDefault();
@@ -102,7 +104,21 @@ function info_error({ t, i18n, modal, onModalChange }) {
                 </div>
                 <div>
                     <label htmlFor="" className="flex  justify-between">
-                        Date de naissance:
+                    {t("telephone")}
+                        <input
+                            onChange={(e) =>
+                                setModifiertelephone(e.target.checked)
+                            }
+                            className="rounded focus:ring-0"
+                            type="checkbox"
+                            name=""
+                            id=""
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label htmlFor="" className="flex  justify-between">
+                    {t("date de naissance")}
                         <input
                             onChange={(e) =>
                                 setModifierdatedenaissance(e.target.checked)
@@ -177,6 +193,18 @@ function info_error({ t, i18n, modal, onModalChange }) {
                             />
                         </label>
                     )}
+                    {modifiertelephone && (
+                        <label htmlFor="">
+                            {t("telephone")} <br />
+                            <input
+                            value={data.newtelephone} onChange={e => setData('newtelephone', e.target.value)}
+                                className=" rounded focus:ring-0 md:w-74 w-32"
+                                type="text"
+                                name=""
+                                id=""
+                            />
+                        </label>
+                    )}
                 </div>
                 <button
                     className=" bg-green-300 rounded-md w-32 h-8"
@@ -186,7 +214,6 @@ function info_error({ t, i18n, modal, onModalChange }) {
                     {t('submit')}
                 </button>
             </form>
-            <h1 className=" font-serif text-red-700 text-sm">{t("warning")}</h1>
             <button
                 className=" absolute top-2 right-2 text-xl w-10 hover:bg-slate-500/40 rounded p-2 transition hover:ease-in-out ease-in-out duration-300"
                 onClick={handleClick}

@@ -112,13 +112,12 @@ function Home({ t, i18n }) {
                     </div>
                     <img className="w-64" src={photo} alt="" />
                 </div>
-                <div className="p-4">
+                <div className="p-8 rounded shadow bg-slate-200 mt-4">
                     <h1 className=" font-semibold text-2xl text-red-500">{t('remarque')}</h1>
                     <ul className=" list-disc font-semibold">
                         <li>{t('remarque1')}</li>
                         <li>{t('remarque2')}</li>
                         <li>{t('remarque3')}</li>
-                        <li>{t('remarque4')}</li>
                     </ul>
                 </div>
                 <div className="flex flex-wrap gap-8 justify-around mt-8 h-auto">
@@ -146,7 +145,7 @@ function Home({ t, i18n }) {
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">
-                                        Date de naissance :{" "}
+                                    {t('date de naissance')} :{" "}
                                     </span>
                                     <span>{auth.user.naissance}</span>
                                 </h1>
@@ -170,9 +169,9 @@ function Home({ t, i18n }) {
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">
-                                        {t("semestre")} :{" "}
+                                        {t("telephone")} :{" "}
                                     </span>
-                                    <span>{auth.user.semester} </span>
+                                    <span>{auth.user.telephone} </span>
                                 </h1>
                                 <h1>
                                     <span className=" font-semibold">

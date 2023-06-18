@@ -45,7 +45,7 @@ function Fichier({ t, i18n }) {
             <form onSubmit={handleSubmit} className=" grid gap-4">
                     <label htmlFor="option1">{t('scolarite')}:
                     <input
-                    className=" ml-[4.3rem] rtl:mr-[4.3rem] rounded focus:ring-0"
+                    className=" ml-[4.3rem] rounded focus:ring-0"
                     type="checkbox"
                     checked={data.scolarite}
                     name="selected_documents[]" value="scolarite"

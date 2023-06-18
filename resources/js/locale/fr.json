@@ -20,15 +20,16 @@
     "log out" : "log out",
     "Choisir type de document" : "Choisir type de document",
     "Choisir module" : "choisir un module",
-    "Sélect les module que vous voulez ajouter" : "حدد الوحدات التي تريد إضافتها",
+    "Sélect les module que vous voulez ajouter" : " Sélect les module que vous voulez ajouter",
     "warning" : "VOTRE MODFICITAION VAS ETRE SUBMITER SOUS FORM D'UN EMAIL",
     "msg" : "Signaler une erreur dans vos informations",
     "instruction" : "Choisir ou il y'a l'erreur puis saisi la nouvelle valeur :",
     "day" : "aujourd'hui est",
     "dayl" : "fr-FR",
     "remarque" : "REMARQUE",
-    "remarque1" : "tous les service sont sous forme des email",
-    "remarque2" : "vous douvez attender au moins une semain pour recus votre document",
-    "remarque3" : "le max nombre de module que vous pouver ajouter est 3",
-    "remarque4" : "tous les services sont limités à 2 demandes par an"
+    "remarque1" : "Vous devez attendre au moins une semaine pour recevoir votre document du Bureau des affaires étudiantes",
+    "remarque2" : "Vous pouvez ajouter 2 unités au maximum (3 dans certains cas particuliers)",
+    "remarque3" : "Vous avez le droit de demander une re-notation seulement deux fois par semestre",
+    "date de naissance" : "Date de naissance ",
+    "telephone" : "numéro de téléphone "
 }

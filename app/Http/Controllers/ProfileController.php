@@ -214,6 +214,7 @@ class ProfileController extends Controller
                 'nouveau cne' => $request->input('newcne'),
                 'nouveau cni' => $request->input('newcni'),
                 'nouveau date' => $request->input('newdate'),
+                'nouveau telephone' => $request->input('newtelephone'),
             ];
 
             $table = 'demande_correction_de_donnees';
