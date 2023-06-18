@@ -6,7 +6,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
-import logo from "../../images/Universite-logo.png";
+import logo from "../../images/lafac_logo.png";
 
 export default function Login({ status, canResetPassword }: { status?: string, canResetPassword: boolean }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -32,7 +32,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
-            <img src={logo} alt="" />
+            <img className=' bg-blend-color-dodge' src={logo} alt="" />
             <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="appoge" value="email" />
