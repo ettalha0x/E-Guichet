@@ -23,7 +23,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
-
+        console.log(data);
         post(route('login'));
     };
 
