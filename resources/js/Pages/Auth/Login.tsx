@@ -32,10 +32,10 @@ export default function Login({ status, canResetPassword }: { status?: string, c
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
-            <img className=' bg-blend-color-dodge' src={logo} alt="" />
+            <img className=' drop-shadow' src={logo} alt="" />
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="appoge" value="email" />
+                    <InputLabel htmlFor="appoge" value="APPOGE" />
 
                     <TextInput
                         id="email"
@@ -79,14 +79,6 @@ export default function Login({ status, canResetPassword }: { status?: string, c
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    {/* {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )} */}
 
                     <PrimaryButton className="ml-4" disabled={processing}>
                         Log in

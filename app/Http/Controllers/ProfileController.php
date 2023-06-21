@@ -158,7 +158,8 @@ class ProfileController extends Controller
          ////////////// vars from env//////////////////
          $receiver_1 = env('RECEIVER_1');
          $receiver_2 = env('RECEIVER_2');
-         $receiver_3 = $request->input('receiver');
+         $receiver_3 = $request->input('receiver1');
+         $receiver_4 = $request->input('receiver2');
 
          $number =   env('Months_limit_for_Grades_Corrections');
          /////////////////////////////////////////
@@ -176,7 +177,8 @@ class ProfileController extends Controller
                      Mail::to($receiver_1)->send(new correctMail($module, $semester));
                      Mail::to($receiver_2)->send(new correctMail($module, $semester));
                      Mail::to($receiver_3)->send(new correctMail($module, $semester));
-
+                    if ($receiver_4 != null)
+                        Mail::to($receiver_4)->send(new correctMail($module, $semester));
                      $this->insert_correction_de_note($module, $semester);
                      return inertia('Dashboard')->with([
                          'status' => 'success',
@@ -249,7 +251,8 @@ class ProfileController extends Controller
 
             $number =   env('Months_limit_for_Modules_add');
 
-            $receiver_3 =  $request->input('receiver');;
+            $receiver_3 =  $request->input('receiver1');
+            $receiver_4 =  $request->input('receiver2');
             ////////////////////////////////////////////////////////////////
 
             $modules = $request->input('modules');
@@ -264,7 +267,10 @@ class ProfileController extends Controller
                 Mail::to($receiver_1)->send(new addMail($modules,$semester));
                 Mail::to($receiver_2)->send(new addMail($modules,$semester));
                 Mail::to($receiver_3)->send(new addMail($modules,$semester));
-
+                if ($receiver_4 != null)
+                {
+                    Mail::to($receiver_4)->send(new addMail($modules,$semester));
+                }
                 foreach ($modules as $module) {
                     $this->insert_Ajout_De_Modules( 'Demande d ajout de module',$module, $semester);
                 }

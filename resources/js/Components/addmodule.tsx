@@ -23,7 +23,8 @@ const MyComponent = ({ t, i18n }) => {
         const { data, setData, post, processing , reset} = useForm({
             semestre : semester.semestre[selectedSemester - 1].name,
             modules : [],
-            receiver : mail?.email
+            receiver1 : mail?.email[0],
+            receiver2 : mail?.email[1] || null
         });
         function handleCheckboxChange(e) {
             const checkboxLabel = e.target.name;
@@ -49,7 +50,6 @@ const MyComponent = ({ t, i18n }) => {
               return;
             }
             e.preventDefault();
-            console.log(data);
             post("/ajout_de_module", {
               onSuccess: (response) => {
                 reset();

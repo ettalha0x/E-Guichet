@@ -18,7 +18,8 @@ const Note = ({ t, i18n }) => {
     const { data, setData, post, processing , reset} = useForm({
         semester: semesname,
         module: modulname,
-        receiver : mail?.email
+        receiver1 : mail?.email[0],
+        receiver2 : mail?.email[1] || null
     });
     const [selectedSemester, setSelectedSemester] = useState(0);
     const semester = list.find((item) => item.name === auth.user.fillier);

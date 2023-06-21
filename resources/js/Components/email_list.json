@@ -2,26 +2,46 @@
     {
         "id": "1",
         "name": "Etudes Arabes",
-        "email": "mohamedkhairou5@gmail.com"
+        "email": ["ahmedhachim.eraissouni@gmail.com"]
     },
-    { "id": "3", "name": "Etudes Hispaniques", "email": "mohamedkhairou5@gmail.com" },
+    {
+        "id": "3",
+        "name": "Etudes Hispaniques",
+        "email": ["zcharia@uae.ac.ma","elfathi@hotmail.com"]
+    },
     {
         "id": "3",
         "name": "Histoire & Civilisation",
-        "email": "mohamedkhairou5@gmail.com"
+        "email": ["acheddad@uae.ac.ma"]
     },
-    { "id": "4", "name": "Etudes Anglaises", "email": "mohamedkhairou5@gmail.com" },
-    { "id": "5", "name": "Sociologie", "email": "mohamedkhairou5@gmail.com" },
+    {
+        "id": "4",
+        "name": "Etudes Anglaises",
+        "email": ["a.belamrani@uae.ac.ma","n.kechikeche@uae.ac.ma"]
+    },
+    {
+        "id": "5",
+        "name": "Sociologie",
+        "email": ["w.jehouani@uae.ac.ma"]
+    },
     {
         "id": "6",
         "name": "Etudes Françaises",
-        "email": "mohamedkhairou5@gmail.com"
+        "email": ["jboumaajoune@uae.ac.ma","jzemrani@uae.ac.ma"]
     },
     {
         "id": "7",
         "name": "Etudes Islamiques",
-        "email": "mohamedkhairou5@gmail.com"
+        "email": ["elmek.mostafa@gmail.com"]
     },
-    { "id": "8", "name": "Philosophie", "email": "mohamedkhairou5@gmail.com" },
-    { "id": "9", "name": "Géographie", "email": "mohamedkhairou5@gmail.com" }
+    {
+        "id": "8",
+        "name": "Philosophie",
+        "email": ["b.assel@uae.ac.ma"]
+    },
+    {
+        "id": "9",
+        "name": "Géographie",
+        "email": ["adergal@uae.ac.ma"]
+    }
 ]
