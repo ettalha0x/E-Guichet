@@ -2,46 +2,46 @@
     {
         "id": "1",
         "name": "Etudes Arabes",
-        "email": ["ahmedhachim.eraissouni@gmail.com"]
+        "email": ["example@example.com"]
     },
     {
         "id": "3",
         "name": "Etudes Hispaniques",
-        "email": ["zcharia@uae.ac.ma","elfathi@hotmail.com"]
+        "email": ["example@example.com"]
     },
     {
         "id": "3",
         "name": "Histoire & Civilisation",
-        "email": ["acheddad@uae.ac.ma"]
+        "email": ["example@example.com"]
     },
     {
         "id": "4",
         "name": "Etudes Anglaises",
-        "email": ["a.belamrani@uae.ac.ma","n.kechikeche@uae.ac.ma"]
+        "email": ["example@example.com"]
     },
     {
         "id": "5",
         "name": "Sociologie",
-        "email": ["w.jehouani@uae.ac.ma"]
+        "email": ["example@example.com"]
     },
     {
         "id": "6",
         "name": "Etudes Françaises",
-        "email": ["jboumaajoune@uae.ac.ma","jzemrani@uae.ac.ma"]
+        "email": ["example@example.com","example@example.com"]
     },
     {
         "id": "7",
         "name": "Etudes Islamiques",
-        "email": ["elmek.mostafa@gmail.com"]
+        "email": ["example@example.com"]
     },
     {
         "id": "8",
         "name": "Philosophie",
-        "email": ["b.assel@uae.ac.ma"]
+        "email": ["example@example.com"]
     },
     {
         "id": "9",
         "name": "Géographie",
-        "email": ["adergal@uae.ac.ma"]
+        "email": ["example@example.com"]
     }
 ]
